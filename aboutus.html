@@ -2182,28 +2182,7 @@
 			border-bottom-style: solid;
 		}
 
-		.ast-breadcrumbs .trail-browse,
-		.ast-breadcrumbs .trail-items,
-		.ast-breadcrumbs .trail-items li {
-			display: inline-block;
-			margin: 0;
-			padding: 0;
-			border: none;
-			background: inherit;
-			text-indent: 0;
-			text-decoration: none;
-		}
-
-		.ast-breadcrumbs .trail-browse {
-			font-size: inherit;
-			font-style: inherit;
-			font-weight: inherit;
-			color: inherit;
-		}
-
-		.ast-breadcrumbs .trail-items {
-			list-style: none;
-		}
+	
 
 		.trail-items li::after {
 			padding: 0 0.3em;
@@ -4960,7 +4939,7 @@ flexibility(document.documentElement);
 			width: 100% !important;
 			height: 100px !important;
 			z-index: 9999 !important;
-			background: rgba(17, 17, 17, 0.95);
+			background: rgba(73, 23, 153, 0.95);
 			/* semi-transparent dark */
 			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 			transition: all 0.3s ease;
@@ -5008,6 +4987,302 @@ flexibility(document.documentElement);
 			/* adjust as you like */
 		}
 	</style>
+
+
+
+
+
+
+
+
+
+<style id="mobile-enhancements">
+
+.ast-mobile-header-content {
+  background: #000; /* solid black background */
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+
+
+/* 🌑 Navigation Container */
+#ast-hf-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 🌑 Menu Items */
+#ast-hf-mobile-menu .menu-link {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0.5rem;
+  color: #000000;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover / Focus */
+#ast-hf-mobile-menu .menu-link:hover,
+#ast-hf-mobile-menu .menu-link:focus {
+	color: whitesmoke;
+  background: linear-gradient(90deg, #111, #333);
+  transform: translateX(6px);
+}
+
+.menu-link:hover{
+  color: #ffd700 !important; /* golden highlight */
+}
+
+/* Active / Current page */
+#ast-hf-mobile-menu .current-menu-item > .menu-link {
+  background: linear-gradient(90deg, #222222e1, #555);
+  color: #ffd700; /* golden highlight */
+  font-weight: 700;
+  border-left: 4px solid #ffd700;
+}
+
+/* Subtle Glow (Z signature) */
+#ast-hf-mobile-menu .menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+#ast-hf-mobile-menu .menu-link:hover::after {
+  width: 80%;
+}
+
+/* 🌑 Responsive tweaks */
+@media (min-width: 768px) {
+  .ast-mobile-header-content {
+    display: none; /* hide mobile menu on desktop */
+  }
+}
+
+
+
+
+
+/* 🌐 Breadcrumb Styling */
+.ast-breadcrumbs,
+.ast-breadcrumbs a {
+  color: #1e90ff !important; /* Dodger blue */
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ast-breadcrumbs a:hover {
+  color: #0d6efd !important; /* Slightly darker blue */
+  text-decoration: underline;
+}
+
+.ast-breadcrumbs .breadcrumb_last {
+  color: #0a58ca !important; /* Deep blue for the active page */
+  font-weight: 600;
+}
+
+
+
+
+/* Mobile Responsiveness Enhancements */
+@media (max-width: 921px) {
+  /* Header adjustments for mobile */
+  .site-header, 
+  .ast-header-break-point .main-header-bar {
+    min-height: 70px;
+  }
+  
+  /* Logo sizing for mobile */
+  .site-logo-img img, 
+  .astra-logo-svg {
+    max-width: 100px !important;
+    width: 60px !important;
+  }
+  
+  /* Mobile menu improvements */
+  .ast-mobile-header-content {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  /* Content area adjustments */
+  .ast-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Full-width cover blocks on mobile */
+  .wp-block-cover.alignfull {
+    min-height: 80vh !important;
+    padding: 20px !important;
+  }
+  
+  /* Font size adjustments for mobile */
+  .wp-block-cover h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+  }
+  
+  /* Stack columns on mobile */
+  .wp-block-columns {
+    flex-direction: column;
+  }
+  
+  .wp-block-column {
+    flex-basis: 100% !important;
+    margin-bottom: 30px;
+  }
+  
+  /* Comparison slider adjustments */
+  .comparison-slider {
+    height: 300px !important;
+    max-width: 100% !important;
+    margin: 0 auto 40px !important;
+  }
+  
+  .thumbnails {
+    gap: 10px !important;
+  }
+  
+  .thumbnail {
+    width: 80px !important;
+    height: 60px !important;
+  }
+  
+  /* Counter adjustments */
+  #customer-count {
+    font-size: 60px !important;
+  }
+  
+  /* Button sizing */
+  .wp-block-button__link {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+  
+  /* WhatsApp button adjustments */
+  a[href*="whatsapp"] {
+    font-size: 14px !important;
+    padding: 10px 16px !important;
+  }
+}
+
+@media (max-width: 544px) {
+  /* Further adjustments for very small screens */
+  .site-title {
+    font-size: 1.2rem !important;
+  }
+  
+  .wp-block-cover h1 {
+    font-size: 2rem !important;
+  }
+  
+  .comparison-slider {
+    height: 250px !important;
+  }
+  
+  #customer-count {
+    font-size: 50px !important;
+  }
+  
+  /* Header adjustments */
+  .ast-primary-header-bar {
+    padding: 10px 0 !important;
+  }
+  
+  /* Hide some decorative elements on very small screens */
+  .ast-site-title-wrap .site-description {
+    display: none;
+  }
+  
+  /* Improve touch targets */
+  .menu-toggle, 
+  .ast-button, 
+  .wp-block-button__link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Cart button adjustments */
+  #cart-btn {
+    margin-left: 10px;
+  }
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve readability on mobile */
+p, li {
+  line-height: 1.6;
+}
+
+/* Better form elements on mobile */
+input, select, textarea {
+  font-size: 16px !important; /* Prevents zoom on focus in iOS */
+}
+</style>
+
+
+
+
+<style id="mobile-menu-fix">
+/* Mobile Menu Positioning Fix */
+@media (max-width: 921px) {
+    .ast-mobile-header-content {
+        top: 100% !important;
+        margin-top: 0;
+    }
+    
+    .ast-mobile-header-wrap .ast-mobile-header-content {
+        position: absolute;
+        z-index: 9999;
+        background: #fff;
+        width: 100%;
+        left: 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Ensure header has proper z-index */
+    .site-header, 
+    .ast-header-break-point .main-header-bar {
+        z-index: 10000 !important;
+    }
+}
+
+</style>
+
+
+
+
+
+
+
 </head>
 
 <body itemtype="https://schema.org/WebPage" itemscope="itemscope"
@@ -5173,7 +5448,7 @@ flexibility(document.documentElement);
 									data-section="section-header-mobile-trigger">
 									<div class="ast-button-wrap">
 										<button type="button"
-											class="menu-toggle main-header-menu-toggle ast-mobile-menu-trigger-minimal"
+											class="menu-toggle main-header-menu-toggle ast-mobile-menu-trigger-minimal ast-breadcrumbs"
 											aria-expanded="false" aria-label="Main menu toggle" data-index="0">
 											<span class="screen-reader-text">Main Menu</span>
 											<span class="mobile-menu-toggle-icon">
@@ -5212,25 +5487,16 @@ flexibility(document.documentElement);
 									<div id="ast-hf-mobile-menu" class="main-navigation">
 										<ul
 											class="main-header-menu ast-nav-menu ast-flex  submenu-with-border astra-menu-animation-fade  stack-on-mobile">
+											
+											<li class="page_item page-item-35 menu-item"><a href="./index.html"
+													class="menu-link">Home</a></li>
 											<li
 												class="page_item page-item-15 current-menu-item menu-item current-menu-item">
 												<a href="./aboutus.html" class="menu-link">About Us</a></li>
-											<li class="page_item page-item-198 menu-item"><a
-													href="./index.htmlindex.php/cart/" class="menu-link">Cart</a></li>
+											
 											<li class="page_item page-item-17 menu-item"><a
 													href="./contactus.html" class="menu-link">Contact
 													Us</a></li>
-											<li class="page_item page-item-35 menu-item"><a href="./index.html"
-													class="menu-link">Home</a></li>
-											<li class="page_item page-item-8 menu-item"><a href="#"
-													class="menu-link">Home Cleaning</a></li>
-											<li class="page_item page-item-11 menu-item"><a href="#"
-													class="menu-link">Industrial Cleaning</a></li>
-											<li class="page_item page-item-13 menu-item"><a href="#"
-													class="menu-link">Laundry</a></li>
-											<li class="page_item page-item-200 menu-item"><a
-													href="./index.htmlindex.php/my-account/" class="menu-link">My
-													account</a></li>
 											<li class="page_item page-item-38 menu-item"><a href="./ourservices.html"
 													class="menu-link">Our Services</a></li>
 											<li class="page_item page-item-197 menu-item"><a href="./shop.html"
