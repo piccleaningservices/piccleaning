@@ -1,0 +1,39 @@
+/* --- styles.css --- */
+
+/* 1. Cart Drawer Background Image and Properties */
+.cart-background {
+    /* !! IMPORTANT: REPLACE 'YOUR_IMAGE_PATH.jpg' with your actual image path !! */
+    background-image: url('./PICpix/image.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 2. Overlay for Readability */
+/* Adds a translucent dark layer over the image to ensure text is visible */
+.cart-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.808); /* 50% opacity black */
+    z-index: 1; /* Place the overlay behind the content but over the image */
+}
+
+/* 3. Ensure Content Layers Correctly */
+/* Makes sure the drawer's content (text, buttons, etc.) sits above the overlay */
+.cart-background > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* 4. Global Animation (The fade-in you defined earlier) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+.animate-fadeIn { 
+    animation: fadeIn 0.4s ease-in-out; 
+}

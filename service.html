@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProClean - Professional Cleaning Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c6bed;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --home-bg: #e0f2fe;
+            --industrial-bg: #dcfce7;
+            --laundry-bg: #fef3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card.selected {
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        
+        .service-header {
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .home .service-header { background-color: var(--primary); }
+        .industrial .service-header { background-color: var(--secondary); }
+        .laundry .service-header { background-color: var(--accent); }
+        
+        .service-body {
+            padding: 1.5rem;
+        }
+        
+        .service-features {
+            list-style-type: none;
+            margin: 1rem 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-features li i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .price-note {
+            font-style: italic;
+            color: #666;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        .service-details {
+            display: none;
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .service-details.active {
+            display: block;
+        }
+        
+        .order-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .service-option {
+            border: 2px solid #eee;
+            border-radius: 4px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .service-option:hover {
+            border-color: var(--primary);
+        }
+        
+        .service-option.selected {
+            border-color: var(--primary);
+            background-color: rgba(44, 107, 237, 0.1);
+        }
+        
+        .service-option i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        button:hover {
+            background-color: #1e56ca;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-broom"></i>
+            <span>ProClean</span>
+        </div>
+        <h1>Professional Cleaning Services</h1>
+        <p>Expert cleaning solutions for your home, business, and laundry needs</p>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <h2>Our Professional Cleaning Services</h2>
+            <p>Choose from our range of expert cleaning services tailored to meet your specific needs. Our trained professionals use industry-grade equipment and eco-friendly products to deliver exceptional results every time.</p>
+            <p>All prices are negotiable based on the size and condition of your space.</p>
+        </section>
+        
+        <section class="services">
+            <div class="service-card home" data-service="home">
+                <div class="service-header">
+                    <i class="fas fa-home"></i>
+                    <h3>Home Cleaning</h3>
+                </div>
+                <div class="service-body">
+                    <p>Thorough cleaning of your living spaces with attention to detail and care for your belongings.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Dusting and wiping all surfaces</li>
+                        <li><i class="fas fa-check"></i> Vacuuming and mopping floors</li>
+                        <li><i class="fas fa-check"></i> Bathroom and kitchen deep cleaning</li>
+                        <li><i class="fas fa-check"></i> Window cleaning (interior)</li>
+                        <li><i class="fas fa-check"></i> Eco-friendly cleaning products</li>
+                    </ul>
+                    <p class="price-note">Price negotiable based on home size</p>
+                </div>
+            </div>
+            
+            <div class="service-card industrial" data-service="industrial">
+                <div class="service-header">
+                    <i class="fas fa-industry"></i>
+                    <h3>Industrial Cleaning</h3>
+                </div>
+                <div class="service-body">
+                    <p>Specialized cleaning for commercial and industrial facilities with strict safety standards.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Factory and warehouse cleaning</li>
+                        <li><i class="fas fa-check"></i> Office deep cleaning</li>
+                        <li><i class="fas fa-check"></i> High-pressure washing</li>
+                        <li><i class="fas fa-check"></i> Industrial equipment cleaning</li>
+                        <li><i class="fas fa-check"></i> Waste management solutions</li>
+                    </ul>
+                    <p class="price-note">Price negotiable based on facility size</p>
+                </div>
+            </div>
+            
+            <div class="service-card laundry" data-service="laundry">
+                <div class="service-header">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Laundry Service</h3>
+                </div>
+                <div class="service-body">
+                    <p>Professional laundry and fabric care with careful handling and premium detergents.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Wash, dry, and fold service</li>
+                        <li><i class="fas fa-check"></i> Stain treatment</li>
+                        <li><i class="fas fa-check"></i> Delicate fabric care</li>
+                        <li><i class="fas fa-check"></i> Ironing and steaming</li>
+                        <li><i class="fas fa-check"></i> Pickup and delivery available</li>
+                    </ul>
+                    <p class="price-note">Price negotiable based on load quantity</p>
+                </div>
+            </div>
+        </section>
+        
+       
+        
+        <section class="order-form">
+            <h2>Order Cleaning Service</h2>
+            <p>Fill out the form below to schedule your professional cleaning service. We'll contact you to discuss pricing based on your specific needs.</p>
+            
+            <form id="cleaningOrderForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Service Address *</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Select Service Type *</label>
+                    <div class="service-options">
+                        <div class="service-option" data-service="Home Cleaning">
+                            <i class="fas fa-home"></i>
+                            <h4>Home Cleaning</h4>
+                            <p>Residential spaces</p>
+                        </div>
+                        <div class="service-option" data-service="Industrial Cleaning">
+                            <i class="fas fa-industry"></i>
+                            <h4>Industrial Cleaning</h4>
+                            <p>Commercial facilities</p>
+                        </div>
+                        <div class="service-option" data-service="Laundry Service">
+                            <i class="fas fa-tshirt"></i>
+                            <h4>Laundry Service</h4>
+                            <p>Professional laundry</p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="serviceType" name="serviceType" required>
+                </div>
+                
+
+
+ <!-- Service Details Sections -->
+        <div class="service-details" id="home-details">
+            <h3>About Our Home Cleaning Service</h3>
+            <p>Our professional home cleaning service is designed to give you back your precious time while ensuring your living space is impeccably clean. We use eco-friendly products that are safe for your family and pets while being highly effective against dirt and germs.</p>
+            <p>Our trained cleaners pay attention to every detail, from baseboards to ceiling fans, ensuring a comprehensive clean. We offer regular maintenance cleaning as well as deep cleaning services for move-in/move-out situations. Our team arrives fully equipped with all necessary supplies and equipment.</p>
+            <p>We customize our cleaning based on your specific needs and preferences. Whether you need a one-time deep clean or regular weekly/bi-weekly service, we'll create a cleaning plan that works for you.</p>
+        </div>
+        
+        <div class="service-details" id="industrial-details">
+            <h3>About Our Industrial Cleaning Service</h3>
+            <p>Our industrial cleaning division specializes in maintaining large-scale facilities to the highest standards of cleanliness and safety. We understand the unique challenges of industrial environments and have developed specialized protocols for different types of facilities.</p>
+            <p>Our team is trained in OSHA safety standards and uses industrial-grade equipment capable of handling large areas efficiently. We offer services ranging from daily maintenance cleaning to periodic deep cleaning of production areas, warehouses, and office spaces.</p>
+            <p>We develop customized cleaning plans for each client based on their operational schedule, with options for after-hours cleaning to avoid disrupting business operations. Our services help maintain a safe working environment and extend the life of your facilities and equipment.</p>
+        </div>
+        
+        <div class="service-details" id="laundry-details">
+            <h3>About Our Laundry Service</h3>
+            <p>Our professional laundry service takes the chore out of laundry day with careful, expert handling of your garments and linens. We use premium detergents and specialized treatments to ensure your items are cleaned effectively while preserving their quality and extending their lifespan.</p>
+            <p>Each load is carefully sorted by color and fabric type, with special attention given to delicates and items requiring special care. We offer stain treatment using professional-grade solutions that are tough on stains but gentle on fabrics.</p>
+            <p>Our service includes washing, drying, folding, and optional ironing with precision and care. We offer convenient pickup and delivery options to fit your schedule, making laundry one less thing you have to worry about in your busy life.</p>
+        </div>
+
+        <br><br><br>
+
+                <div class="form-group">
+                    <label for="spaceDetails" id="spaceDetailsLabel">Space Details *</label>
+                    <textarea id="spaceDetails" name="spaceDetails" rows="3" required placeholder="Please describe the size of your space"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="serviceDate">Preferred Service Date *</label>
+                        <input type="date" id="serviceDate" name="serviceDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceTime">Preferred Time *</label>
+                        <select id="serviceTime" name="serviceTime" required>
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (8am-12pm)</option>
+                            <option value="afternoon">Afternoon (12pm-4pm)</option>
+                            <option value="evening">Evening (4pm-8pm)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Special Instructions</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Any specific requirements or additional information"></textarea>
+                </div>
+                
+                <button type="submit" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Order Request
+                </button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2023 ProClean Professional Services. All rights reserved.</p>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> info@proclean.example.com</p>
+            <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            <p><i class="fab fa-whatsapp"></i> +234 816 364 5085</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Service selection functionality
+            const serviceOptions = document.querySelectorAll('.service-option');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const serviceTypeInput = document.getElementById('serviceType');
+            const spaceDetails = document.getElementById('spaceDetails');
+            const spaceDetailsLabel = document.getElementById('spaceDetailsLabel');
+            
+            // Set up service card click handlers
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const serviceType = this.getAttribute('data-service');
+                    
+                    // Remove selected class from all cards
+                    serviceCards.forEach(c => c.classList.remove('selected'));
+                    
+                    // Add selected class to clicked card
+                    this.classList.add('selected');
+                    
+                    // Show the appropriate service details
+                    document.querySelectorAll('.service-details').forEach(detail => {
+                        detail.classList.remove('active');
+                    });
+                    
+                    if (serviceType) {
+                        document.getElementById(`${serviceType}-details`).classList.add('active');
+                    }
+                    
+                    // Update the form service selection
+                    serviceOptions.forEach(option => {
+                        if (option.getAttribute('data-service').toLowerCase().includes(serviceType)) {
+                            option.classList.add('selected');
+                            serviceTypeInput.value = option.getAttribute('data-service');
+                            
+                            // Update space details placeholder based on service type
+                            if (serviceType === 'home') {
+                                spaceDetails.placeholder = 'Please describe your home (e.g., 3 bedrooms, 2 bathrooms, 1500 sq ft)';
+                                spaceDetailsLabel.textContent = 'Home Details *';
+                            } else if (serviceType === 'industrial') {
+                                spaceDetails.placeholder = 'Please describe your facility (e.g., warehouse size, office areas, special requirements)';
+                                spaceDetailsLabel.textContent = 'Facility Details *';
+                            } else if (serviceType === 'laundry') {
+                                spaceDetails.placeholder = 'Please describe your laundry needs (e.g., number of loads, special items, weight estimate)';
+                                spaceDetailsLabel.textContent = 'Laundry Details *';
+                            }
+                        } else {
+                            option.classList.remove('selected');
+                        }
+                    });
+                });
+            });
+            
+            // Set up service option click handlers
+            serviceOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    serviceOptions.forEach(opt => opt.classList.remove('selected'));
+                    serviceCards.forEach(c => c.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Set the hidden input value
+                    const serviceType = this.getAttribute('data-service');
+                    serviceTypeInput.value = serviceType;
+                    
+                    // Show the appropriate service details
+                    document.querySelectorAll('.service-details').forEach(detail => {
+                        detail.classList.remove('active');
+                    });
+                    
+                    if (serviceType.toLowerCase().includes('home')) {
+                        document.getElementById('home-details').classList.add('active');
+                        spaceDetails.placeholder = 'Please describe your home (e.g., 3 bedrooms, 2 bathrooms, 1500 sq ft)';
+                        spaceDetailsLabel.textContent = 'Home Details *';
+                        
+                        // Select the home card
+                        document.querySelector('.service-card.home').classList.add('selected');
+                    } else if (serviceType.toLowerCase().includes('industrial')) {
+                        document.getElementById('industrial-details').classList.add('active');
+                        spaceDetails.placeholder = 'Please describe your facility (e.g., warehouse size, office areas, special requirements)';
+                        spaceDetailsLabel.textContent = 'Facility Details *';
+                        
+                        // Select the industrial card
+                        document.querySelector('.service-card.industrial').classList.add('selected');
+                    } else if (serviceType.toLowerCase().includes('laundry')) {
+                        document.getElementById('laundry-details').classList.add('active');
+                        spaceDetails.placeholder = 'Please describe your laundry needs (e.g., number of loads, special items, weight estimate)';
+                        spaceDetailsLabel.textContent = 'Laundry Details *';
+                        
+                        // Select the laundry card
+                        document.querySelector('.service-card.laundry').classList.add('selected');
+                    }
+                });
+            });
+            
+            // Form submission
+            const form = document.getElementById('cleaningOrderForm');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate service selection
+                if (!serviceTypeInput.value) {
+                    alert('Please select a service type');
+                    return;
+                }
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                const serviceType = serviceTypeInput.value;
+                const spaceDetailsText = document.getElementById('spaceDetails').value;
+                const serviceDate = document.getElementById('serviceDate').value;
+                const serviceTime = document.getElementById('serviceTime').value;
+                const message = document.getElementById('message').value;
+                
+                // Format date for display
+                const formattedDate = new Date(serviceDate).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                // Format time for display
+                let timeText = '';
+                if (serviceTime === 'morning') timeText = 'Morning (8am-12pm)';
+                else if (serviceTime === 'afternoon') timeText = 'Afternoon (12pm-4pm)';
+                else if (serviceTime === 'evening') timeText = 'Evening (4pm-8pm)';
+                
+                // Create WhatsApp message
+                const whatsappMessage = `
+*PROCLEAN SERVICE REQUEST*
+
+*Name:* ${name}
+*Email:* ${email}
+*Phone:* ${phone}
+
+*Service Address:*
+${address}
+
+*Service Type:* ${serviceType}
+*${serviceType.includes('Home') ? 'Home' : serviceType.includes('Industrial') ? 'Facility' : 'Laundry'} Details:* ${spaceDetailsText}
+
+*Preferred Service Date:* ${formattedDate}
+*Preferred Time:* ${timeText}
+
+*Special Instructions:*
+${message || 'None'}
+
+*Note:* Prices are negotiable based on details provided.
+                `.trim();
+                
+                // Encode message for URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // Send to WhatsApp
+                const whatsappPhone = '2348163645085'; // Your WhatsApp Number
+                const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+                const whatsappUrl = isMobile ? 
+                    `https://api.whatsapp.com/send?phone=${whatsappPhone}&text=${encodedMessage}` :
+                    `https://web.whatsapp.com/send?phone=${whatsappPhone}&text=${encodedMessage}`;
+                
+                // Open WhatsApp in a new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // Reset form
+                form.reset();
+                serviceOptions.forEach(opt => opt.classList.remove('selected'));
+                serviceCards.forEach(c => c.classList.remove('selected'));
+                document.querySelectorAll('.service-details').forEach(detail => {
+                    detail.classList.remove('active');
+                });
+            });
+            
+            // Set minimum date to today
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+            document.getElementById('serviceDate').setAttribute('min', tomorrowFormatted);
+        });
+    </script>
+</body>
+</html>
