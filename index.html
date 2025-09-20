@@ -5012,20 +5012,122 @@ flexibility(document.documentElement);
 
 
 <style id="mobile-enhancements">
+
+
+
+.ast-mobile-header-content {
+  background: #000; /* solid black background */
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+
+
+/* 🌑 Navigation Container */
+#ast-hf-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 🌑 Menu Items */
+#ast-hf-mobile-menu .menu-link {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0.5rem;
+  color: #000000;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover / Focus */
+#ast-hf-mobile-menu .menu-link:hover,
+#ast-hf-mobile-menu .menu-link:focus {
+	color: whitesmoke;
+  background: linear-gradient(90deg, #111, #333);
+  transform: translateX(6px);
+}
+
+.menu-link:hover{
+  color: #ffd700 !important; /* golden highlight */
+}
+
+/* Active / Current page */
+#ast-hf-mobile-menu .current-menu-item > .menu-link {
+  background: linear-gradient(90deg, #222222e1, #555);
+  color: #ffd700; /* golden highlight */
+  font-weight: 700;
+  border-left: 4px solid #ffd700;
+}
+
+/* Subtle Glow (Z signature) */
+#ast-hf-mobile-menu .menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+#ast-hf-mobile-menu .menu-link:hover::after {
+  width: 80%;
+}
+
+/* 🌑 Responsive tweaks */
+@media (min-width: 768px) {
+  .ast-mobile-header-content {
+    display: none; /* hide mobile menu on desktop */
+  }
+}
+
+
+
+
+
+/* 🌐 Breadcrumb Styling */
+.ast-breadcrumbs,
+.ast-breadcrumbs a {
+  color: #1e90ff !important; /* Dodger blue */
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ast-breadcrumbs a:hover {
+  color: #0d6efd !important; /* Slightly darker blue */
+  text-decoration: underline;
+}
+
+.ast-breadcrumbs .breadcrumb_last {
+  color: #0a58ca !important; /* Deep blue for the active page */
+  font-weight: 600;
+}
+
+
+
+
 /* Mobile Responsiveness Enhancements */
 @media (max-width: 921px) {
   /* Header adjustments for mobile */
   .site-header, 
   .ast-header-break-point .main-header-bar {
-    height: auto !important;
-    min-height: 80px;
+    min-height: 70px;
   }
   
   /* Logo sizing for mobile */
   .site-logo-img img, 
   .astra-logo-svg {
     max-width: 100px !important;
-    width: 120px !important;
+    width: 60px !important;
   }
   
   /* Mobile menu improvements */
@@ -5161,15 +5263,36 @@ p, li {
 input, select, textarea {
   font-size: 16px !important; /* Prevents zoom on focus in iOS */
 }
-
-
-
-
-
-
 </style>
 
 
+
+
+<style id="mobile-menu-fix">
+/* Mobile Menu Positioning Fix */
+@media (max-width: 921px) {
+    .ast-mobile-header-content {
+        top: 100% !important;
+        margin-top: 0;
+    }
+    
+    .ast-mobile-header-wrap .ast-mobile-header-content {
+        position: absolute;
+        z-index: 9999;
+        background: #fff;
+        width: 100%;
+        left: 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Ensure header has proper z-index */
+    .site-header, 
+    .ast-header-break-point .main-header-bar {
+        z-index: 10000 !important;
+    }
+}
+
+</style>
 
 
 
@@ -5354,9 +5477,9 @@ input, select, textarea {
 									data-section="section-header-mobile-trigger">
 									<div class="ast-button-wrap">
 										<button type="button"
-											class="menu-toggle main-header-menu-toggle ast-mobile-menu-trigger-minimal"
+											class="menu-toggle main-header-menu-toggle ast-mobile-menu-trigger-minimal white"
 											aria-expanded="false" aria-label="Main menu toggle" data-index="0">
-											<span class="screen-reader-text text-white">Main Menu</span>
+											<span class="screen-reader-text">Main Menu</span>
 											<span class="mobile-menu-toggle-icon">
 												<span aria-hidden="true"
 													class="ahfb-svg-iconset ast-inline-flex svg-baseline"><svg
@@ -5376,13 +5499,14 @@ input, select, textarea {
 														</path>
 													</svg></span> </span>
 										</button>
+										
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="ast-mobile-header-content content-align-flex-start ">
+				<div class="ast-mobile-header-content content-align-flex-start" style="z-index: 999999999999;">
 					<div class="ast-builder-menu-mobile ast-builder-menu ast-builder-menu-mobile-focus-item ast-builder-layout-element site-header-focus-item"
 						data-section="section-header-mobile-menu">
 						<div class="ast-main-header-bar-alignment">
@@ -5393,16 +5517,16 @@ input, select, textarea {
 									<div id="ast-hf-mobile-menu" class="main-navigation">
 										<ul
 											class="main-header-menu ast-nav-menu ast-flex  submenu-with-border astra-menu-animation-fade  stack-on-mobile">
+											<li
+												class="page_item page-item-35 current-menu-item menu-item current-menu-item">
+												<a href="./index.html" class="menu-link">Home</a>
+											</li>
 											<li class="page_item page-item-15 menu-item"><a
 													href="./aboutus.html"
 													class="menu-link">About Us</a></li>
 											<li class="page_item page-item-17 menu-item"><a
 													href="./contactus.html"
 													class="menu-link">Contact Us</a></li>
-											<li
-												class="page_item page-item-35 current-menu-item menu-item current-menu-item">
-												<a href="./index.html" class="menu-link">Home</a>
-											</li>
 											<li class="page_item page-item-38 menu-item"><a
 													href="./ourservices.html"
 													class="menu-link">Our Services</a></li>

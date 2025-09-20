@@ -4065,6 +4065,76 @@
 
 
 
+
+		/* 1. Base reset */
+* {
+  box-sizing: border-box;
+}
+
+/* 2. Product Grid – auto stacks on small screens */
+#product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* 3. Product Card – consistent height, responsive */
+#product-grid .product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+#product-grid .product-card:hover {
+  transform: translateY(-4px);
+}
+
+#product-grid img {
+  max-height: 180px;
+  object-fit: contain;
+  width: 100%;
+}
+
+/* 4. Cart Drawer */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: #fff;
+  width: 400px;
+  max-width: 100%;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile: drawer full width */
+@media (max-width: 768px) {
+  .cart-drawer {
+    width: 100%;
+  }
+}
+
+/* 5. Buttons (touch friendly) */
+button, .btn {
+  min-height: 44px; /* thumb-friendly */
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+}
+
+
+
+
+
+
 		/* Add spacing at the top of single product pages */
 		.single-product .site-main {
 			padding-top: 200px;
