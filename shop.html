@@ -4444,6 +4444,13 @@ input, select, textarea {
     }
 }
 
+
+.add-to-cart {
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #003cff 0%, #ff00f2 100%);
+    }
+
+
 </style>
 
 
@@ -7709,10 +7716,10 @@ function renderProducts(searchTerm = '') {
             <h2 class="font-semibold text-lg">${p.name}</h2>
             <p class="text-gray-600">₦${p.price.toLocaleString()}</p>
 
-            <button onclick="addToCart('${p.name}', ${p.price}, '${p.image}')" class="mt-3 bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition">Add to Cart</button>
+            <button onclick="addToCart('${p.name}', ${p.price}, '${p.image}')" class="add-to-cart mt-3 bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition">Add to Cart</button>
              <a 
   href="product.html?name=${encodeURIComponent(p.name)}"
-  class="mt-3 inline-block bg-gradient-to-r from-black via-gray-900 to-black 
+  class=" mt-3 inline-block bg-gradient-to-r from-black via-purple-900 to-black 
          text-white font-semibold tracking-wider 
          px-5 py-2.5 rounded-2xl shadow-lg shadow-gray-700/40 
          border border-gray-700 

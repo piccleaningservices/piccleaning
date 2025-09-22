@@ -5625,7 +5625,7 @@ input, select, textarea {
 
 											<h1 id="typed" style="color:white; font-size:2rem; font-weight:700;"></h1>
 <script>
-  const words = ["Premium Cleaning.", "Smart Living.", "Eco-Friendly Solutions.", "Customer Satisfaction.", "One Stop Shop for Cleaning." ,"Think Spotless", "Think Reliability" , "Think Pic Cleaning ✨."];
+  const words = ["Premium Cleaning.", "Smart Living.", "Eco-Friendly Solutions.", "Customer Satisfaction Guranteed.", "One Stop Shop for Everything Cleaning." ,"Think Spotless", "Think Reliability" , "Think Pic Cleaning ✨."];
   let i=0, j=0, current="", isDeleting=false;
   function type(){
     current = words[i].substring(0, j);
@@ -5674,38 +5674,69 @@ input, select, textarea {
 												</div>
 												<style>
 													.whatsapp-btn {
-    display: inline-flex;
-	text-decoration: none;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 12px 22px;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px #128C7E;
-    transition: all 0.4s ease;
-    animation: pulse 2s infinite;
-  }
-  .whatsapp-btn img.icon {
-    width: 20px; height: 20px; transition: all 0.4s ease;
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 10px;
+  box-shadow: 0 4px #128C7E;
+  transition: all 0.4s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-btn img.icon {
+  width: 20px; 
+  height: 20px; 
+  transition: all 0.4s ease;
+}
+
+.whatsapp-btn.scrolled {
+  position: fixed;
+  bottom: 16px; 
+  right: 16px;
+  border-radius: 50%;
+  padding: 14px;
+  width: 56px; 
+  height: 56px;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+  z-index: 9999;
+}
+
+.whatsapp-btn.scrolled span {
+  display: none; /* hide text in bubble mode */
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    font-size: 14px;
+    padding: 10px 18px;
   }
   .whatsapp-btn.scrolled {
-    position: fixed;
-    bottom: 20px; right: 20px;
-    border-radius: 50%;
-    padding: 14px;
-    font-size: 0;
-    box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
-    z-index: 9999;
+    bottom: 12px;
+    right: 12px;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
   }
-  .whatsapp-btn.scrolled span { display: none; }
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+  .whatsapp-btn img.icon {
+    width: 18px; 
+    height: 18px;
   }
+}
+
 </style>
 
 <script>
