@@ -21,7 +21,8 @@ function saveCart() {
  */
 function playCartFeedback() {
     const cartSound = document.getElementById('cart-sound');
-    const cartCount = document.getElementById('cart-count');
+    const counters = document.querySelectorAll('cart-count');
+
     
     if (cartSound) {
         cartSound.currentTime = 0;

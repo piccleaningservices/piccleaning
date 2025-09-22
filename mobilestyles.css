@@ -1,0 +1,40 @@
+/* --- mobilestyles.css --- */
+
+/* Drawer background */
+.cart-background {
+    background-image: url('./PICpix/image.jpg'); /* use a mobile-specific image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Overlay for readability */
+.cart-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+
+/* Content above overlay */
+.cart-background > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Mobile drawer tweaks */
+#mobile-cart-drawer {
+    max-width: 90%;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
