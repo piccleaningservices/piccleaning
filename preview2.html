@@ -1,0 +1,62 @@
+<!-- Glass Orb Loader -->
+<div id="loader">
+  <div class="orb">
+    <span class="logo">X</span> <!-- Replace with your logo or text -->
+  </div>
+</div>
+
+<style>
+  /* Fullscreen overlay */
+  #loader {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #000; /* dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 1s ease;
+  }
+
+  /* Orb styles */
+  .orb {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.1));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 25px rgba(0,255,180,0.7),
+                inset 0 0 30px rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 6s linear infinite, pulse 3s ease-in-out infinite;
+  }
+
+  /* Logo inside orb */
+  .orb .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,255,180,0.8);
+  }
+
+  /* Animations */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); box-shadow: 0 0 20px rgba(0,255,180,0.4); }
+    50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(0,255,180,0.8); }
+  }
+</style>
+
+<script>
+  // Hide loader after site fully loads
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => loader.style.display = "none", 1000);
+  });
+</script>

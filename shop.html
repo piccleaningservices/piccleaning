@@ -4451,6 +4451,9 @@ input, select, textarea {
 
 
 
+
+
+
 </head>
 <header
 			class="site-header header-main-layout-1 ast-primary-menu-enabled ast-logo-title-inline ast-hide-custom-menu-mobile ast-builder-menu-toggle-icon ast-mobile-header-inline"
@@ -4744,11 +4747,11 @@ input, select, textarea {
 <br><br><br>
   <div class="flex flex-wrap justify-center gap-2 p-4 bg-white shadow-md">
     <button onclick="filterCategory('All', this)" class="category-btn bg-black text-white px-4 py-2 rounded-full text-sm font-medium transition duration-200">All Products</button>
-    <button onclick="filterCategory('Cleaning Equipment & Machinery', this)" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 transition duration-200">Equipment & Machinery</button>
-    <button onclick="filterCategory('Cleaning Chemicals & Solutions', this)" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 transition duration-200">Chemicals & Solutions</button>
-    <button onclick="filterCategory('Odor Control & Air Fresheners', this)" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 transition duration-200">Odor Control</button>
-    <button onclick="filterCategory('Disinfectants & Sanitizers', this)" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 transition duration-200">Disinfectants</button>
-    <button onclick="filterCategory('Consumables & Supplies', this)" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 transition duration-200">Consumables & Supplies</button>
+    <button onclick="filterCategory('Cleaning Equipment & Tools', this)" class="category-btn bg-blue-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-300 transition duration-200">Cleaning Equipment & Tools</button>
+    <button onclick="filterCategory('Cleaning Products', this)" class="category-btn bg-pink-200 text-grey-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-pink-300 transition duration-200">Cleaning Products</button>
+    <button onclick="filterCategory(' Eco-Friendly & Specialty', this)" class="category-btn bg-green-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-green-300 transition duration-200">Eco-Friendly & Specialty</button>
+    <button onclick="filterCategory('Laundry Care', this)" class="category-btn bg-purple-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-300 transition duration-200">Laundry Care</button>
+    <button onclick="filterCategory(' Home Essentials', this)" class="category-btn bg-yellow-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-yellow-300 transition duration-200"> Home Essentials</button>
     <div id="search-container" class="flex items-center">
             <span id="search-icon" class="material-icons text-2xl cursor-pointer text-gray-600 hover:text-black transition-colors duration-300">search</span>
             
@@ -4782,54 +4785,54 @@ input, select, textarea {
     // UPDATED PRODUCTS ARRAY WITH CATEGORIES (Same as before)
     // ----------------------------------------------------
     const products = [
-      { category: 'Consumables & Supplies', name: 'Bathroom mat', price: 6000, image: './aboutus_files/mat.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Microfiber Towel', price: 2000, image: './aboutus_files/mict.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Parker', price: 2000, image: './aboutus_files/par.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Scrubbing brush', price: 3000, image: './aboutus_files/scrb.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Shaving stick one pack', price: 1500, image: './aboutus_files/shave1pack.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Colgate toothpaste', price: 2000, image: './aboutus_files/colgate.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Harpic', price: 9500, image: './aboutus_files/harpic.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Iron sponge', price: 500, image: './aboutus_files/ironsponge.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Bathing sponge', price: 1500, image: './aboutus_files/spongebath.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Good Mama Detergent', price: 2000, image: './aboutus_files/goodmamadet.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Strong Mop', price: 5000, image: './aboutus_files/mop.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Floss', price: 1500, image: './aboutus_files/floss.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Peg Set', price: 2500, image: './aboutus_files/pegs.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Toilet Brush', price: 5500, image: './aboutus_files/toiletbrush.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Baby&Me', price: 700, image: './aboutus_files/baby&me.jpeg' },
-      { category: 'Consumables & Supplies', name: 'MYMY Toothpaste', price: 1800, image: './aboutus_files/mymy.jpeg' },
-      { category: 'Odor Control & Air Fresheners', name: 'Air wick', price: 4000, image: './aboutus_files/airwick.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Baby toothbrush', price: 900, image: './aboutus_files/babytoothbrush.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: '', price: 4500, image: './aboutus_files/.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Black soap', price: 5000, image: './aboutus_files/blacksoap.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Blossom polish', price: 3000, image: './aboutus_files/blossom.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'CIF Floor cleaner', price: 5000, image: './aboutus_files/ciffloorcleaner.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Close up toothpaste', price: 1800, image: './aboutus_files/close up toothpaste.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Hanger', price: 5000, image: './aboutus_files/hanger.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Cutton bud', price: 1200, image: './aboutus_files/cutton bud.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Kids milk teeth', price: 2500, image: './aboutus_files/kids milk teeth.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Kitchen towel', price: 1500, image: './aboutus_files/kitchen towel.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Wooden Long brush', price: 3500, image: './aboutus_files/long brush.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Metal sponge', price: 1500, image: './aboutus_files/metal sponge.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Mop bucket', price: 5000, image: './aboutus_files/mop bucket.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Morning fresh big', price: 3500, image: './aboutus_files/morning fresh big.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Morning fresh', price: 1500, image: './aboutus_files/morning fresh.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Mr sheen', price: 2500, image: './aboutus_files/mr sheen.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Nittol Detergent', price: 2000, image: './aboutus_files/nittol detergent.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Oral B', price: 1900, image: './aboutus_files/oral b.jpeg' },
-      { category: 'Disinfectants & Sanitizers', name: 'Xoc Charcoal Mouth Wash', price: 8000, image: './aboutus_files/polish.jpeg' },
-      { category: 'Disinfectants & Sanitizers', name: 'Purit antiseptic', price: 2500, image: './aboutus_files/purity antiseptic.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Shaving bic', price: 1500, image: './aboutus_files/shaving bic.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Scouring pad', price: 1800, image: './aboutus_files/scouring pad.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Sponge', price: 2000, image: './aboutus_files/sponge.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Toothbrush', price: 700, image: './aboutus_files/toothbrush.jpeg' },
-      { category: 'Odor Control & Air Fresheners', name: 'Top bereeze', price: 6000, image: './aboutus_files/top bereeze.jpeg' },
-      { category: 'Consumables & Supplies', name: 'Trash bag', price: 2500, image: './aboutus_files/trash bag.jpeg' },
-      { category: 'Cleaning Equipment & Machinery', name: 'Upholstery machine', price: 450000, image: './aboutus_files/upholstery machine.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Viva bar soap', price: 950, image: './aboutus_files/viva bar soap.jpeg' },
-      { category: 'Cleaning Chemicals & Solutions', name: 'Waw detergent', price: 1800, image: './aboutus_files/waw detergent.jpeg' },
+      { category: ' Home Essentials', name: 'Bathroom mat', price: 6000, image: './aboutus_files/mat.jpeg' },
+      { category: ' Home Essentials', name: 'Microfiber Towel', price: 2000, image: './aboutus_files/mict.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Parker', price: 2000, image: './aboutus_files/par.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Scrubbing brush', price: 3000, image: './aboutus_files/scrb.jpeg' },
+      { category: ' Home Essentials', name: 'Shaving stick one pack', price: 1500, image: './aboutus_files/shave1pack.jpeg' },
+      { category: ' Home Essentials', name: 'Colgate toothpaste', price: 2000, image: './aboutus_files/colgate.jpeg' },
+      { category: 'Cleaning Products', name: 'Harpic', price: 9500, image: './aboutus_files/harpic.jpeg' },
+      { category: ' Home Essentials', name: 'Iron sponge', price: 500, image: './aboutus_files/ironsponge.jpeg' },
+      { category: ' Home Essentials', name: 'Bathing sponge', price: 1500, image: './aboutus_files/spongebath.jpeg' },
+      { category: 'Cleaning Products', name: 'Good Mama Detergent', price: 2000, image: './aboutus_files/goodmamadet.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Strong Mop', price: 5000, image: './aboutus_files/mop.jpeg' },
+      { category: ' Home Essentials', name: 'Floss', price: 1500, image: './aboutus_files/floss.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Peg Set', price: 2500, image: './aboutus_files/pegs.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Toilet Brush', price: 5500, image: './aboutus_files/toiletbrush.jpeg' },
+      { category: ' Home Essentials', name: 'Baby&Me', price: 700, image: './aboutus_files/baby&me.jpeg' },
+      { category: ' Home Essentials', name: 'MYMY Toothpaste', price: 1800, image: './aboutus_files/mymy.jpeg' },
+      { category: ' Eco-Friendly & Specialty', name: 'Air wick', price: 4000, image: './aboutus_files/airwick.jpeg' },
+      { category: ' Home Essentials', name: 'Baby toothbrush', price: 900, image: './aboutus_files/babytoothbrush.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: '', price: 4500, image: './aboutus_files/.jpeg' },
+      { category: 'Cleaning Products', name: 'Black soap', price: 5000, image: './aboutus_files/blacksoap.jpeg' },
+      { category: 'Cleaning Products', name: 'Blossom polish', price: 3000, image: './aboutus_files/blossom.jpeg' },
+      { category: 'Cleaning Products', name: 'CIF Floor cleaner', price: 5000, image: './aboutus_files/ciffloorcleaner.jpeg' },
+      { category: ' Home Essentials', name: 'Close up toothpaste', price: 1800, image: './aboutus_files/close up toothpaste.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Hanger', price: 5000, image: './aboutus_files/hanger.jpeg' },
+      { category: ' Home Essentials', name: 'Cutton bud', price: 1200, image: './aboutus_files/cutton bud.jpeg' },
+      { category: ' Home Essentials', name: 'Kids milk teeth', price: 2500, image: './aboutus_files/kids milk teeth.jpeg' },
+      { category: ' Home Essentials', name: 'Kitchen towel', price: 1500, image: './aboutus_files/kitchen towel.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Wooden Long brush', price: 3500, image: './aboutus_files/long brush.jpeg' },
+      { category: ' Home Essentials', name: 'Metal sponge', price: 1500, image: './aboutus_files/metal sponge.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Mop bucket', price: 5000, image: './aboutus_files/mop bucket.jpeg' },
+      { category: 'Cleaning Products', name: 'Morning fresh big', price: 3500, image: './aboutus_files/morning fresh big.jpeg' },
+      { category: 'Cleaning Products', name: 'Morning fresh', price: 1500, image: './aboutus_files/morning fresh.jpeg' },
+      { category: 'Cleaning Products', name: 'Mr sheen', price: 2500, image: './aboutus_files/mr sheen.jpeg' },
+      { category: 'Cleaning Products', name: 'Nittol Detergent', price: 2000, image: './aboutus_files/nittol detergent.jpeg' },
+      { category: ' Home Essentials', name: 'Oral B', price: 1900, image: './aboutus_files/oral b.jpeg' },
+      { category: 'Laundry Care', name: 'Xoc Charcoal Mouth Wash', price: 8000, image: './aboutus_files/polish.jpeg' },
+      { category: 'Laundry Care', name: 'Purit antiseptic', price: 2500, image: './aboutus_files/purity antiseptic.jpeg' },
+      { category: ' Home Essentials', name: 'Shaving bic', price: 1500, image: './aboutus_files/shaving bic.jpeg' },
+      { category: ' Home Essentials', name: 'Scouring pad', price: 1800, image: './aboutus_files/scouring pad.jpeg' },
+      { category: ' Home Essentials', name: 'Sponge', price: 2000, image: './aboutus_files/sponge.jpeg' },
+      { category: ' Home Essentials', name: 'Toothbrush', price: 700, image: './aboutus_files/toothbrush.jpeg' },
+      { category: ' Eco-Friendly & Specialty', name: 'Top bereeze', price: 6000, image: './aboutus_files/top bereeze.jpeg' },
+      { category: ' Home Essentials', name: 'Trash bag', price: 2500, image: './aboutus_files/trash bag.jpeg' },
+      { category: 'Cleaning Equipment & Tools', name: 'Upholstery machine', price: 450000, image: './aboutus_files/upholstery machine.jpeg' },
+      { category: 'Cleaning Products', name: 'Viva bar soap', price: 950, image: './aboutus_files/viva bar soap.jpeg' },
+      { category: 'Cleaning Products', name: 'Waw detergent', price: 1800, image: './aboutus_files/waw detergent.jpeg' },
 	  {
-    category: "Disinfectants & Sanitizers",
+    category: "Laundry Care",
     name: "CIF Cleaner Disinfectant",
     price: 5000,
     image: "./aboutus_files/cif.jpeg",
@@ -4842,7 +4845,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Bathroom mat",
     price: 6000,
     image: "./aboutus_files/mat.jpeg",
@@ -4855,7 +4858,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Rubber Toilet brush",
     price: 2500,
     image: "./aboutus_files/rtb.jpeg",
@@ -4868,7 +4871,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Microfiber Towel",
     price: 2000,
     image: "./aboutus_files/mict.jpeg",
@@ -4881,7 +4884,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Parker",
     price: 2000,
     image: "./aboutus_files/par.jpeg",
@@ -4894,7 +4897,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Shaving stick one pack",
     price: 1500,
     image: "./aboutus_files/shave1pack.jpeg",
@@ -4907,7 +4910,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Colgate toothpaste",
     price: 2000,
     image: "./aboutus_files/colgate.jpeg",
@@ -4920,7 +4923,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Iron sponge",
     price: 500,
     image: "./aboutus_files/ironsponge.jpeg",
@@ -4933,7 +4936,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Good Mama Detergent",
     price: 2000,
     image: "./aboutus_files/goodmamadet.jpeg",
@@ -4946,7 +4949,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Strong Mop",
     price: 5000,
     image: "./aboutus_files/mop.jpeg",
@@ -4959,7 +4962,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Floss",
     price: 1500,
     image: "./aboutus_files/floss.jpeg",
@@ -4972,7 +4975,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Peg Set",
     price: 2500,
     image: "./aboutus_files/pegs.jpeg",
@@ -4985,7 +4988,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Long Brush",
     price: 3000,
     image: "./aboutus_files/longbrush.jpeg",
@@ -4998,7 +5001,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Baby&Me",
     price: 700,
     image: "./aboutus_files/baby&me.jpeg",
@@ -5011,7 +5014,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "MYMY Toothbrush",
     price: 1800,
     image: "./aboutus_files/mymy.jpeg",
@@ -5024,7 +5027,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Baby toothbrush",
     price: 900,
     image: "./aboutus_files/babytoothbrush.jpeg",
@@ -5037,7 +5040,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Black soap",
     price: 5000,
     image: "./aboutus_files/blacksoap.jpeg",
@@ -5050,7 +5053,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "CIF Floor cleaner",
     price: 5000,
     image: "./aboutus_files/ciffloorcleaner.jpeg",
@@ -5063,7 +5066,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Disinfectants & Sanitizers",
+    category: "Laundry Care",
     name: "Clorox disinfecting wipes",
     price: 3500,
     image: "./aboutus_files/clorox wipes.jpeg",
@@ -5076,7 +5079,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Close up toothpaste",
     price: 1800,
     image: "./aboutus_files/close up toothpaste.jpeg",
@@ -5089,7 +5092,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Hanger",
     price: 5000,
     image: "./aboutus_files/hanger.jpeg",
@@ -5102,7 +5105,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Cutton bud",
     price: 1200,
     image: "./aboutus_files/cutton bud.jpeg",
@@ -5115,7 +5118,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Kids milk teeth",
     price: 2500,
     image: "./aboutus_files/kids milk teeth.jpeg",
@@ -5128,7 +5131,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Kitchen towel",
     price: 1500,
     image: "./aboutus_files/kitchen towel.jpeg",
@@ -5142,7 +5145,7 @@ input, select, textarea {
   },
   
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "metal sponge",
     price: 1500,
     image: "./aboutus_files/metal sponge.jpeg",
@@ -5155,7 +5158,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "mop bucket",
     price: 5000,
     image: "./aboutus_files/mop bucket.jpeg",
@@ -5168,7 +5171,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "morning fresh big",
     price: 3500,
     image: "./aboutus_files/morning fresh big.jpeg",
@@ -5181,7 +5184,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "morning fresh",
     price: 1500,
     image: "./aboutus_files/morning fresh.jpeg",
@@ -5194,7 +5197,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Mr sheen",
     price: 2500,
     image: "./aboutus_files/mr sheen.jpeg",
@@ -5207,7 +5210,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Nittol Detergent",
     price: 2000,
     image: "./aboutus_files/nittol detergent.jpeg",
@@ -5220,7 +5223,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Oral B",
     price: 1900,
     image: "./aboutus_files/oral b.jpeg",
@@ -5233,7 +5236,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Xoc Charcoal Mouth Wash",
     price: 8000,
     image: "./aboutus_files/polish.jpeg",
@@ -5246,7 +5249,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "pressure washer (80000)",
     price: 80000,
     image: "./aboutus_files/pressure washer.jpeg",
@@ -5259,7 +5262,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Pressure washer (450000)",
     price: 450000,
     image: "./aboutus_files/pressure washer1.jpeg",
@@ -5272,7 +5275,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Shaving bic",
     price: 1500,
     image: "./aboutus_files/shaving bic.jpeg",
@@ -5285,7 +5288,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Scouring pad",
     price: 1800,
     image: "./aboutus_files/scouring pad.jpeg",
@@ -5298,7 +5301,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Sponge",
     price: 2000,
     image: "./aboutus_files/sponge.jpeg",
@@ -5311,7 +5314,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Toothbrush",
     price: 700,
     image: "./aboutus_files/toothbrush.jpeg",
@@ -5324,7 +5327,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "top bereeze",
     price: 6000,
     image: "./aboutus_files/top bereeze.jpeg",
@@ -5337,7 +5340,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Trash bag",
     price: 2500,
     image: "./aboutus_files/trash bag.jpeg",
@@ -5351,7 +5354,7 @@ input, select, textarea {
   },
 
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Waw detergent",
     price: 1800,
     image: "./aboutus_files/waw detergent.jpeg",
@@ -5364,7 +5367,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Bathroom mat",
     price: 6000,
     image: "./aboutus_files/mat.jpeg",
@@ -5377,7 +5380,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Microfiber Towel",
     price: 2000,
     image: "./aboutus_files/mict.jpeg",
@@ -5390,7 +5393,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Parker",
     price: 2000,
     image: "./aboutus_files/par.jpeg",
@@ -5403,7 +5406,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Scrubbing brush",
     price: 3000,
     image: "./aboutus_files/scrb.jpeg",
@@ -5416,7 +5419,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Shaving stick one pack",
     price: 1500,
     image: "./aboutus_files/shave1pack.jpeg",
@@ -5429,7 +5432,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Colgate toothpaste",
     price: 2000,
     image: "./aboutus_files/colgate.jpeg",
@@ -5442,7 +5445,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Disinfectants & Sanitizers",
+    category: "Laundry Care",
     name: "Hypo",
     price: 3500,
     image: "./aboutus_files/hypo.jpeg",
@@ -5455,7 +5458,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Iron sponge",
     price: 500,
     image: "./aboutus_files/ironsponge.jpeg",
@@ -5468,7 +5471,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Bathing sponge",
     price: 1500,
     image: "./aboutus_files/spongebath.jpeg",
@@ -5481,7 +5484,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Good Mama Detergent",
     price: 2000,
     image: "./aboutus_files/goodmamadet.jpeg",
@@ -5494,7 +5497,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Strong Mop",
     price: 5000,
     image: "./aboutus_files/mop.jpeg",
@@ -5507,7 +5510,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Floss",
     price: 1500,
     image: "./aboutus_files/floss.jpeg",
@@ -5520,7 +5523,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Broom",
     price: 1000,
     image: "./aboutus_files/broom.jpeg",
@@ -5533,7 +5536,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Peg Set",
     price: 2500,
     image: "./aboutus_files/pegs.jpeg",
@@ -5546,7 +5549,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Long Brush",
     price: 3000,
     image: "./aboutus_files/longbrush.jpeg",
@@ -5559,7 +5562,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Baby&Me",
     price: 700,
     image: "./aboutus_files/baby&me.jpeg",
@@ -5572,7 +5575,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Viva plus",
     price: 2500,
     image: "./aboutus_files/viva.jpeg",
@@ -5585,7 +5588,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "MYMY Toothbrush",
     price: 1800,
     image: "./aboutus_files/mymy.jpeg",
@@ -5598,7 +5601,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Baby toothbrush",
     price: 900,
     image: "./aboutus_files/babytoothbrush.jpeg",
@@ -5611,7 +5614,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Black soap",
     price: 5000,
     image: "./aboutus_files/blacksoap.jpeg",
@@ -5624,7 +5627,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Odor Control & Air Fresheners",
+    category: " Eco-Friendly & Specialty",
     name: "BNC insecticide",
     price: 3500,
     image: "./aboutus_files/bncinsectide.jpeg",
@@ -5637,7 +5640,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "CIF Floor cleaner",
     price: 5000,
     image: "./aboutus_files/ciffloorcleaner.jpeg",
@@ -5650,7 +5653,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Close up toothpaste",
     price: 1800,
     image: "./aboutus_files/close up toothpaste.jpeg",
@@ -5663,7 +5666,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Hanger",
     price: 5000,
     image: "./aboutus_files/hanger.jpeg",
@@ -5676,7 +5679,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Cutton bud",
     price: 1200,
     image: "./aboutus_files/cutton bud.jpeg",
@@ -5689,7 +5692,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Kids milk teeth",
     price: 2500,
     image: "./aboutus_files/kids milk teeth.jpeg",
@@ -5702,7 +5705,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Kitchen towel",
     price: 1500,
     image: "./aboutus_files/kitchen towel.jpeg",
@@ -5716,7 +5719,7 @@ input, select, textarea {
   },
   
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "long brush and paker",
     price: 5000,
     image: "./aboutus_files/long brush and paker.jpeg",
@@ -5729,7 +5732,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "long scrubbing brush",
     price: 4000,
     image: "./aboutus_files/long scrubbing brush.jpeg",
@@ -5742,7 +5745,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "metal sponge",
     price: 1500,
     image: "./aboutus_files/metal sponge.jpeg",
@@ -5755,7 +5758,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "mop bucket",
     price: 5000,
     image: "./aboutus_files/mop bucket.jpeg",
@@ -5768,7 +5771,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "morning fresh big",
     price: 3500,
     image: "./aboutus_files/morning fresh big.jpeg",
@@ -5781,7 +5784,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "morning fresh",
     price: 1500,
     image: "./aboutus_files/morning fresh.jpeg",
@@ -5794,7 +5797,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Odor Control & Air Fresheners",
+    category: " Eco-Friendly & Specialty",
     name: "mortein insecticide",
     price: 4500,
     image: "./aboutus_files/mortein insecticide.jpeg",
@@ -5807,7 +5810,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Mr sheen",
     price: 2500,
     image: "./aboutus_files/mr sheen.jpeg",
@@ -5820,7 +5823,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Nittol Detergent",
     price: 2000,
     image: "./aboutus_files/nittol detergent.jpeg",
@@ -5833,7 +5836,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Novex multi purpose",
     price: 4500,
     image: "./aboutus_files/novex multi purpose.jpeg",
@@ -5846,7 +5849,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Oral B",
     price: 1900,
     image: "./aboutus_files/oral b.jpeg",
@@ -5859,7 +5862,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Xoc Charcoal Mouth Wash",
     price: 8000,
     image: "./aboutus_files/polish.jpeg",
@@ -5872,7 +5875,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Pressure washer (450000)",
     price: 450000,
     image: "./aboutus_files/pressure washer1.jpeg",
@@ -5885,7 +5888,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Disinfectants & Sanitizers",
+    category: "Laundry Care",
     name: "Savlon antiseptic",
     price: 6500,
     image: "./aboutus_files/savlon antiseptic.jpeg",
@@ -5898,7 +5901,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Shaving bic",
     price: 1500,
     image: "./aboutus_files/shaving bic.jpeg",
@@ -5911,7 +5914,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Scouring pad",
     price: 1800,
     image: "./aboutus_files/scouring pad.jpeg",
@@ -5924,7 +5927,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Sponge",
     price: 2000,
     image: "./aboutus_files/sponge.jpeg",
@@ -5937,7 +5940,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Toothbrush",
     price: 700,
     image: "./aboutus_files/toothbrush.jpeg",
@@ -5950,7 +5953,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "top bereeze",
     price: 6000,
     image: "./aboutus_files/top bereeze.jpeg",
@@ -5963,7 +5966,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Trash bag",
     price: 2500,
     image: "./aboutus_files/trash bag.jpeg",
@@ -5976,7 +5979,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Trash ",
     price: 110000,
     image: "./aboutus_files/trash .jpeg",
@@ -5991,7 +5994,7 @@ input, select, textarea {
 
 
 {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Trash basket",
     price: 110000,
     image: "./aboutus_files/trash basket.jpeg",
@@ -6006,7 +6009,7 @@ input, select, textarea {
 
 
 {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Basket",
     price: 4500,
     image: "./aboutus_files/basket.jpeg",
@@ -6021,7 +6024,7 @@ input, select, textarea {
 
 
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Waw detergent",
     price: 1800,
     image: "./aboutus_files/waw detergent.jpeg",
@@ -6034,7 +6037,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dove beauty cream bar",
     price: 1600,
     image: "./aboutus_files/Dove beauty cream bar.jpeg",
@@ -6047,7 +6050,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dettol skincare blossom bathing soap",
     price: 1600,
     image: "./aboutus_files/Dettol skincare bossom bathing soap.jpeg",
@@ -6060,7 +6063,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dettol even tone bathing soap",
     price: 1300,
     image: "./aboutus_files/Dettol even tone bathing soap.jpeg",
@@ -6073,7 +6076,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Eva bathing soap",
     price: 2300,
     image: "./aboutus_files/Eva bathing soap.jpeg",
@@ -6086,7 +6089,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Lux soft caress bathing soap",
     price: 900,
     image: "./aboutus_files/Lux soft caress bathing soap.jpeg",
@@ -6099,7 +6102,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "St. Ives scrup soap",
     price: 2300,
     image: "./aboutus_files/St. Ives scrub soap.jpeg",
@@ -6112,7 +6115,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Hawaii papaya calamansi beauty soap",
     price: 3000,
     image: "./aboutus_files/Hawaii papaya calamansi beauty soap .jpeg",
@@ -6125,7 +6128,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Extract whitening herbal soap",
     price: 1500,
     image: "./aboutus_files/Extract whitening herbal soap.jpeg",
@@ -6138,7 +6141,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Siri African Marigold barsoap",
     price: 2500,
     image: "./aboutus_files/Siri African Marigold barsoap.jpeg",
@@ -6151,7 +6154,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Cera Ve cleanser bar",
     price: 9500,
     image: "./aboutus_files/Cera Ve cleanser bar.jpeg",
@@ -6164,7 +6167,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Irish spring",
     price: 900,
     image: "./aboutus_files/Irish spring.jpeg",
@@ -6177,7 +6180,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dudu-osun black soap",
     price: 1000,
     image: "./aboutus_files/Dudu-osun black soap.jpeg",
@@ -6190,7 +6193,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dr Teal’s glow and hydrate body wash",
     price: 11000,
     image: "./aboutus_files/Dr Teal’s glow and hydrate body wash.jpeg",
@@ -6203,7 +6206,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "OLAY collagen peptide hydrating bodywash",
     price: 25000,
     image: "./aboutus_files/OLAY collagen peptide hydrating bodywash.jpeg",
@@ -6216,7 +6219,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Cera Ve hydrating body wash",
     price: 8500,
     image: "./aboutus_files/Cera Ve hydrating body wash.jpeg",
@@ -6229,7 +6232,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Golden glow intensive whitening, exfoliating shower gel",
     price: 20000,
     image: "./aboutus_files/Golden glow intensive whitening, exfoliating shower gel.jpeg",
@@ -6242,7 +6245,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dove nourishing secrets",
     price: 11500,
     image: "./aboutus_files/Dove nourishing secrets.jpeg",
@@ -6255,7 +6258,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dove refreshing body wash",
     price: 10500,
     image: "./aboutus_files/Dove refreshing body wash.jpeg",
@@ -6268,7 +6271,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "St. Ives refreshing bodywash",
     price: 9800,
     image: "./aboutus_files/St. Ives refreshing bodywash.jpeg",
@@ -6281,7 +6284,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dr Teal’s body wash",
     price: 11000,
     image: "./aboutus_files/Dr Teal’s body wash.jpeg",
@@ -6294,7 +6297,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Pumice black stone for leg",
     price: 6000,
     image: "./aboutus_files/Pumice black stone for leg.jpeg",
@@ -6307,7 +6310,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Veet hair removal cream",
     price: 6000,
     image: "./aboutus_files/Veet hair removal cream.jpeg",
@@ -6320,7 +6323,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Bathing gloves",
     price: 2000,
     image: "./aboutus_files/Bathing gloves.jpeg",
@@ -6333,7 +6336,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Xoc dual action mint mouthwash",
     price: 9500,
     image: "./aboutus_files/Xoc dual action mint mouthwash.jpeg",
@@ -6346,7 +6349,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Wooden toothpick",
     price: 800,
     image: "./aboutus_files/Wooden toothpick.jpeg",
@@ -6359,7 +6362,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Xtreme whitening boost toothpaste",
     price: 1900,
     image: "./aboutus_files/Xtreme whitening boost toothpaste .jpeg",
@@ -6372,7 +6375,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Pepsodent triple protection toothpaste",
     price: 1800,
     image: "./aboutus_files/Pepsodent triple protection toothpaste .jpeg",
@@ -6385,7 +6388,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Sensodyne toothpaste",
     price: 1900,
     image: "./aboutus_files/Sensodyne toothpaste.jpeg",
@@ -6398,7 +6401,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Xoc Charcoal toothpaste",
     price: 5000,
     image: "./aboutus_files/Xoccharcoal toothpaste.jpeg",
@@ -6411,7 +6414,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Oral -b electronic toothbrush",
     price: 89000,
     image: "./aboutus_files/Oral -b electronic toothbrush .jpeg",
@@ -6424,7 +6427,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Electronic toothbrush (4 head)",
     price: 10000,
     image: "./aboutus_files/Electronic toothbrush (4 head).jpeg",
@@ -6437,7 +6440,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Tongue cleaner (2set)",
     price: 4500,
     image: "./aboutus_files/Tongue cleaner (2set).jpeg",
@@ -6450,7 +6453,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dental floss",
     price: 1000,
     image: "./aboutus_files/Dental floss .jpeg",
@@ -6463,7 +6466,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Kiddies toothbrush",
     price: 6500,
     image: "./aboutus_files/Kiddies toothbrush (set of 4).jpeg",
@@ -6476,7 +6479,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Oral high quality toothbrush (hard)",
     price: 6000,
     image: "./aboutus_files/Oral high quality toothbrush (hard)4.jpeg",
@@ -6489,7 +6492,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Xoc charcoal whitening mouth wash",
     price: 8000,
     image: "./aboutus_files/Xoc charcoal whitening mouth wash.jpeg",
@@ -6502,7 +6505,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Sparkle bright toothbrush (medium)",
     price: 5000,
     image: "./aboutus_files/Sparkle bright toothbrush (medium).jpeg",
@@ -6515,7 +6518,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Oral high Qual toothbrush (soft)",
     price: 6000,
     image: "./aboutus_files/Oral high Qual toothbrush (soft).jpeg",
@@ -6528,7 +6531,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Longrich toothpaste",
     price: 1500,
     image: "./aboutus_files/Longrich toothpaste .jpeg",
@@ -6541,7 +6544,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Macleans milkteeth for kids",
     price: 1500,
     image: "./aboutus_files/Macleans milkteeth for kids .jpeg",
@@ -6554,7 +6557,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Oral-B toothpaste",
     price: 2000,
     image: "./aboutus_files/Oral-B toothpaste.jpeg",
@@ -6567,7 +6570,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Colgate cavity protection toothpaste",
     price: 1900,
     image: "./aboutus_files/Colgate cavity protection toothpaste.jpeg",
@@ -6580,7 +6583,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "MyMy Toothpaste",
     price: 1700,
     image: "./aboutus_files/MyMy Toothpaste .jpeg",
@@ -6593,7 +6596,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Listerine mouth wash",
     price: 9000,
     image: "./aboutus_files/Listerine mouth wash",
@@ -6606,7 +6609,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Scrubbing brush wooden handle for toilet floor",
     price: 3500,
     image: "./aboutus_files/Scrubbing brush wooden handle for toilet floor.jpeg",
@@ -6619,7 +6622,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Bathroom mat",
     price: 8000,
     image: "./aboutus_files/mat.jpeg",
@@ -6632,7 +6635,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Toilet tissue paper",
     price: 2000,
     image: "./aboutus_files/toiletroll.jpeg",
@@ -6645,7 +6648,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Disinfectants & Sanitizers",
+    category: "Laundry Care",
     name: "Clorox Concentrated Disinfecting Bleach",
     price: 28000,
     image: "./aboutus_files/Clorox Concentrated Disinfecting Bleach.jpeg",
@@ -6658,7 +6661,7 @@ input, select, textarea {
     ]
   },
    {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dettol skincare blossom bathing soap",
     price: 1600,
     image: "./aboutus_files/Dettol skincare bossom bathing soap.jpeg",
@@ -6671,7 +6674,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Fabuloso Lavender Multi-Purpose Cleaner",
     price: 30000,
     image: "./aboutus_files/fabuloso.jpeg",
@@ -6684,7 +6687,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Windex glass cleaner",
     price: 7500,
     image: "./aboutus_files/windex.jpeg",
@@ -6697,7 +6700,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Mr sheen multi surface cleanser",
     price: 3000,
     image: "./aboutus_files/mr sheen.jpeg",
@@ -6710,7 +6713,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Novex multipurpose cleaner",
     price: 4500,
     image: "./aboutus_files/Novex multipurpose cleaner",
@@ -6723,7 +6726,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Cif floor cleaner",
     price: 4000,
     image: "./aboutus_files/ciffloorcleaner.jpeg",
@@ -6736,7 +6739,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Disinfectants & Sanitizers",
+    category: "Laundry Care",
     name: "Astonish antibacterial surface cleanser",
     price: 6500,
     image: "./aboutus_files/asc.jpeg",
@@ -6749,7 +6752,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Vim classic scourer",
     price: 2500,
     image: "./aboutus_files/vim.jpeg",
@@ -6762,7 +6765,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Floor Wash machine",
     price: 650000,
     image: "./aboutus_files/floor wash machine.jpeg",
@@ -6775,7 +6778,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Seven step iron ladder",
     price: 160000,
     image: "./aboutus_files/Seven step iron ladder.jpeg",
@@ -6788,7 +6791,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Multi-purpose aluminum foldable ladder",
     price: 350000,
     image: "./aboutus_files/Multi-purpose aluminum foldable ladder.jpeg",
@@ -6801,7 +6804,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "24-Feet Louisville Ladder",
     price: 1100000,
     image: "./aboutus_files/24-Feet Louisville Ladder.jpeg",
@@ -6814,7 +6817,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "4 step multi-purpose ladder",
     price: 70000,
     image: "./aboutus_files/4 step multi-purpose ladder.jpeg",
@@ -6827,7 +6830,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Generic all in one steam cleaner",
     price: 250000,
     image: "./aboutus_files/Generic all in one steam cleaner.jpeg",
@@ -6840,7 +6843,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Karcher muti purpose steam cleaner",
     price: 500000,
     image: "./aboutus_files/Karcher muti purpose steam cleaner.jpeg",
@@ -6853,7 +6856,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Brightening vitamin c facial wash",
     price: 5000,
     image: "./aboutus_files/Brightening vitamin c facial wash.jpeg",
@@ -6866,7 +6869,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Gun pressure washer",
     price: 90000,
     image: "./aboutus_files/Gun pressure washer.jpeg",
@@ -6879,7 +6882,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Karcher k 4 pressure washer",
     price: 700000,
     image: "./aboutus_files/Karcher k 4 pressure washer.jpeg",
@@ -6892,7 +6895,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Karcher k 3 power control electronic pressure washer",
     price: 500000,
     image: "./aboutus_files/Karcher k 3 power control electronic pressure washer.jpeg",
@@ -6905,7 +6908,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Vacuum cleaner",
     price: 250000,
     image: "./aboutus_files/vacum cleaner.jpeg",
@@ -6918,7 +6921,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Equipment & Machinery",
+    category: "Cleaning Equipment & Tools",
     name: "Hand held vacuum (blower)",
     price: 50000,
     image: "./aboutus_files/blower.jpeg",
@@ -6931,7 +6934,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "CeraVe foaming facial cleanser",
     price: 30000,
     image: "./aboutus_files/CeraVe foaming facial cleanser.jpeg",
@@ -6944,7 +6947,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Dr Teal’s shea sugar scrub",
     price: 13000,
     image: "./aboutus_files/Dr Teal’s shea sugar scrub.jpeg",
@@ -6957,7 +6960,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Simple smoothing facial scrub",
     price: 9000,
     image: "./aboutus_files/Simple smoothing facial scrub.jpeg",
@@ -6970,7 +6973,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Disaar aloevera",
     price: 5000,
     image: "./aboutus_files/Disaar aloevera.jpeg",
@@ -6983,7 +6986,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Tea tree facial scrub",
     price: 5000,
     image: "./aboutus_files/Tea tree facial scrub.jpeg",
@@ -6996,7 +6999,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Personal facial cotton buds",
     price: 3000,
     image: "./aboutus_files/cutton bud.jpeg",
@@ -7009,7 +7012,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Facial clean sponge",
     price: 1500,
     image: "./aboutus_files/Bathing sponge.jpeg",
@@ -7022,7 +7025,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Neutrogena clear and defend face scrub",
     price: 12000,
     image: "./aboutus_files/Neutrogena clear and defend face scrub.jpeg",
@@ -7034,7 +7037,7 @@ input, select, textarea {
       "Leaves face clean and clear"
     ]
   },
-  {category: "Consumables & Supplies", name: "Blackhead clearing cleanser", price: 11000, image: "./aboutus_files/Blackhead clearing cleanser.jpeg", description: "Blackhead Clearing Cleanser – Gently removes dirt, oil, and impurities to help reduce blackheads and prevent breakouts. Leaves your skin feeling clean, smooth, and refreshed.",
+  {category: " Home Essentials", name: "Blackhead clearing cleanser", price: 11000, image: "./aboutus_files/Blackhead clearing cleanser.jpeg", description: "Blackhead Clearing Cleanser – Gently removes dirt, oil, and impurities to help reduce blackheads and prevent breakouts. Leaves your skin feeling clean, smooth, and refreshed.",
     features: [
       "Helps reduce blackheads",
       "Prevents breakouts",
@@ -7043,7 +7046,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Elan Mentholated Shampoo and Hair Conditioner",
     price: 8000,
     image: "./aboutus_files/elan_menthol_duo.jpeg",
@@ -7056,7 +7059,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Hanger (set)",
     price: 2000,
     image: "./aboutus_files/hanger_set.jpeg",
@@ -7069,7 +7072,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Disinfectants & Sanitizers",
+    category: "Laundry Care",
     name: "Jik Bleach",
     price: 2000,
     image: "./aboutus_files/jik_bleach.jpeg",
@@ -7082,7 +7085,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Comfort Fabric Conditioner",
     price: 11000,
     image: "./aboutus_files/comfort_conditioner.jpeg",
@@ -7095,7 +7098,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "So Klin Concentrated Detergent",
     price: 2500,
     image: "./aboutus_files/so_klin_detergent.jpeg",
@@ -7108,7 +7111,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Nittol Antibacterial Detergent",
     price: 1800,
     image: "./aboutus_files/nittol_antibac_detergent.jpeg",
@@ -7121,7 +7124,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Paloma Classic Tissue",
     price: 2800,
     image: "./aboutus_files/paloma_tissue.jpeg",
@@ -7134,7 +7137,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Cleaning Chemicals & Solutions",
+    category: "Cleaning Products",
     name: "Easy On Spray Starch",
     price: 4500,
     image: "./aboutus_files/easy_on_starch.jpeg",
@@ -7147,7 +7150,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Angel Facial Wipes",
     price: 3500,
     image: "./aboutus_files/angel_wipes_3500.jpeg",
@@ -7160,7 +7163,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Angel Facial Wipes (Premium)",
     price: 4000,
     image: "./aboutus_files/angel_wipes_4000.jpeg",
@@ -7173,7 +7176,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Simple Cleansing Facial Wipes",
     price: 6000,
     image: "./aboutus_files/simple_wipes.jpeg",
@@ -7186,7 +7189,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Tea Tree Cleansing Facial Wipes",
     price: 3000,
     image: "./aboutus_files/tea_tree_wipes.jpeg",
@@ -7199,7 +7202,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Beauty Lint Cotton Wool",
     price: 1500,
     image: "./aboutus_files/beauty_cotton_wool.jpeg",
@@ -7212,7 +7215,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Pretty Cotton Wool Pleat",
     price: 4000,
     image: "./aboutus_files/pretty_cotton_pleat.jpeg",
@@ -7225,7 +7228,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Pretty Intimate Daily Fresh Panty Liners",
     price: 3000,
     image: "./aboutus_files/pretty_daily_liners.jpeg",
@@ -7238,7 +7241,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Love Panty Liners",
     price: 2500,
     image: "./aboutus_files/love_panty_liners.jpeg",
@@ -7251,7 +7254,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Pretty Intimate Panty Liners",
     price: 2500,
     image: "./aboutus_files/pretty_intimate_liners.jpeg",
@@ -7264,7 +7267,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Equate Tampons",
     price: 13000,
     image: "./aboutus_files/equate_tampons.jpeg",
@@ -7277,7 +7280,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Anytime Menstrual Cup",
     price: 9000,
     image: "./aboutus_files/anytime_menstrual_cup.jpeg",
@@ -7290,7 +7293,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Tampax Super Tampons",
     price: 8000,
     image: "./aboutus_files/tampax_super.jpeg",
@@ -7303,7 +7306,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Always Sanitary Pad",
     price: 2500,
     image: "./aboutus_files/always_pad.jpeg",
@@ -7316,7 +7319,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Molped Maxi Thick Sanitary Pad",
     price: 1000,
     image: "./aboutus_files/molped_maxi_thick.jpeg",
@@ -7329,7 +7332,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Virony Smart Lady Sanitary Pad",
     price: 6000,
     image: "./aboutus_files/virony_smart_lady.jpeg",
@@ -7342,7 +7345,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Molped Ultra Soft Sanitary Pad",
     price: 1200,
     image: "./aboutus_files/molped_ultra_soft.jpeg",
@@ -7355,7 +7358,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Besense Sanitary Pad",
     price: 6000,
     image: "./aboutus_files/besense_pad.jpeg",
@@ -7368,7 +7371,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Drylove Sanitary Pad",
     price: 1000,
     image: "./aboutus_files/drylove_pad.jpeg",
@@ -7381,7 +7384,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Softcare Sanitary Pad (1000)",
     price: 1000,
     image: "./aboutus_files/softcare_pad_1000.jpeg",
@@ -7394,7 +7397,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Softcare Sanitary Pad (8500)",
     price: 8500,
     image: "./aboutus_files/softcare_pad_8500.jpeg",
@@ -7407,7 +7410,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Passion Talcum Powder",
     price: 3500,
     image: "./aboutus_files/passion_talc.jpeg",
@@ -7420,7 +7423,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Cussons Baby Powder",
     price: 8500,
     image: "./aboutus_files/cussons_baby_powder.jpeg",
@@ -7433,7 +7436,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "TCB Three Oil Sheen Spray",
     price: 8500,
     image: "./aboutus_files/tcb_sheen_spray.jpeg",
@@ -7446,7 +7449,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Disaar Argan Oil",
     price: 6500,
     image: "./aboutus_files/disaar_argan_oil.jpeg",
@@ -7459,7 +7462,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "ORS Olive Oil",
     price: 4500,
     image: "./aboutus_files/ors_olive_oil.jpeg",
@@ -7472,7 +7475,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Mielle Rosemary Mint Scalp and Hair Strengthening Oil",
     price: 7000,
     image: "./aboutus_files/mielle_rosemary_oil.jpeg",
@@ -7485,7 +7488,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Elan Hair Oil",
     price: 4500,
     image: "./aboutus_files/elan_hair_oil.jpeg",
@@ -7498,7 +7501,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "L’uôsais Hair Repair Oil Serum",
     price: 5500,
     image: "./aboutus_files/luosais_hair_serum.jpeg",
@@ -7511,7 +7514,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Above Oil Sheen Spray",
     price: 4500,
     image: "./aboutus_files/above_sheen_spray.jpeg",
@@ -7524,7 +7527,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Mega Growth Anti-Dandruff Shampoo",
     price: 4500,
     image: "./aboutus_files/mega_growth_shampoo.jpeg",
@@ -7537,7 +7540,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Petals Instant Hair Conditioner",
     price: 2500,
     image: "./aboutus_files/petals_instant_conditioner.jpeg",
@@ -7550,7 +7553,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Lush Rejuvenating Shampoo and Conditioner",
     price: 800,
     image: "./aboutus_files/lush_duo.jpeg",
@@ -7563,7 +7566,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Petals Shampoo",
     price: 2000,
     image: "./aboutus_files/petals_shampoo.jpeg",
@@ -7576,7 +7579,7 @@ input, select, textarea {
     ]
   },
   {
-    category: "Consumables & Supplies",
+    category: " Home Essentials",
     name: "Vinoz Anti-Dandruff Shampoo and Hair Conditioner",
     price: 6000,
     image: "./aboutus_files/vinoz_anti_dandruff_duo.jpeg",
@@ -7707,7 +7710,19 @@ function renderProducts(searchTerm = '') {
             <p class="text-gray-600">₦${p.price.toLocaleString()}</p>
 
             <button onclick="addToCart('${p.name}', ${p.price}, '${p.image}')" class="mt-3 bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition">Add to Cart</button>
-             <a href="product.html?name=${encodeURIComponent(p.name)}"class="mt-3 bg-black text-white px-4 py-2 rounded-xl text-center hover:bg-gray-800 transition">View Details</a>
+             <a 
+  href="product.html?name=${encodeURIComponent(p.name)}"
+  class="mt-3 inline-block bg-gradient-to-r from-black via-gray-900 to-black 
+         text-white font-semibold tracking-wider 
+         px-5 py-2.5 rounded-2xl shadow-lg shadow-gray-700/40 
+         border border-gray-700 
+         hover:scale-105 hover:shadow-gray-900/60 hover:from-gray-900 hover:to-black
+         active:scale-95 
+         transition-all duration-300 ease-out"
+>
+   View Details
+</a>
+
         `;
         grid.appendChild(div);
     });

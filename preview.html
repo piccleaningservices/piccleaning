@@ -1,0 +1,84 @@
+<style>
+  body {
+    background: linear-gradient(270deg, #000, #111, #0d0d2d, #111);
+    background-size: 800% 800%;
+    animation: bgShift 20s ease infinite;
+  }
+  @keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+<body>
+    
+    <div style="text-align: center; margin-top: 20vh;">
+        <h1 style="color: white; font-size: 3rem; margin-bottom: 1rem;">Welcome to Our Preview Page</h1>
+        <p style="color: #ccc; font-size: 1.5rem;">This is a sample preview page with a dynamic background.</p>
+    </div>
+</body>
+
+
+<div style="
+  backdrop-filter: blur(12px) saturate(150%);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 20px;
+  max-width: 400px;
+  margin: 40px auto;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+  <h2>💎 Premium Service</h2>
+  <p>Experience the next level of clean — powered by X.</p>
+</div>
+
+
+
+<canvas id="bg"></canvas>
+<script>
+  const c = document.getElementById('bg'), ctx = c.getContext('2d');
+  c.width = window.innerWidth; c.height = window.innerHeight;
+  let particles = Array.from({length:60}, () => ({
+    x: Math.random()*c.width,
+    y: Math.random()*c.height,
+    r: Math.random()*2,
+    dx: (Math.random()-0.5)*0.5,
+    dy: (Math.random()-0.5)*0.5
+  }));
+  function animate(){
+    ctx.clearRect(0,0,c.width,c.height);
+    particles.forEach(p=>{
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle="rgba(255,255,255,0.6)";
+      ctx.fill();
+      p.x+=p.dx; p.y+=p.dy;
+      if(p.x<0||p.x>c.width) p.dx*=-1;
+      if(p.y<0||p.y>c.height) p.dy*=-1;
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+<style>
+  #bg { position: fixed; top:0; left:0; z-index:-1; }
+</style>
+
+
+
+
+
+<h1 id="typed" style="color:white; font-size:2rem; font-weight:700;"></h1>
+<script>
+  const words = ["Premium Cleaning.", "Smart Living.", "Pic Cleaning Services.", "Eco-Friendly Solutions.", "Customer Satisfaction.", "Shop Cleaning Agents."];
+  let i=0, j=0, current="", isDeleting=false;
+  function type(){
+    current = words[i].substring(0, j);
+    document.getElementById("typed").textContent = current;
+    if(!isDeleting && j++ === words[i].length){ isDeleting=true; setTimeout(type,1500); return; }
+    if(isDeleting && j-- === 0){ isDeleting=false; i=(i+1)%words.length; }
+    setTimeout(type, isDeleting?80:120);
+  }
+  type();
+</script>

@@ -5621,14 +5621,32 @@ input, select, textarea {
 										class="wp-block-cover__inner-container is-layout-constrained wp-container-core-cover-is-layout-d89aad35 wp-block-cover-is-layout-constrained">
 										<div
 											class="wp-block-group alignwide is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-12dd3699 wp-block-group-is-layout-constrained">
+
+
+											<h1 id="typed" style="color:white; font-size:2rem; font-weight:700;"></h1>
+<script>
+  const words = ["Premium Cleaning.", "Smart Living.", "Eco-Friendly Solutions.", "Customer Satisfaction.", "One Stop Shop for Cleaning." ,"Think Spotless", "Think Reliablity" , "Think Pic Cleaning ✨."];
+  let i=0, j=0, current="", isDeleting=false;
+  function type(){
+    current = words[i].substring(0, j);
+    document.getElementById("typed").textContent = current;
+    if(!isDeleting && j++ === words[i].length){ isDeleting=true; setTimeout(type,1500); return; }
+    if(isDeleting && j-- === 0){ isDeleting=false; i=(i+1)%words.length; }
+    setTimeout(type, isDeleting?80:120);
+  }
+  type();
+</script>
+
+
+
+
 											<h1 class="wp-block-heading has-text-align-left" style="font-size:100px">
 												<strong><mark style="background-color:rgba(0, 0, 0, 0);color:#ffffff"
 														class="has-inline-color">Pic cleaning</mark></strong>
 												<strong><mark style="background-color:rgba(0, 0, 0, 0);color:#ffffff"
 														class="has-inline-color">Services</mark></strong>
 											</h1>
-
-
+											
 
 											<p style="font-size:22px"><mark style="background-color:rgba(0, 0, 0, 0)"
 													class="has-inline-color has-ast-global-color-4-color">I Di Ocha Bu
@@ -5647,41 +5665,54 @@ input, select, textarea {
 
 												<div style="text-align: center; margin: 20px 0;">
 													<a href="https://api.whatsapp.com/send/?phone=2348163645085&text=Hi%2C+I%E2%80%99d+like+to+book+a+cleaning&type=phone_number&app_absent=0"
-														target="_blank" rel="noopener noreferrer" style="
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 12px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: 0 4px #128C7E;
-      transition: all 0.2s ease-in-out;
-      animation: pulse 2s infinite;
-   " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px #128C7E';"
-														onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px #128C7E';">
-														<img decoding="async" src="./index_files/WhatsApp.svg"
-															alt="WhatsApp" style="width:20px;height:20px;">
-														Message us on WhatsApp
+   target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+   <img src="./index_files/WhatsApp.svg" alt="WhatsApp" class="icon">
+   <span>Message us on WhatsApp</span>
+</a>
 													</a>
 
 												</div>
 												<style>
-													@keyframes pulse {
+													.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px #128C7E;
+    transition: all 0.4s ease;
+    animation: pulse 2s infinite;
+  }
+  .whatsapp-btn img.icon {
+    width: 20px; height: 20px; transition: all 0.4s ease;
+  }
+  .whatsapp-btn.scrolled {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    border-radius: 50%;
+    padding: 14px;
+    font-size: 0;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+    z-index: 9999;
+  }
+  .whatsapp-btn.scrolled span { display: none; }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+</style>
 
-														0%,
-														100% {
-															transform: scale(1);
-														}
-
-														50% {
-															transform: scale(1.03);
-														}
-													}
-												</style>
+<script>
+  const whatsappBtn = document.querySelector('.whatsapp-btn');
+  window.addEventListener('scroll', () => {
+    whatsappBtn.classList.toggle('scrolled', window.scrollY > 600);
+  });
+</script>
 											</div>
 										</div>
 									</div>
