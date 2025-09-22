@@ -5275,6 +5275,96 @@ input, select, textarea {
     }
 }
 
+
+
+/* Add these mobile-specific styles */
+    @media (max-width: 768px) {
+        
+        
+        .site-title {
+            font-size: 1.3rem !important;
+        }
+        
+        .ast-site-title-wrap .site-description {
+            display: none;
+            color: whitesmoke !important;
+        }
+        
+        /* Contact section adjustments */
+        .zz-contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 15px;
+        }
+        
+        .zz-contact-header h2 {
+            font-size: 2rem !important;
+        }
+        
+        .zz-contact-header p {
+            font-size: 1rem !important;
+        }
+        
+        .zz-card {
+            padding: 20px;
+        }
+        
+        /* Form adjustments */
+        .wp-block-columns {
+            flex-direction: column !important;
+        }
+        
+        .wp-block-column {
+            flex-basis: 100% !important;
+            margin-bottom: 20px;
+        }
+        
+        /* FAQ adjustments */
+        .zz-faq-header h2 {
+            font-size: 1.8rem !important;
+        }
+        
+        .zz-faq-question {
+            font-size: 1rem;
+            padding: 15px;
+        }
+        
+        .zz-faq-answer {
+            padding: 0 15px 15px;
+        }
+        
+        /* Cover block adjustments */
+        .wp-block-cover.alignfull {
+            min-height: 800px !important;
+            padding: 20px !important;
+        }
+        
+        .wp-block-cover h3.wp-block-heading {
+            font-size: 70px !important;
+        }
+        
+        
+    }
+
+    @media (max-width: 480px) {
+        .zz-contact-header h2 {
+            font-size: 1.8rem !important;
+        }
+        
+        .wp-block-cover h3.wp-block-heading {
+            font-size: 47px !important;
+        }
+        
+        .zz-faq-header h2 {
+            font-size: 1.5rem !important;
+        }
+        
+        .zz-btn {
+            padding: 12px 20px !important;
+            font-size: 0.9rem !important;
+        }
+    }
+
+
 </style>
 
 
