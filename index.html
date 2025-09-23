@@ -5386,7 +5386,7 @@ input, select, textarea {
     background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.1));
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.2);
-    box-shadow: 0 0 25px rgba(0,255,180,0.7),
+    box-shadow: 0 0 25px rgba(255, 136, 0, 0.7),
                 inset 0 0 30px rgba(255,255,255,0.3);
     display: flex;
     align-items: center;
@@ -5754,7 +5754,50 @@ input, select, textarea {
 											class="wp-block-group alignwide is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-12dd3699 wp-block-group-is-layout-constrained">
 
 
-											<h1 id="typed" style="color:white; font-size:2rem; font-weight:700;"></h1>
+											<style>
+					/* Typed headline */
+#typed {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 3px solid white; /* blinking caret */
+  animation: blink 0.8s infinite;
+}
+
+/* Blinking caret animation */
+@keyframes blink {
+  0%, 50% { border-color: white; }
+  51%, 100% { border-color: transparent; }
+}
+
+/* Body text */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  #typed { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  #typed { font-size: 1.2rem; }
+}
+
+
+											</style>
+
+
+
+
+										<em>	<p id="typed" class="typed" style="color:white; margin-bottom: -2rem; font-weight:700;"></p> </em>
 <script>
   const words = ["Premium Cleaning.", "Smart Living.", "Eco-Friendly Solutions.", "Customer Satisfaction Guranteed.", "One-Stop Shop for Everything Cleaning." ,"Think Spotless", "Think Reliability" , "Think Pic Cleaning ✨."];
   let i=0, j=0, current="", isDeleting=false;
@@ -5767,32 +5810,6 @@ input, select, textarea {
   }
   type();
 </script>
-
-<style>
-
-#typed {
-  font-size: 36px;   /* default desktop size */
-  font-weight: 700;
-  line-height: 1.3;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-/* 📱 Mobile adjustments */
-@media (max-width: 768px) {
-  #typed {
-    font-size: 24px;   /* smaller size for tablets/phones */
-  }
-}
-
-@media (max-width: 480px) {
-  #typed {
-    font-size: 18px;   /* extra small for very small screens */
-  }
-}
-
-
-</style>
 
 
 											<h1 class="wp-block-heading has-text-align-left" style="font-size:100px">
