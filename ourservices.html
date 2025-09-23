@@ -1425,6 +1425,55 @@ input, select, textarea {
 
 
 
+<style>
+  .menu-item-has-children {
+    position: relative;
+  }
+  .menu-item-has-children .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #fff;
+    border-radius: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1000;
+  }
+  .menu-item-has-children .submenu li a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .menu-item-has-children .submenu li a:hover {
+    background: #f3f3f3;
+    color: #000;
+  }
+  /* Desktop hover */
+  .menu-item-has-children:hover .submenu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Mobile */
+  @media (max-width: 768px) {
+    .menu-item-has-children .submenu {
+      position: static;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
+</style>
+
+
 
 
 		</head>
@@ -1459,8 +1508,22 @@ input, select, textarea {
 										<div class="ast-builder-menu-1 ast-builder-menu ast-flex ast-builder-menu-1-focus-item ast-builder-layout-element site-header-focus-item" data-section="section-hb-menu-1">
 			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="primary-site-navigation-desktop" aria-label="Primary Site Navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation ast-inline-flex"><ul id="ast-hf-menu-1" class="main-header-menu ast-menu-shadow ast-nav-menu ast-flex  submenu-with-border astra-menu-animation-slide-down  ast-menu-hover-style-underline  stack-on-mobile"><li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-146"><a href="./index.html" class="menu-link">Home</a></li>
 <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="./aboutus.html" class="menu-link">About Us</a></li>
-<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="./contactus.html" class="menu-link">Contact Us</a></li>
-<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-38 current_page_item menu-item-has-children menu-item-80"><a aria-expanded="false" href="./ourservices.html" aria-current="page" class="menu-link">Our Services</a></li>
+<li id="menu-item-78" class="menu-item menu-item-has-children">
+  <a href="./contactus.html" class="menu-link">Contact Us ▾</a>
+  <ul class="submenu">
+    <li><a href="requestajob.html">Request a Job</a></li>
+    <li><a href="contactus.html#message-us" target="_blank">Message Us</a></li>
+    <li><a href="requestservice.html">Get a Nanny</a></li>
+  </ul>
+</li>
+															<li id="menu-item-78" class="menu-item menu-item-has-children">
+  <a href="./ourservices.html" class="menu-link">Our Services ▾</a>
+  <ul class="submenu">
+    <li><a href="homecleaning.html">Home Cleaning</a></li>
+    <li><a href="industrialcleaning.html" target="_blank">Industrial Cleaning</a></li>
+    <li><a href="laundry.html">Laundry Services</a></li>
+  </ul>
+</li>
 </ul>
 </li>
 <li id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79"><a href="./shop.html" class="menu-link">Shop Now</a></li>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team | Professional Cleaning & Nanny Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .apply-section {
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .apply-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-panel {
+            flex: 1.2;
+            padding: 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .benefits-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits-list i {
+            margin-right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .apply-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e1e5ee;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: #f9fafc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #6a11cb;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            font-weight: 600;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+        }
+
+        .submit-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #718096;
+            font-size: 15px;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 40px;
+            color: #a0aec0;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #6a11cb;
+            border-radius: 10px;
+            background: white;
+            color: #6a11cb;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .nav-btn i {
+            margin-right: 8px;
+        }
+
+        .nav-btn:hover {
+            background: #6a11cb;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+        }
+
+        @media (max-width: 968px) {
+            .apply-section {
+                flex-direction: column;
+            }
+            
+            .info-panel {
+                padding: 30px;
+            }
+            
+            .form-panel {
+                padding: 30px;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .info-panel, .form-panel {
+                padding: 25px;
+            }
+            
+            .title {
+                font-size: 26px;
+            }
+            
+            .form-header h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Animation for form elements */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .form-group:nth-child(3) { animation-delay: 0.3s; }
+        .form-group:nth-child(4) { animation-delay: 0.4s; }
+        .form-group:nth-child(5) { animation-delay: 0.5s; }
+        .form-group:nth-child(6) { animation-delay: 0.6s; }
+        .form-group:nth-child(7) { animation-delay: 0.7s; }
+        .form-group:nth-child(8) { animation-delay: 0.8s; }
+        .submit-btn { animation-delay: 0.9s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="apply-section">
+            <div class="info-panel">
+                <div class="logo">
+                    <i class="fas fa-hands-helping"></i>
+                    Pic Cleaning Services
+                </div>
+                <h1 class="title">Work With Us</h1>
+                <p class="subtitle">Join our team of trusted <strong>Cleaners</strong> & <strong>Nannies</strong>. Flexible schedules, reliable pay, and a chance to grow.</p>
+                
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check"></i> Competitive pay with weekly payments</li>
+                    <li><i class="fas fa-check"></i> Flexible scheduling options</li>
+                    <li><i class="fas fa-check"></i> Professional training & support</li>
+                    <li><i class="fas fa-check"></i> Career advancement opportunities</li>
+                    <li><i class="fas fa-check"></i> Supportive team environment</li>
+                </ul>
+            </div>
+            
+            <div class="form-panel">
+                <div class="form-header">
+                    <h2>Apply Now</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                </div>
+                
+                <form id="jobForm" class="apply-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                        <i class="fas fa-user input-icon"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="e.g. 08012345678" required>
+                        <i class="fas fa-phone input-icon"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                        <i class="fas fa-envelope input-icon"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role Applying For</label>
+                        <select id="role" required>
+                            <option value="">-- Select a role --</option>
+                            <option value="Cleaner">Cleaner</option>
+                            <option value="Nanny">Nanny</option>
+                        </select>
+                        <i class="fas fa-briefcase input-icon"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="City / Area" required>
+                        <i class="fas fa-map-marker-alt input-icon"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" placeholder="e.g. 3" min="0" max="50" required>
+                        <i class="fas fa-chart-line input-icon"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <select id="availability" required>
+                            <option value="">-- Select availability --</option>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                            <option value="Weekends">Weekends only</option>
+                            <option value="Flexible">Flexible</option>
+                        </select>
+                        <i class="fas fa-calendar input-icon"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Information</label>
+                        <textarea id="notes" placeholder="Anything extra you'd like to share about your experience or availability..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Submit Application <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i> Thank you! Your application has been submitted successfully.
+                </div>
+                
+                <div class="navigation-buttons">
+                    <a href="index.html" class="nav-btn">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                    <a href="contactus.html" class="nav-btn">
+                        <i class="fas fa-envelope"></i> Back to Contact Us
+                    </a>
+                    <a href="requestservice.html" class="nav-btn">
+                        <i class="fas fa-baby"></i> Apply for Nanny Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('jobForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const role = document.getElementById('role').value;
+            const location = document.getElementById('location').value;
+            const experience = document.getElementById('experience').value;
+            const availability = document.getElementById('availability').value;
+            const notes = document.getElementById('notes').value;
+
+            // Create WhatsApp message
+            const message = `New Job Application:%0A%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+Role: ${role}%0A
+Location: ${location}%0A
+Experience: ${experience} years%0A
+Availability: ${availability}%0A
+Additional Info: ${notes || 'N/A'}`;
+
+            // WhatsApp business number
+            const phoneNumber = '2348163645085';
+            const url = /Mobi|Android/i.test(navigator.userAgent)
+                ? `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`
+                : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Open WhatsApp after a short delay
+            setTimeout(() => {
+                window.open(url, '_blank');
+            }, 1500);
+            
+            // Reset form after submission
+            setTimeout(() => {
+                document.getElementById('jobForm').reset();
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+
+        // Add input validation
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('blur', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#4CAF50';
+                } else if (this.hasAttribute('required')) {
+                    this.style.borderColor = '#f44336';
+                }
+            });
+            
+            element.addEventListener('focus', function() {
+                this.style.borderColor = '#6a11cb';
+            });
+        });
+    </script>
+</body>
+</html>

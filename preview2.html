@@ -1,62 +1,184 @@
-<!-- Glass Orb Loader -->
-<div id="loader">
-  <div class="orb">
-    <span class="logo">X</span> <!-- Replace with your logo or text -->
-  </div>
+<div class="apply-section">
+  <h2 class="title">Work With Us</h2>
+  <p class="subtitle">Join our team of trusted <strong>Cleaners</strong> & <strong>Nannies</strong>. Flexible schedules, reliable pay, and a chance to grow.</p>
+
+  <form id="jobForm" class="apply-form">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" id="phone" placeholder="e.g. 08012345678" required>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+      <label>Role Applying For</label>
+      <select id="role" required>
+        <option value="">-- Select --</option>
+        <option value="Cleaner">Cleaner</option>
+        <option value="Nanny">Nanny</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Location</label>
+      <input type="text" id="location" placeholder="City / Area" required>
+    </div>
+
+    <div class="form-group">
+      <label>Years of Experience</label>
+      <input type="number" id="experience" placeholder="e.g. 3" required>
+    </div>
+
+    <div class="form-group">
+      <label>Availability</label>
+      <select id="availability" required>
+        <option value="">-- Select --</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Part-time">Part-time</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea id="notes" placeholder="Anything extra you'd like to share..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Apply Now</button>
+  </form>
 </div>
 
 <style>
-  /* Fullscreen overlay */
-  #loader {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #000; /* dark background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-    transition: opacity 1s ease;
+  .apply-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    text-align: center;
   }
 
-  /* Orb styles */
-  .orb {
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.1));
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.2);
-    box-shadow: 0 0 25px rgba(0,255,180,0.7),
-                inset 0 0 30px rgba(255,255,255,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: spin 6s linear infinite, pulse 3s ease-in-out infinite;
+  .apply-section .title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  /* Logo inside orb */
-  .orb .logo {
-    font-size: 2rem;
+  .apply-section .subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-group {
+    text-align: left;
+  }
+
+  .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.9);
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    box-shadow: 0 0 0 3px rgba(106,17,203,0.3);
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+
+  .submit-btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
     font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0,255,180,0.8);
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(106,17,203,0.4);
   }
 
-  /* Animations */
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37,117,252,0.5);
   }
-  @keyframes pulse {
-    0%,100% { transform: scale(1); box-shadow: 0 0 20px rgba(0,255,180,0.4); }
-    50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(0,255,180,0.8); }
+
+  @media (max-width: 768px) {
+    .apply-section {
+      margin: 20px;
+      padding: 20px;
+    }
+    .apply-section .title {
+      font-size: 24px;
+    }
   }
 </style>
 
 <script>
-  // Hide loader after site fully loads
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-    loader.style.opacity = "0";
-    setTimeout(() => loader.style.display = "none", 1000);
+  document.getElementById('jobForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const role = document.getElementById('role').value;
+    const location = document.getElementById('location').value;
+    const experience = document.getElementById('experience').value;
+    const availability = document.getElementById('availability').value;
+    const notes = document.getElementById('notes').value;
+
+    const message = `Hello, I'd like to apply for a job.%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+Role: ${role}%0A
+Location: ${location}%0A
+Experience: ${experience} years%0A
+Availability: ${availability}%0A
+Notes: ${notes}`;
+
+    const phoneNumber = "2348163645085"; // your WhatsApp business number
+    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+    window.open(url, "_blank");
   });
 </script>

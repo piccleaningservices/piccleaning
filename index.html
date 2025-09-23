@@ -5298,7 +5298,134 @@ input, select, textarea {
 
 
 
+<style>
+  .menu-item-has-children {
+    position: relative;
+  }
+  .menu-item-has-children .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #fff;
+    border-radius: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1000;
+  }
+  .menu-item-has-children .submenu li a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .menu-item-has-children .submenu li a:hover {
+    background: #f3f3f3;
+    color: #000;
+  }
+  /* Desktop hover */
+  .menu-item-has-children:hover .submenu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Mobile */
+  @media (max-width: 768px) {
+    .menu-item-has-children .submenu {
+      position: static;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
+</style>
+
+
+
+
+
+
 </head>
+
+
+
+
+
+
+<!-- Glass Orb Loader -->
+<div id="loader">
+  <div class="orb">
+    <img class="logo" src="./index_files/piclogo-removebg-preview.png" alt="" width="100" height="100">
+</div>
+</div>
+
+
+<style>
+  /* Fullscreen overlay */
+  #loader {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #000; /* dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 1s ease;
+  }
+
+  /* Orb styles */
+  .orb {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.1));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 25px rgba(0,255,180,0.7),
+                inset 0 0 30px rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 6s linear infinite, pulse 3s ease-in-out infinite;
+  }
+
+  /* Logo inside orb */
+  .orb .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,255,180,0.8);
+  }
+
+  /* Animations */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); box-shadow: 0 0 20px rgba(0,255,180,0.4); }
+    50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(0,255,180,0.8); }
+  }
+</style>
+
+<script>
+  // Hide loader after site fully loads
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => loader.style.display = "none", 1000);
+  });
+</script>
+
+
+
+
+
 
 <body itemtype="https://schema.org/WebPage" itemscope="itemscope"
 	class="home wp-singular page-template-default page page-id-35 logged-in wp-custom-logo wp-theme-astra theme-astra woocommerce-js ast-desktop ast-plain-container ast-no-sidebar astra-4.11.11 ast-single-post ast-inherit-site-logo-transparent ast-theme-transparent-header ast-hfb-header ast-full-width-primary-header"
@@ -5369,19 +5496,22 @@ input, select, textarea {
 																<a href="./aboutus.html"
 																	class="menu-link">About Us</a>
 															</li>
-															<li id="menu-item-78"
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78">
-																<a href="./contactus.html"
-																	class="menu-link">Contact Us</a>
-															</li>
-															<li id="menu-item-80"
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-80">
-																<a aria-expanded="false"
-																	href="./ourservices.html"
-																	class="menu-link">Our Services</a>
-																	</li>
-																</ul>
-															</li>
+															<li id="menu-item-78" class="menu-item menu-item-has-children">
+  <a href="./contactus.html" class="menu-link">Contact Us ▾</a>
+  <ul class="submenu">
+    <li><a href="requestajob.html">Request a Job</a></li>
+    <li><a href="contactus.html#message-us" target="_blank">Message Us</a></li>
+    <li><a href="requestservice.html">Get a Nanny</a></li>
+  </ul>
+</li>
+															<li id="menu-item-78" class="menu-item menu-item-has-children">
+  <a href="./ourservices.html" class="menu-link">Our Services ▾</a>
+  <ul class="submenu">
+    <li><a href="homecleaning.html">Home Cleaning</a></li>
+    <li><a href="industrialcleaning.html" target="_blank">Industrial Cleaning</a></li>
+    <li><a href="laundry.html">Laundry Services</a></li>
+  </ul>
+</li>
 															<li id="menu-item-79"
 																class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79">
 																<a href="./shop.html"
@@ -5625,7 +5755,7 @@ input, select, textarea {
 
 											<h1 id="typed" style="color:white; font-size:2rem; font-weight:700;"></h1>
 <script>
-  const words = ["Premium Cleaning.", "Smart Living.", "Eco-Friendly Solutions.", "Customer Satisfaction Guranteed.", "One Stop Shop for Everything Cleaning." ,"Think Spotless", "Think Reliability" , "Think Pic Cleaning ✨."];
+  const words = ["Premium Cleaning.", "Smart Living.", "Eco-Friendly Solutions.", "Customer Satisfaction Guranteed.", "One-Stop Shop for Everything Cleaning." ,"Think Spotless", "Think Reliability" , "Think Pic Cleaning ✨."];
   let i=0, j=0, current="", isDeleting=false;
   function type(){
     current = words[i].substring(0, j);
@@ -5642,7 +5772,7 @@ input, select, textarea {
 
 											<h1 class="wp-block-heading has-text-align-left" style="font-size:100px">
 												<strong><mark style="background-color:rgba(0, 0, 0, 0);color:#ffffff"
-														class="has-inline-color">Pic cleaning</mark></strong>
+														class="has-inline-color">Pic Cleaning</mark></strong>
 												<strong><mark style="background-color:rgba(0, 0, 0, 0);color:#ffffff"
 														class="has-inline-color">Services</mark></strong>
 											</h1>
