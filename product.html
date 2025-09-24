@@ -184,46 +184,474 @@
   <script>
     // Cleaned up products array with unique products
     const products = [
-      {
-        category: " Home Essentials",
-        name: "Dove beauty cream bar",
-        price: 1600,
-        image: "./Products/Dove beauty cream bar.jpeg",
-        description: "Dove Beauty Cream Bar with moisturizing cream. It gently cleanses without drying, leaving your skin soft, smooth, and radiant. Suitable for all skin types.",
-        features: [
-          "1/4 Moisturizing Cream",
-          "Gently cleanses and softens skin",
-          "Suitable for all skin types",
-          "Leaves skin radiant and smooth"
-        ]
-      },
-      {
-        category: " Home Essentials",
-        name: "Dettol skincare blossom bathing soap",
-        price: 1600,
-        image: "./Products/Dettol skincare bossom bathing soap.jpeg",
-        description: "Dettol Skincare Blossom Bathing Soap. Combines Dettol's trusted antibacterial protection with moisturizing ingredients and a delicate floral scent.",
-        features: [
-          "Trusted antibacterial protection",
-          "Enriched with moisturizers",
-          "Delicate floral scent",
-          "Suitable for daily use"
-        ]
-      },
-      {
-        category: "Laundry Care",
-        name: "CIF Cleaner Disinfectant",
-        price: 5000,
-        image: "./Products/cif.jpeg",
-        description: "CIF Cleaner Disinfectant combines powerful cleaning action with antibacterial protection. It effectively removes tough dirt, grease, and stains while killing 99.9% of germs.",
-        features: [
-          "Kills 99.9% of bacteria and viruses",
-          "Powerful degreasing action",
-          "Leaves surfaces sparkling clean",
-          "Suitable for multi-surface use"
-        ]
-      },
-  
+        {
+    category: "Cleaning Equipment & Tools",
+    name: "Metal Handle Strong Mop",
+    price: 5000,
+    image: "./Products/Strong mop(metal handle).jpeg",
+    description: "Metal Handle Strong Mop is built for durability and strength, making floor cleaning easy and effective. With its sturdy metal handle and absorbent mop head, it soaks up spills, lifts dirt, and leaves surfaces sparkling clean with less effort.",
+    features: [
+      "Sturdy metal handle for durability",
+      "Highly absorbent mop head",
+      "Effortlessly cleans spills and dirt",
+      "Leaves surfaces sparkling clean"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Scrubbing Brush",
+    price: 3500,
+    image: "./Products/Scrubbing brush.jpeg",
+    description: "Scrubbing Brush is designed with strong bristles to tackle tough stains, grime, and dirt on floors, tiles, and other surfaces. Durable and easy to grip, it makes cleaning faster, more effective, and leaves surfaces sparkling clean.",
+    features: [
+      "Strong, durable bristles",
+      "Tackles tough stains and grime",
+      "Ergonomic, easy-to-grip handle",
+      "Ideal for floors, tiles, and surfaces"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Mama Lemon Dishwashing Liquid",
+    price: 1500,
+    image: "./Products/Mama lemon dishwashing liquid .jpeg",
+    description: "Mama Lemon Dishwashing Liquid cuts through grease and tough food stains, leaving your dishes sparkling clean with a refreshing lemon scent. It creates rich, lasting foam and rinses easily, making dishwashing faster, fresher, and gentle on your hands.",
+    features: [
+      "Powerful grease-cutting formula",
+      "Refreshing lemon scent",
+      "Creates rich, lasting foam",
+      "Gentle on hands"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Dust Pan and Brush",
+    price: 4500,
+    image: "./Products/Dust pan and brush .jpeg",
+    description: "Keep your space clean and tidy with this practical dustpan and brush set. The brush features durable bristles that sweep up dust, dirt, and crumbs with ease. Its compact design allows you to reach corners, edges, and tight spaces effortlessly. The dustpan collects debris quickly, making cleaning fast and efficient.",
+    features: [
+      "Durable bristles for effective sweeping",
+      "Compact design for hard-to-reach areas",
+      "Quick and efficient debris collection",
+      "Lightweight and easy to use"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Expandable Spin Mop and Bucket",
+    price: 18000,
+    image: "./Products/Expandable spin mop and bucket.jpeg",
+    description: "Make floor cleaning effortless with this expandable spin mop and bucket set. The mop handle adjusts to your preferred length, letting you reach high and low areas with ease. Its microfiber mop head spins to remove dirt and excess water efficiently, keeping your hands dry. The durable bucket features a built-in wringer, making rinsing and wringing simple and hygienic.",
+    features: [
+      "Expandable handle for extended reach",
+      "Microfiber mop head for efficient cleaning",
+      "Hands-free spin wringer",
+      "Hygienic and easy to use"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Cobwebs Remover",
+    price: 2500,
+    image: "./Products/Cobwebs remover.jpeg",
+    description: "Easily remove cobwebs from ceilings and corners. It reaches high and hard-to-access spots without a ladder. Lightweight and comfortable to hold, this tool is perfect for quick touch-ups or deep cleaning, making the process faster, safer, and hassle-free.",
+    features: [
+      "Extended reach without a ladder",
+      "Lightweight and comfortable to hold",
+      "Durable design for long-lasting use",
+      "Perfect for home, office, or garage"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Carex Antiseptic",
+    price: 2500,
+    image: "./Products/Carex antiseptic.jpeg",
+    description: "Carex Antiseptic offers reliable protection for everyday hygiene and first aid. Specially formulated to kill germs and bacteria, it helps prevent infection from cuts, grazes, insect bites, and minor wounds. Gentle on the skin yet powerful against germs, it's safe for the whole family.",
+    features: [
+      "Kills germs and bacteria effectively",
+      "Prevents infection in minor wounds",
+      "Gentle on skin, safe for the whole family",
+      "Can be used for personal hygiene and household disinfection"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Dettol Antiseptic",
+    price: 4000,
+    image: "./Products/Dettol Antiseptic.jpeg",
+    description: "Protect your family with the trusted power of Dettol Antiseptic. Specially formulated to kill germs and bacteria, it provides reliable protection against infections from cuts, scratches, and insect bites. This versatile solution can be used for personal hygiene, first aid, and household disinfection.",
+    features: [
+      "Kills germs and bacteria",
+      "Trusted infection protection",
+      "Versatile for home and personal use",
+      "Gentle on skin, tough on germs"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Dettol Antiseptic (750ml)",
+    price: 11500,
+    image: "./Products/Dettol antiseptic (750ml).jpeg",
+    description: "Protect your family with the trusted power of Dettol Antiseptic. Specially formulated to kill germs and bacteria, it provides reliable protection against infections from cuts, scratches, and insect bites. This versatile solution can be used for personal hygiene, first aid, and household disinfection. Ideal for everyday use, it helps maintain a healthy and hygienic environment.",
+    features: [
+      "Large 750ml bottle for long-term use",
+      "Kills germs and bacteria effectively",
+      "Protects against infections in minor wounds",
+      "Suitable for personal and household use"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Toothbrush Holder",
+    price: 4000,
+    image: "./Products/Toothbrush holder.jpeg",
+    description: "Keep your toothbrushes clean, dry, and neatly stored with this practical toothbrush holder. Designed to hold multiple brushes, it helps you organize your bathroom space with ease. Its durable build ensures long-lasting use, while the sleek design complements any bathroom décor.",
+    features: [
+      "Keeps toothbrushes clean and dry",
+      "Holds multiple brushes",
+      "Organizes bathroom space",
+      "Durable and stylish design"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Glass Tissue Holder",
+    price: 9000,
+    image: "./Products/Glass tissue holder.jpeg",
+    description: "Add elegance to your space with this stylish glass tissue holder. Durable, easy to clean, and perfect for keeping tissues neatly organized in any room.",
+    features: [
+      "Stylish and elegant design",
+      "Made from durable glass",
+      "Keeps tissues neatly organized",
+      "Easy to clean"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Two-Space Aluminum Bathroom Shelf",
+    price: 18000,
+    image: "./Products/two-space-aluminum-shelf.jpeg",
+    description: "Organize your bathroom essentials with this sleek two-space aluminum shelf. Made from strong, rust-resistant aluminum, it is built to withstand moisture and daily use. The double-layer design provides ample space for soaps, shampoos, lotions, and more while keeping your bathroom neat and tidy.",
+    features: [
+      "Two-tier design for ample storage",
+      "Made from rust-resistant aluminum",
+      "Sleek and modern look",
+      "Easy to install and clean"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Bathlux Toilet Tissue Holder",
+    price: 4000,
+    image: "./Products/Two space aluminum bathroom shelf.jpeg",
+    description: "Add convenience and style to your bathroom with the Bathlux Toilet Tissue Holder. Made from high-quality materials, it is durable, easy to clean, and resistant to daily wear. Its sleek and modern design blends seamlessly with any bathroom décor while keeping tissues neatly in place.",
+    features: [
+      "Durable and high-quality materials",
+      "Sleek and modern design",
+      "Keeps tissue roll neatly in place",
+      "Easy to clean"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Mini Hanger",
+    price: 4000,
+    image: "./Products/cloth hanger.jpeg",
+    description: "Keep your wardrobe organized with this durable pant hanger. Designed to hold trousers, skirts, and other clothing items neatly, it helps save closet space while preventing wrinkles. The sturdy build ensures long-lasting use, while the smooth finish protects fabrics from damage.",
+    features: [
+      "Durable and sturdy build",
+      "Holds trousers and skirts neatly",
+      "Saves closet space",
+      "Prevents wrinkles"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Water Bowl (Bella)",
+    price: 2000,
+    image: "./Products/Water bowl (Bella).jpeg",
+    description: "This durable water bowl is designed for everyday convenience and reliability. Made from high-quality materials, it is sturdy, easy to clean, and long-lasting. Its simple yet practical design makes it perfect for serving water, beverages, or even for multipurpose household use.",
+    features: [
+      "Durable and high-quality materials",
+      "Sturdy and long-lasting",
+      "Easy to clean",
+      "Multipurpose household use"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Blossom Stainless Mop",
+    price: 5500,
+    image: "./Products/Blossom stainless mop.jpeg",
+    description: "Clean with ease and durability using the Blossom Stainless Mop. Built with a strong stainless-steel handle, it offers long-lasting performance and comfort while mopping. The high-quality mop head absorbs water and dirt efficiently, leaving your floors spotless. Its lightweight design makes it easy to maneuver, perfect for both home and commercial cleaning.",
+    features: [
+      "Strong stainless-steel handle",
+      "High-quality, absorbent mop head",
+      "Lightweight and easy to maneuver",
+      "Suitable for home and commercial cleaning"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Blossom Automatic Hand Dryer (Small)",
+    price: 45000,
+    image: "./Products/Blossom automatic hand dryer(small).jpeg",
+    description: "Enjoy fast and hygienic hand drying with the Blossom Automatic Hand Dryer. Compact in size yet powerful in performance, it delivers quick drying while saving energy. The touch-free sensor technology ensures a more hygienic experience, reducing the spread of germs. Made from durable materials, it is built to last and easy to maintain.",
+    features: [
+      "Automatic, touch-free sensor",
+      "Fast and hygienic drying",
+      "Compact, space-saving design",
+      "Energy-efficient and durable"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Toothbrush and Paste Holder",
+    price: 5000,
+    image: "./Products/Toothbrush and paste holder.jpeg",
+    description: "Keep your bathroom neat and organized with this convenient toothbrush and paste holder. Designed to store multiple toothbrushes and toothpaste in one place, it saves space while promoting hygiene. The upright design allows proper air circulation, keeping brushes dry and fresh.",
+    features: [
+      "Stores multiple brushes and toothpaste",
+      "Saves space and organizes bathroom",
+      "Promotes hygiene by keeping brushes dry",
+      "Durable and easy to clean"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Plunger (Big)",
+    price: 4000,
+    image: "./Products/Plunger(big).jpeg",
+    description: "Clear clogs quickly and easily with this durable plunger. Designed with a strong suction cup, it creates powerful pressure to remove blockages from sinks, toilets, and drains. The sturdy handle provides a firm, comfortable grip for effective plunging.",
+    features: [
+      "Strong suction for powerful pressure",
+      "Clears clogs from sinks and toilets",
+      "Sturdy, comfortable grip handle",
+      "Durable and effective"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Blossom Soap Holder",
+    price: 4000,
+    image: "./Products/Blossom soap holder.jpeg",
+    description: "Keep your soap clean, dry, and within reach with the Blossom Soap Holder. Designed with durability and style in mind, it prevents soap from slipping or melting away quickly. Its sleek design adds a touch of elegance to any bathroom or kitchen space. Easy to clean and maintain, it ensures convenience for everyday use.",
+    features: [
+      "Keeps soap clean and dry",
+      "Prevents soap from slipping",
+      "Sleek and elegant design",
+      "Easy to clean and maintain"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Adjustable Towel Rack",
+    price: 20000,
+    image: "./Products/Adjustable towel rack.jpeg",
+    description: "Organize your bathroom with ease using this adjustable towel rack. Designed to hold multiple towels, it adjusts to fit your space while keeping towels neatly arranged. Made from durable, rust-resistant materials, it is built to withstand daily use and moisture. Its sleek, modern design complements any bathroom décor while saving space.",
+    features: [
+      "Adjustable length to fit any space",
+      "Holds multiple towels",
+      "Made from rust-resistant materials",
+      "Sleek, modern design"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Single Towel Rack",
+    price: 5000,
+    image: "./Products/Single towel rack.jpeg",
+    description: "Keep your bathroom simple and organized with this single towel rack. Designed to hold one towel at a time, it's perfect for compact spaces while maintaining a neat look. Made from durable, rust-resistant materials, it ensures long-lasting use even in humid conditions. Its sleek and minimal design blends seamlessly with any bathroom décor.",
+    features: [
+      "Ideal for compact spaces",
+      "Durable and rust-resistant",
+      "Holds one towel neatly",
+      "Sleek and minimal design"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Bath Mat",
+    price: 5000,
+    image: "./Products/Bath mat.jpeg",
+    description: "Step out of the shower in comfort and safety with this soft, absorbent bath mat. Designed to soak up water quickly, it keeps your bathroom floor dry and slip-free. The non-slip backing provides stability, preventing accidents on wet surfaces. Made from durable, easy-to-clean materials, it's built for everyday use. Its stylish design adds a touch of elegance to any bathroom décor.",
+    features: [
+      "Soft, absorbent and quick-drying",
+      "Non-slip backing for safety",
+      "Durable and easy to clean",
+      "Adds a stylish touch to any bathroom"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Bathlux Tissue Holder",
+    price: 3500,
+    image: "./Products/Bathlux tissue holder.jpeg",
+    description: "Add style and convenience to your bathroom with the Bathlux Tissue Holder. Crafted from high-quality materials, it is durable, easy to clean, and resistant to daily wear. Its modern and sleek design blends seamlessly with any décor while keeping tissues neatly stored and accessible. Compact yet functional, it helps save space and keeps your bathroom organized.",
+    features: [
+      "High-quality and durable",
+      "Sleek and modern design",
+      "Keeps tissues neatly stored",
+      "Compact and space-saving"
+    ]
+  },
+  {
+    category: "Bathroom Accessories",
+    name: "Haoxin Shower Curtain",
+    price: 5000,
+    image: "./Products/Haoxin shower curtain .jpeg",
+    description: "Upgrade your bathroom with the Hoaxin Shower Curtain, designed to combine style and functionality. Made from high-quality, water-resistant fabric, it keeps your bathroom floor dry while adding a modern touch to your space. The durable material is easy to clean and built to last, ensuring long-term use. Lightweight and simple to install, it fits most standard shower rods with ease.",
+    features: [
+      "High-quality, water-resistant fabric",
+      "Adds a modern touch to the bathroom",
+      "Durable and easy to clean",
+      "Fits most standard shower rods"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Laundry Bag",
+    price: 8000,
+    image: "./Products/Laundry bagjpeg",
+    description: "Keep your dirty clothes neatly stored with this durable laundry bag. Made from strong, breathable fabric, it allows airflow to prevent odors while keeping laundry organized. Its lightweight design and sturdy handles make it easy to carry from room to room or to the laundromat. Spacious enough to hold a full load, it's perfect for homes, hostels, or travel use.",
+    features: [
+      "Durable, breathable fabric",
+      "Lightweight with sturdy handles",
+      "Prevents odors by allowing airflow",
+      "Spacious enough for a full load"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Baby Hanger",
+    price: 2000,
+    image: "./Products/Baby hanger.jpeg",
+    description: "Keep your little one's clothes neatly organized with this durable baby hanger. Specially designed to fit baby and toddler clothing, it prevents stretching and slipping. Made from strong yet lightweight material, it's safe, sturdy, and easy to use. The smooth finish protects delicate fabrics while keeping outfits in perfect shape.",
+    features: [
+      "Perfectly sized for baby clothes",
+      "Prevents stretching and slipping",
+      "Strong and lightweight material",
+      "Protects delicate fabrics"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Industrial Glass Wiper",
+    price: 12000,
+    image: "./Products/Industrial glass wiper.jpeg",
+    description: "Achieve spotless, streak-free surfaces with this heavy-duty industrial glass wiper. Designed for professional cleaning, it removes water, dirt, and smudges effortlessly from windows, mirrors, and glass panels. The strong handle provides a firm grip, while the wide blade covers large areas quickly and efficiently. Built with durable materials, it withstands frequent use in commercial and industrial settings.",
+    features: [
+      "Heavy-duty for industrial use",
+      "Achieves spotless, streak-free surfaces",
+      "Wide blade for efficient cleaning",
+      "Durable materials for frequent use"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Blossom Caution Sign",
+    price: 10000,
+    image: "./Products/Blossom caution sign.jpeg",
+    description: "Ensure safety in your space with the Blossom Caution Sign, designed to effectively warn of wet or hazardous floors. Its bold lettering and bright yellow color provide clear visibility from a distance, reducing the risk of slips and falls. Lightweight yet sturdy, it's easy to place, move, and store after use.",
+    features: [
+      "Highly visible bold lettering",
+      "Warns of wet or hazardous floors",
+      "Lightweight and sturdy",
+      "Reduces risk of slips and falls"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "PVC Mop",
+    price: 8500,
+    image: "./Products/PVC mop.jpeg",
+    description: "Keep your floors spotless with the durable PVC Mop, designed for everyday cleaning. Its strong PVC handle provides a comfortable grip, while the absorbent mop head soaks up water and dirt with ease. Lightweight yet sturdy, it's easy to maneuver around corners and under furniture. Ideal for homes, offices, and commercial spaces, this mop makes cleaning faster and more efficient.",
+    features: [
+      "Strong PVC handle for a comfortable grip",
+      "Absorbent mop head for efficient cleaning",
+      "Lightweight and easy to maneuver",
+      "Suitable for homes, offices, and commercial spaces"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "30-Liter Pedal Waste Bin",
+    price: 35000,
+    image: "./Products/30 liter padel waste bin.jpeg",
+    description: "Dispose of waste easily and hygienically with this durable Pedal Waste Bin. Designed with a foot pedal for hands-free use, it helps maintain cleanliness and prevents the spread of germs. Its sturdy build and sleek design make it suitable for kitchens, offices, bathrooms, and other spaces. Easy to clean and convenient to use, this bin is a practical addition to any home or workplace.",
+    features: [
+      "30-liter capacity",
+      "Hands-free foot pedal operation",
+      "Hygienic and easy to clean",
+      "Sturdy and durable build"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Blossom Square Pedal Bin (3-Liter)",
+    price: 18000,
+    image: "./Products/Blossom square pedal bin(3liter).jpeg",
+    description: "Maintain a clean and hygienic space with the Blossom Square Pedal Waste Bin. Its hands-free pedal design makes waste disposal effortless and germ-free, while the square shape offers a modern look that fits neatly into corners and tight spaces. Built with durable materials, it is sturdy, easy to clean, and perfect for homes, offices, bathrooms, and kitchens.",
+    features: [
+      "3-liter capacity",
+      "Hands-free pedal design",
+      "Space-saving square shape",
+      "Modern and durable"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Blossom Pedal Trash Can (6-Liter)",
+    price: 25000,
+    image: "./Products/Blossom padel trash can(6 liter).jpeg",
+    description: "Keep your space tidy with the Blossom Pedal Trash Can, designed with a 6-liter capacity for everyday use. Its foot pedal allows hands-free disposal, promoting hygiene and convenience. Compact yet durable, it fits perfectly in bathrooms, bedrooms, and offices. Stylish and easy to clean, it's the ideal solution for small-space waste management.",
+    features: [
+      "6-liter capacity for small spaces",
+      "Hands-free foot pedal operation",
+      "Compact and durable",
+      "Stylish and hygienic"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Industrial Cobweb Remover",
+    price: 14000,
+    image: "./Products/Industrial cobweb remover.jpeg",
+    description: "Easily clear ceilings and corners with the Industrial Cobweb Remover, designed for heavy-duty cleaning. Its strong, lightweight handle provides extended reach, while the specially designed bristles sweep away cobwebs and dust without damaging surfaces. Durable and easy to use, it's perfect for warehouses, offices, homes, and other large spaces.",
+    features: [
+      "Extended reach for heavy-duty cleaning",
+      "Strong and lightweight handle",
+      "Specialized bristles for effective removal",
+      "Durable for long-lasting use"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Kitchen Wash King Scourer",
+    price: 1500,
+    image: "./Products/Kitchen wash king scourer.jpeg",
+    description: "Tackle tough stains and grease with the Kitchen Wash King Scourer, designed for powerful cleaning without scratching. Its durable texture easily removes stubborn dirt from pots, pans, and kitchen surfaces, leaving them sparkling clean. Lightweight, easy to hold, and long-lasting, it's the perfect tool for everyday dishwashing and heavy-duty scrubbing.",
+    features: [
+      "Tackles tough stains and grease",
+      "Durable texture for powerful cleaning",
+      "Non-scratch design",
+      "Lightweight and easy to hold"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "CIF Cleaner Disinfectant",
+    price: 5000,
+    image: "./Products/cif.jpeg",
+    description: "CIF Cleaner Disinfectant combines powerful cleaning action with antibacterial protection. It effectively removes tough dirt, grease, and stains while killing 99.9% of germs.",
+    features: [
+      "Kills 99.9% of bacteria and viruses",
+      "Powerful degreasing action",
+      "Leaves surfaces sparkling clean",
+      "Suitable for multi-surface use"
+    ]
+  },
   {
     category: "Cleaning Equipment & Tools",
     name: "Rubber Toilet brush",
@@ -237,7 +665,6 @@
       "Ergonomic handle for comfortable use"
     ]
   },
-
   {
     category: "Cleaning Equipment & Tools",
     name: "Parker",
@@ -252,7 +679,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Shaving stick one pack",
     price: 1500,
     image: "./Products/shave1pack.jpeg",
@@ -264,22 +691,21 @@
       "Convenient single pack"
     ]
   },
-
   {
-    category: "Laundry Care",
-    name: "Hypo",
-    price: 3500,
-    image: "./Products/hypo.jpeg",
-    description: "Hypo Bleach delivers powerful disinfecting and whitening action. Ideal for sterilizing surfaces, bleaching laundry, and general household sanitation.",
+    category: "Home Essentials",
+    name: "Colgate toothpaste",
+    price: 2000,
+    image: "./Products/colgate.jpeg",
+    description: "Colgate Cavity Protection Toothpaste, enriched with fluoride to strengthen teeth and fight cavities. Cleans thoroughly and promotes fresh breath.",
     features: [
-      "Powerful disinfecting bleach",
-      "Whitens and brightens laundry",
-      "Removes stubborn stains",
-      "Suitable for general sanitation"
+      "Fluoride formula fights cavities",
+      "Strengthens tooth enamel",
+      "Provides thorough cleaning",
+      "Promotes fresh breath"
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Cleaning Products",
     name: "Iron sponge",
     price: 500,
     image: "./Products/ironsponge.jpeg",
@@ -292,7 +718,7 @@
     ]
   },
   {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "Good Mama Detergent",
     price: 2000,
     image: "./Products/goodmamadet.jpeg",
@@ -318,7 +744,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Floss",
     price: 1500,
     image: "./Products/floss.jpeg",
@@ -330,7 +756,6 @@
       "Long-lasting roll"
     ]
   },
-
   {
     category: "Cleaning Equipment & Tools",
     name: "Long Brush",
@@ -345,33 +770,7 @@
     ]
   },
   {
-    category: " Eco-Friendly & Specialty",
-    name: "Air wick",
-    price: 4000,
-    image: "./Products/airwick.jpeg",
-    description: "Air Wick Automatic Air Freshener provides continuous, long-lasting fragrance to any room. Eliminates odors and creates a fresh, inviting atmosphere.",
-    features: [
-      "Continuous fragrance release",
-      "Eliminates tough odors",
-      "Adjustable fragrance settings",
-      "Creates a fresh, inviting atmosphere"
-    ]
-  },
-  {
-    category: " Home Essentials",
-    name: "Baby toothbrush",
-    price: 900,
-    image: "./Products/babytoothbrush.jpeg",
-    description: "Soft-bristled toothbrush specially designed for an infant's first teeth and sensitive gums. Small head and gentle design ensure safe and comfortable brushing.",
-    features: [
-      "Extra-soft bristles for infants",
-      "Small head for tiny mouths",
-      "Safe and comfortable design",
-      "Easy-grip handle for adults"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Black soap",
     price: 5000,
     image: "./Products/blacksoap.jpeg",
@@ -385,23 +784,10 @@
   },
   {
     category: "Cleaning Products",
-    name: "Blossom polish",
-    price: 3000,
-    image: "./Products/blossom.jpeg",
-    description: "Blossom Multi-Purpose Polish cleans, protects, and restores shine to various surfaces, including wood and laminate. Leaves a pleasant, lasting fragrance.",
-    features: [
-      "Cleans, protects, and shines",
-      "Suitable for multi-surfaces",
-      "Restores wood and laminate shine",
-      "Pleasant, long-lasting fragrance"
-    ]
-  },
-  {
-    category: "Cleaning Products",
     name: "CIF Floor cleaner",
     price: 5000,
     image: "./Products/ciffloorcleaner.jpeg",
-    description: "CIF Floor Cleaner is specially formulated to remove dirt and grime while protecting your floors’ natural shine. Leaves a spotless finish and a fresh scent.",
+    description: "CIF Floor Cleaner is specially formulated to remove dirt and grime while protecting your floors' natural shine. Leaves a spotless finish and a fresh scent.",
     features: [
       "Removes dirt, grease, and grime",
       "Protects floor shine",
@@ -410,7 +796,7 @@
     ]
   },
   {
-    category: "Laundry Care",
+    category: "Cleaning Products",
     name: "Clorox disinfecting wipes",
     price: 3500,
     image: "./Products/clorox wipes.jpeg",
@@ -422,9 +808,21 @@
       "Fresh, clean scent"
     ]
   },
-
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
+    name: "Cutton bud",
+    price: 1200,
+    image: "./Products/cutton bud.jpeg",
+    description: "Soft and absorbent cotton buds perfect for delicate cleaning, makeup correction, and personal hygiene. Packaged for convenience and hygiene.",
+    features: [
+      "Soft and highly absorbent cotton",
+      "Ideal for precise cleaning",
+      "Suitable for delicate areas",
+      "Hygienic packaging"
+    ]
+  },
+  {
+    category: "Home Essentials",
     name: "Kids milk teeth",
     price: 2500,
     image: "./Products/kids milk teeth.jpeg",
@@ -436,35 +834,8 @@
       "Protects against early cavities"
     ]
   },
-  
   {
-    category: "Cleaning Equipment & Tools",
-    name: "long brush and paker",
-    price: 5000,
-    image: "./Products/long brush and paker.jpeg",
-    description: "A set combining a long-handled brush for scrubbing and a matching dustpan with a rubber lip for efficient dirt collection. Ideal for home and commercial use.",
-    features: [
-      "Complete sweeping and scrubbing set",
-      "Long handle for less bending",
-      "Efficient rubber-lip dustpan",
-      "Durable construction"
-    ]
-  },
-  {
-    category: "Cleaning Equipment & Tools",
-    name: "Wooden long brush",
-    price: 3500,
-    image: "./Products/long brush.jpeg",
-    description: "Multi-purpose long-handled utility brush with stiff, angled bristles for reaching corners and scrubbing tough floor stains without excessive bending.",
-    features: [
-      "Long handle for extended reach",
-      "Stiff, angled bristles",
-      "Ideal for grout and corners",
-      "Reduces back strain"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Cleaning Products",
     name: "metal sponge",
     price: 1500,
     image: "./Products/metal sponge.jpeg",
@@ -529,7 +900,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Oral B",
     price: 1900,
     image: "./Products/oral b.jpeg",
@@ -541,7 +912,6 @@
       "Ergonomic handle"
     ]
   },
-
   {
     category: "Cleaning Equipment & Tools",
     name: "pressure washer (80000)",
@@ -569,7 +939,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Shaving bic",
     price: 1500,
     image: "./Products/shaving bic.jpeg",
@@ -582,7 +952,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Cleaning Products",
     name: "Sponge",
     price: 2000,
     image: "./Products/sponge.jpeg",
@@ -595,47 +965,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Toothbrush",
-    price: 700,
-    image: "./Products/toothbrush.jpeg",
-    description: "Standard manual toothbrush with soft to medium bristles for effective plaque removal and gum massage. Essential for daily oral care.",
-    features: [
-      "Effective plaque removal",
-      "Soft to medium bristles",
-      "Comfortable ergonomic design",
-      "Essential daily oral care"
-    ]
-  },
-
-  {
-    category: "Cleaning Equipment & Tools",
-    name: "Upholstery machine",
-    price: 450000,
-    image: "./Products/upholstery machine.jpeg",
-    description: "Professional upholstery cleaning machine designed to deep-clean fabric furniture, removing embedded dirt, stains, and odors, leaving surfaces fresh.",
-    features: [
-      "Professional deep-cleaning power",
-      "Removes embedded dirt and stains",
-      "Ideal for sofas and car seats",
-      "Leaves fabric fresh and revitalized"
-    ]
-  },
-  {
-    category: " Home Essentials",
-    name: "Viva bar soap",
-    price: 950,
-    image: "./Products/viva bar soap.jpeg",
-    description: "Viva Bar Soap provides a rich lather that cleanses thoroughly while leaving a fresh, mild scent. Gentle on the skin for daily bathing.",
-    features: [
-      "Rich, thick lather",
-      "Thoroughly cleanses skin",
-      "Fresh, mild scent",
-      "Suitable for daily bathing"
-    ]
-  },
-  {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "Waw detergent",
     price: 1800,
     image: "./Products/waw detergent.jpeg",
@@ -648,20 +978,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Bathroom mat",
-    price: 6000,
-    image: "./Products/mat.jpeg",
-    description: "A soft, absorbent bathroom mat designed for safety and comfort. It features a non-slip backing to prevent accidents and keeps your floor dry and stylish.",
-    features: [
-      "Soft and comfortable texture",
-      "Non-slip safety backing",
-      "High water absorbency",
-      "Durable and machine-washable"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Microfiber Towel",
     price: 2000,
     image: "./Products/mict.jpeg",
@@ -674,59 +991,20 @@
     ]
   },
   {
-    category: "Cleaning Equipment & Tools",
-    name: "Parker",
-    price: 2000,
-    image: "./Products/par.jpeg",
-    description: "A durable, lightweight dustpan designed with a long handle to make sweeping and collecting dirt easy without bending. Pairs perfectly with any broom.",
+    category: "Laundry Care",
+    name: "Hypo",
+    price: 3500,
+    image: "./Products/hypo.jpeg",
+    description: "Hypo Bleach delivers powerful disinfecting and whitening action. Ideal for sterilizing surfaces, bleaching laundry, and general household sanitation.",
     features: [
-      "Durable and lightweight design",
-      "Long handle for comfortable use",
-      "Efficient dirt collection lip",
-      "Easy to store"
+      "Powerful disinfecting bleach",
+      "Whitens and brightens laundry",
+      "Removes stubborn stains",
+      "Suitable for general sanitation"
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Shaving stick one pack",
-    price: 1500,
-    image: "./Products/shave1pack.jpeg",
-    description: "Single-use shaving sticks for a quick, close, and comfortable shave. Features a lubricating strip to reduce irritation and ensure smooth gliding.",
-    features: [
-      "Quick and comfortable shave",
-      "Lubricating strip for smoothness",
-      "Reduces skin irritation",
-      "Convenient single pack"
-    ]
-  },
-  {
-    category: " Home Essentials",
-    name: "Colgate toothpaste",
-    price: 2000,
-    image: "./Products/colgate.jpeg",
-    description: "Colgate Cavity Protection Toothpaste, enriched with fluoride to strengthen teeth and fight cavities. Cleans thoroughly and promotes fresh breath.",
-    features: [
-      "Fluoride formula fights cavities",
-      "Strengthens tooth enamel",
-      "Provides thorough cleaning",
-      "Promotes fresh breath"
-    ]
-  },
-  {
-    category: " Home Essentials",
-    name: "Iron sponge",
-    price: 500,
-    image: "./Products/ironsponge.jpeg",
-    description: "Heavy-duty wire wool/iron sponge for tackling baked-on food, grease, and tough grime on pots, pans, and grills. Not recommended for delicate surfaces.",
-    features: [
-      "Heavy-duty grease removal",
-      "Tackles baked-on food",
-      "Durable wire construction",
-      "Ideal for metal pots and pans"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Bathing sponge",
     price: 1500,
     image: "./Products/spongebath.jpeg",
@@ -736,45 +1014,6 @@
       "Creates rich, thick lather",
       "Mild exfoliating action",
       "Durable and quick-drying"
-    ]
-  },
-  {
-    category: "Cleaning Products",
-    name: "Good Mama Detergent",
-    price: 2000,
-    image: "./Products/goodmamadet.jpeg",
-    description: "Good Mama Laundry Detergent is formulated with powerful enzymes to remove tough stains and dirt, leaving clothes clean, bright, and smelling fresh.",
-    features: [
-      "Powerful stain removal",
-      "Leaves clothes bright and fresh",
-      "Suitable for hand or machine wash",
-      "Good foaming action"
-    ]
-  },
-  {
-    category: "Cleaning Equipment & Tools",
-    name: "Strong Mop",
-    price: 5000,
-    image: "./Products/mop.jpeg",
-    description: "A robust and absorbent string mop designed for heavy-duty floor cleaning. Features a strong, durable handle for effective scrubbing and wringing.",
-    features: [
-      "Robust and absorbent strings",
-      "Durable, strong handle",
-      "Ideal for large floor areas",
-      "Effective scrubbing power"
-    ]
-  },
-  {
-    category: " Home Essentials",
-    name: "Floss",
-    price: 1500,
-    image: "./Products/floss.jpeg",
-    description: "Waxed dental floss designed to easily glide between teeth, removing plaque and food particles where a toothbrush can't reach. Promotes healthy gums.",
-    features: [
-      "Waxed for easy gliding",
-      "Removes hidden plaque",
-      "Essential for gum health",
-      "Long-lasting roll"
     ]
   },
   {
@@ -791,7 +1030,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Peg Set",
     price: 2500,
     image: "./Products/pegs.jpeg",
@@ -804,20 +1043,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Baby&Me",
-    price: 700,
-    image: "./Products/baby&me.jpeg",
-    description: "Baby&Me Tissue Paper is extra soft and gentle, specifically formulated for sensitive skin. Provides comfort and reliable hygiene for both baby and adults.",
-    features: [
-      "Extra soft and gentle",
-      "Suitable for sensitive skin",
-      "Highly absorbent",
-      "Reliable and durable"
-    ]
-  },
-  {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "Viva plus",
     price: 2500,
     image: "./Products/viva.jpeg",
@@ -830,7 +1056,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Baby toothbrush",
     price: 900,
     image: "./Products/babytoothbrush.jpeg",
@@ -843,20 +1069,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Black soap",
-    price: 5000,
-    image: "./Products/blacksoap.jpeg",
-    description: "Traditional African Black Soap known for its deep cleansing and nourishing properties. Made with natural ingredients, it gently exfoliates and helps improve skin tone.",
-    features: [
-      "Traditional African formula",
-      "Deeply cleansing and exfoliating",
-      "Made with natural ingredients",
-      "Nourishes and improves skin tone"
-    ]
-  },
-  {
-    category: " Eco-Friendly & Specialty",
+    category: "Eco-Friendly & Specialty",
     name: "BNC insecticide",
     price: 3500,
     image: "./Products/bncinsectide.jpeg",
@@ -869,20 +1082,7 @@
     ]
   },
   {
-    category: "Cleaning Products",
-    name: "CIF Floor cleaner",
-    price: 5000,
-    image: "./Products/ciffloorcleaner.jpeg",
-    description: "CIF Floor Cleaner is specially formulated to remove dirt and grime while protecting your floors’ natural shine. Leaves a spotless finish and a fresh scent.",
-    features: [
-      "Removes dirt, grease, and grime",
-      "Protects floor shine",
-      "Suitable for various floor types",
-      "Long-lasting fresh fragrance"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Close up toothpaste",
     price: 1800,
     image: "./Products/close up toothpaste.jpeg",
@@ -895,7 +1095,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Hanger",
     price: 5000,
     image: "./Products/hanger.jpeg",
@@ -908,33 +1108,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Cutton bud",
-    price: 1200,
-    image: "./Products/cutton bud.jpeg",
-    description: "Soft and absorbent cotton buds perfect for delicate cleaning, makeup correction, and personal hygiene. Packaged for convenience and hygiene.",
-    features: [
-      "Soft and highly absorbent cotton",
-      "Ideal for precise cleaning",
-      "Suitable for delicate areas",
-      "Hygienic packaging"
-    ]
-  },
-  {
-    category: " Home Essentials",
-    name: "Kids milk teeth",
-    price: 2500,
-    image: "./Products/kids milk teeth.jpeg",
-    description: "Kids Milk Teeth Toothpaste is specially formulated for children's developing teeth. Contains age-appropriate fluoride and a mild, appealing flavor to encourage brushing.",
-    features: [
-      "Formulated for kids' milk teeth",
-      "Age-appropriate fluoride",
-      "Mild, appealing flavor",
-      "Protects against early cavities"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Kitchen towel",
     price: 1500,
     image: "./Products/kitchen towel.jpeg",
@@ -948,15 +1122,15 @@
   },
   {
     category: "Cleaning Equipment & Tools",
-    name: "long brush",
-    price: 3500,
-    image: "./Products/long brush.jpeg",
-    description: "Multi-purpose long-handled utility brush with stiff, angled bristles for reaching corners and scrubbing tough floor stains without excessive bending.",
+    name: "long brush and paker",
+    price: 5000,
+    image: "./Products/long brush and paker.jpeg",
+    description: "A set combining a long-handled brush for scrubbing and a matching dustpan with a rubber lip for efficient dirt collection. Ideal for home and commercial use.",
     features: [
-      "Long handle for extended reach",
-      "Stiff, angled bristles",
-      "Ideal for grout and corners",
-      "Reduces back strain"
+      "Complete sweeping and scrubbing set",
+      "Long handle for less bending",
+      "Efficient rubber-lip dustpan",
+      "Durable construction"
     ]
   },
   {
@@ -973,59 +1147,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "metal sponge",
-    price: 1500,
-    image: "./Products/metal sponge.jpeg",
-    description: "Tough metallic sponge ideal for removing heavily burnt food, rust, and stubborn grease from kitchenware and industrial surfaces. Highly durable.",
-    features: [
-      "Removes burnt food and rust",
-      "Tough, metallic construction",
-      "Highly durable and long-lasting",
-      "Ideal for heavy-duty scrubbing"
-    ]
-  },
-  {
-    category: "Cleaning Equipment & Tools",
-    name: "mop bucket",
-    price: 5000,
-    image: "./Products/mop bucket.jpeg",
-    description: "A sturdy mop bucket with a built-in wringer mechanism to effortlessly remove excess water from your mop. Durable plastic construction and a comfortable handle.",
-    features: [
-      "Sturdy wringer mechanism",
-      "Durable plastic construction",
-      "Comfortable carrying handle",
-      "Large capacity design"
-    ]
-  },
-  {
-    category: "Cleaning Products",
-    name: "morning fresh big",
-    price: 3500,
-    image: "./Products/morning fresh big.jpeg",
-    description: "Large-sized Morning Fresh Dishwashing Liquid. Cuts through grease instantly and leaves dishes sparkling clean with a fresh, mild scent. Economical for frequent use.",
-    features: [
-      "Large, economical size",
-      "Cuts through grease instantly",
-      "Leaves dishes sparkling clean",
-      "Mild on hands"
-    ]
-  },
-  {
-    category: "Cleaning Products",
-    name: "morning fresh",
-    price: 1500,
-    image: "./Products/morning fresh.jpeg",
-    description: "Morning Fresh Dishwashing Liquid. Cuts through grease instantly and leaves dishes sparkling clean with a fresh, mild scent. Highly effective, even in cold water.",
-    features: [
-      "Instantly cuts through grease",
-      "Leaves dishes sparkling",
-      "Effective even in cold water",
-      "Mild and gentle on hands"
-    ]
-  },
-  {
-    category: " Eco-Friendly & Specialty",
+    category: "Eco-Friendly & Specialty",
     name: "mortein insecticide",
     price: 4500,
     image: "./Products/mortein insecticide.jpeg",
@@ -1038,20 +1160,7 @@
     ]
   },
   {
-    category: "Cleaning Products",
-    name: "Mr sheen",
-    price: 2500,
-    image: "./Products/mr sheen.jpeg",
-    description: "Mr Sheen Multi-Surface Cleanser removes dust, fingerprints, and everyday dirt from various surfaces. Quick-drying, streak-free formula restores shine.",
-    features: [
-      "Multi-surface cleaning",
-      "Removes dust and fingerprints",
-      "Quick-drying, streak-free",
-      "Restores natural surface shine"
-    ]
-  },
-  {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "Nittol Detergent",
     price: 2000,
     image: "./Products/nittol detergent.jpeg",
@@ -1077,20 +1186,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Oral B",
-    price: 1900,
-    image: "./Products/oral b.jpeg",
-    description: "Oral-B Manual Toothbrush features criss-cross bristles that effectively reach between teeth for a deeper clean. Removes plaque and is gentle on gums.",
-    features: [
-      "Criss-cross bristles for deep clean",
-      "Effectively removes plaque",
-      "Gentle on gums",
-      "Ergonomic handle"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Xoc Charcoal Mouth Wash",
     price: 8000,
     image: "./Products/polish.jpeg",
@@ -1103,33 +1199,7 @@
     ]
   },
   {
-    category: "Cleaning Equipment & Tools",
-    name: "pressure washer (80000)",
-    price: 80000,
-    image: "./Products/pressure washer.jpeg",
-    description: "Entry-level pressure washer that delivers a powerful stream to blast away tough dirt, grime, and stains. Ideal for small car washes, driveways, and basic home exterior cleaning.",
-    features: [
-      "Powerful basic cleaning",
-      "Ideal for driveways and cars",
-      "Easy to set up and use",
-      "Cost-effective solution"
-    ]
-  },
-  {
-    category: "Cleaning Equipment & Tools",
-    name: "Pressure washer (450000)",
-    price: 450000,
-    image: "./Products/pressure washer1.jpeg",
-    description: "Professional-grade, high-powered pressure washer with adjustable settings and superior durability. Designed for heavy-duty commercial and large property cleaning.",
-    features: [
-      "Professional-grade power",
-      "Adjustable pressure settings",
-      "Superior durability",
-      "Ideal for heavy commercial use"
-    ]
-  },
-  {
-    category: "Laundry Care",
+    category: "Home Essentials",
     name: "Savlon antiseptic",
     price: 6500,
     image: "./Products/savlon antiseptic.jpeg",
@@ -1142,20 +1212,7 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Shaving bic",
-    price: 1500,
-    image: "./Products/shaving bic.jpeg",
-    description: "BIC disposable razors provide a smooth and clean shave. Features a comfortable grip and high-quality blade for reliable performance.",
-    features: [
-      "Smooth, clean shaving",
-      "Comfortable ergonomic grip",
-      "High-quality disposable blade",
-      "Reliable and convenient"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Cleaning Products",
     name: "Scouring pad",
     price: 1800,
     image: "./Products/scouring pad.jpeg",
@@ -1168,21 +1225,20 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Sponge",
-    price: 2000,
-    image: "./Products/sponge.jpeg",
-    description: "Multi-purpose cellulose sponge with a scrub side for dishwashing and general cleaning. Highly absorbent and durable for everyday kitchen use.",
+    category: "Home Essentials",
+    name: "Toothbrush",
+    price: 700,
+    image: "./Products/toothbrush.jpeg",
+    description: "Standard manual toothbrush with soft to medium bristles for effective plaque removal and gum massage. Essential for daily oral care.",
     features: [
-      "Dual-sided: sponge and scrub",
-      "Highly absorbent cellulose",
-      "Durable for daily use",
-      "Ideal for dishes and general cleanup"
+      "Effective plaque removal",
+      "Soft to medium bristles",
+      "Comfortable ergonomic design",
+      "Essential daily oral care"
     ]
   },
-
   {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "top bereeze",
     price: 6000,
     image: "./Products/top bereeze.jpeg",
@@ -1195,7 +1251,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Trash bag",
     price: 2500,
     image: "./Products/trash bag.jpeg",
@@ -1208,7 +1264,7 @@
     ]
   },
   {
-    category: "Cleaning Equipment & Tools",
+    category: "Home Essentials",
     name: "Trash basket",
     price: 110000,
     image: "./Products/trash basket.jpeg",
@@ -1220,9 +1276,8 @@
       "Easy to clean and maintain"
     ]
   },
-
-{
-    category: " Home Essentials",
+  {
+    category: "Home Essentials",
     name: "Basket",
     price: 4500,
     image: "./Products/basket.jpeg",
@@ -1234,25 +1289,11 @@
       "Ideal for laundry or supplies"
     ]
   },
-
   {
-    category: "Cleaning Products",
-    name: "Waw detergent",
-    price: 1800,
-    image: "./Products/waw detergent.jpeg",
-    description: "WAW Laundry Detergent offers great value with strong cleaning power. Lifts common stains and brightens clothes with every wash.",
-    features: [
-      "Great value and cleaning power",
-      "Lifts common everyday stains",
-      "Brightens white and colored clothes",
-      "Pleasant, clean scent"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Dove beauty cream bar",
     price: 1600,
-    image: "./Products/dove_cream_bar.jpeg",
+    image: "./Products/Dove beauty cream bar.jpeg",
     description: "Dove Beauty Cream Bar with moisturizing cream. It gently cleanses without drying, leaving your skin soft, smooth, and radiant. Suitable for all skin types.",
     features: [
       "1/4 Moisturizing Cream",
@@ -1262,11 +1303,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Dettol skincare blossom bathing soap",
     price: 1600,
     image: "./Products/Dettol skincare bossom bathing soap.jpeg",
-    description: "Dettol Skincare Blossom Bathing Soap. Combines Dettol’s trusted antibacterial protection with moisturizing ingredients and a delicate floral scent.",
+    description: "Dettol Skincare Blossom Bathing Soap. Combines Dettol's trusted antibacterial protection with moisturizing ingredients and a delicate floral scent.",
     features: [
       "Trusted antibacterial protection",
       "Enriched with moisturizers",
@@ -1275,7 +1316,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Dettol even tone bathing soap",
     price: 1300,
     image: "./Products/Dettol even tone bathing soap.jpeg",
@@ -1288,7 +1329,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Eva bathing soap",
     price: 2300,
     image: "./Products/Eva bathing soap.jpeg",
@@ -1301,7 +1342,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Lux soft caress bathing soap",
     price: 900,
     image: "./Products/Lux soft caress bathing soap.jpeg",
@@ -1314,7 +1355,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "St. Ives scrup soap",
     price: 2300,
     image: "./Products/St. Ives scrub soap.jpeg",
@@ -1327,7 +1368,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Hawaii papaya calamansi beauty soap",
     price: 3000,
     image: "./Products/Hawaii papaya calamansi beauty soap .jpeg",
@@ -1340,7 +1381,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Extract whitening herbal soap",
     price: 1500,
     image: "./Products/Extract whitening herbal soap.jpeg",
@@ -1353,7 +1394,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Siri African Marigold barsoap",
     price: 2500,
     image: "./Products/Siri African Marigold barsoap.jpeg",
@@ -1366,11 +1407,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Cera Ve cleanser bar",
     price: 9500,
     image: "./Products/Cera Ve cleanser bar.jpeg",
-    description: "CeraVe Cleanser Bar is a gentle, soap-free bar developed with dermatologists to effectively remove dirt and oil without disrupting the skin’s natural barrier. Enriched with ceramides and hyaluronic acid.",
+    description: "CeraVe Cleanser Bar is a gentle, soap-free bar developed with dermatologists to effectively remove dirt and oil without disrupting the skin's natural barrier. Enriched with ceramides and hyaluronic acid.",
     features: [
       "Dermatologist-developed",
       "Enriched with ceramides and HA",
@@ -1379,7 +1420,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Irish spring",
     price: 900,
     image: "./Products/Irish spring.jpeg",
@@ -1392,8 +1433,8 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Dude-osun black soap",
+    category: "Facial and Skin Care",
+    name: "Dudu-osun black soap",
     price: 1000,
     image: "./Products/Dudu-osun black soap.jpeg",
     description: "Dudu-Osun Black Soap is a traditional African black soap made from natural ingredients like shea butter, honey, and aloe vera. Known for deep cleansing and healing properties.",
@@ -1405,11 +1446,11 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Dr Teal’s glow and hydrate body wash",
+    category: "Facial and Skin Care",
+    name: "Dr Teal's glow and hydrate body wash",
     price: 11000,
-    image: "./Products/Dr Teal’s glow and hydrate body wash.jpeg",
-    description: "Dr Teal’s Glow & Hydrate Body Wash is infused with essential oils to gently cleanse while restoring skin’s natural moisture. Revitalizes dull skin, leaving it soft and radiant.",
+    image: "./Products/Dr Teal's glow and hydrate body wash.jpeg",
+    description: "Dr Teal's Glow & Hydrate Body Wash is infused with essential oils to gently cleanse while restoring skin's natural moisture. Revitalizes dull skin, leaving it soft and radiant.",
     features: [
       "Infused with essential oils",
       "Restores skin's natural moisture",
@@ -1418,7 +1459,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "OLAY collagen peptide hydrating bodywash",
     price: 25000,
     image: "./Products/OLAY collagen peptide hydrating bodywash.jpeg",
@@ -1431,11 +1472,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Cera Ve hydrating body wash",
     price: 8500,
     image: "./Products/Cera Ve hydrating body wash.jpeg",
-    description: "CeraVe Hydrating Body Wash is developed with dermatologists to gently cleanse while restoring the skin’s natural barrier. Enriched with ceramides and hyaluronic acid.",
+    description: "CeraVe Hydrating Body Wash is developed with dermatologists to gently cleanse while restoring the skin's natural barrier. Enriched with ceramides and hyaluronic acid.",
     features: [
       "Dermatologist-developed",
       "Restores skin's natural barrier",
@@ -1444,7 +1485,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Golden glow intensive whitening, exfoliating shower gel",
     price: 20000,
     image: "./Products/Golden glow intensive whitening, exfoliating shower gel.jpeg",
@@ -1457,7 +1498,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Dove nourishing secrets",
     price: 11500,
     image: "./Products/Dove nourishing secrets.jpeg",
@@ -1470,7 +1511,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Dove refreshing body wash",
     price: 10500,
     image: "./Products/Dove refreshing body wash.jpeg",
@@ -1483,7 +1524,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "St. Ives refreshing bodywash",
     price: 9800,
     image: "./Products/St. Ives refreshing bodywash.jpeg",
@@ -1496,11 +1537,11 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Dr Teal’s body wash",
+    category: "Facial and Skin Care",
+    name: "Dr Teal's body wash",
     price: 11000,
-    image: "./Products/Dr Teal’s body wash.jpeg",
-    description: "Dr Teal’s Body Wash is a refreshing cleansing formula designed to gently wash away dirt, sweat, and impurities while nourishing your skin. Leaves your body feeling clean, soft, and revitalized.",
+    image: "./Products/Dr Teal's body wash.jpeg",
+    description: "Dr Teal's Body Wash is a refreshing cleansing formula designed to gently wash away dirt, sweat, and impurities while nourishing your skin. Leaves your body feeling clean, soft, and revitalized.",
     features: [
       "Refreshing cleansing formula",
       "Gently washes away dirt and sweat",
@@ -1509,7 +1550,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Pumice black stone for leg",
     price: 6000,
     image: "./Products/Pumice black stone for leg.jpeg",
@@ -1522,7 +1563,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Veet hair removal cream",
     price: 6000,
     image: "./Products/Veet hair removal cream.jpeg",
@@ -1535,7 +1576,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Bathing gloves",
     price: 2000,
     image: "./Products/Bathing gloves.jpeg",
@@ -1548,7 +1589,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Xoc dual action mint mouthwash",
     price: 9500,
     image: "./Products/Xoc dual action mint mouthwash.jpeg",
@@ -1561,7 +1602,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Wooden toothpick",
     price: 800,
     image: "./Products/Wooden toothpick.jpeg",
@@ -1574,7 +1615,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Xtreme whitening boost toothpaste",
     price: 1900,
     image: "./Products/Xtreme whitening boost toothpaste .jpeg",
@@ -1587,7 +1628,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Pepsodent triple protection toothpaste",
     price: 1800,
     image: "./Products/Pepsodent triple protection toothpaste .jpeg",
@@ -1600,7 +1641,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Sensodyne toothpaste",
     price: 1900,
     image: "./Products/Sensodyne toothpaste.jpeg",
@@ -1613,7 +1654,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Xoc Charcoal toothpaste",
     price: 5000,
     image: "./Products/Xoccharcoal toothpaste.jpeg",
@@ -1626,7 +1667,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Oral -b electronic toothbrush",
     price: 89000,
     image: "./Products/Oral -b electronic toothbrush .jpeg",
@@ -1639,7 +1680,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Electronic toothbrush (4 head)",
     price: 10000,
     image: "./Products/Electronic toothbrush (4 head).jpeg",
@@ -1652,11 +1693,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Tongue cleaner (2set)",
     price: 4500,
     image: "./Products/Tongue cleaner (2set).jpeg",
-    description: "A simple oral care tool designed to remove bacteria, food debris, and odors from the tongue’s surface. Regular use helps promote fresher breath and improved oral hygiene.",
+    description: "A simple oral care tool designed to remove bacteria, food debris, and odors from the tongue's surface. Regular use helps promote fresher breath and improved oral hygiene.",
     features: [
       "Removes bacteria and debris",
       "Promotes fresher breath",
@@ -1665,7 +1706,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Dental floss",
     price: 1000,
     image: "./Products/Dental floss .jpeg",
@@ -1678,7 +1719,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Kiddies toothbrush",
     price: 6500,
     image: "./Products/Kiddies toothbrush (set of 4).jpeg",
@@ -1691,7 +1732,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Oral high quality toothbrush (hard)",
     price: 6000,
     image: "./Products/Oral high quality toothbrush (hard)4.jpeg",
@@ -1703,9 +1744,8 @@
       "Stronger cleaning action"
     ]
   },
-  
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Sparkle bright toothbrush (medium)",
     price: 5000,
     image: "./Products/Sparkle bright toothbrush (medium).jpeg",
@@ -1718,7 +1758,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Oral high Qual toothbrush (soft)",
     price: 6000,
     image: "./Products/Oral high Qual toothbrush (soft).jpeg",
@@ -1731,7 +1771,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Longrich toothpaste",
     price: 1500,
     image: "./Products/Longrich toothpaste .jpeg",
@@ -1744,20 +1784,20 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Macleans milkteeth for kids",
     price: 1500,
     image: "./Products/Macleans milkteeth for kids .jpeg",
-    description: "Macleans Milk Teeth Toothpaste is specially developed for children aged 0–6 years. Age-appropriate fluoride levels gently clean and protect growing teeth against cavities.",
+    description: "Macleans Milk Teeth Toothpaste is specially developed for children aged 0-6 years. Age-appropriate fluoride levels gently clean and protect growing teeth against cavities.",
     features: [
-      "Developed for ages 0–6",
+      "Developed for ages 0-6",
       "Age-appropriate fluoride levels",
       "Gently protects against cavities",
       "Mild, kid-friendly flavor"
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Oral-B toothpaste",
     price: 2000,
     image: "./Products/Oral-B toothpaste.jpeg",
@@ -1770,7 +1810,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "MyMy Toothpaste",
     price: 1700,
     image: "./Products/MyMy Toothpaste .jpeg",
@@ -1783,7 +1823,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Listerine mouth wash",
     price: 9000,
     image: "./Products/Listerine mouth wash",
@@ -1796,20 +1836,7 @@
     ]
   },
   {
-    category: "Cleaning Equipment & Tools",
-    name: "Toilet brush",
-    price: 5500,
-    image: "./Products/toiletbrush.jpeg",
-    description: "A toilet brush is a durable cleaning tool designed to scrub and remove stains, limescale, and dirt from toilet bowls. With sturdy bristles and an easy-grip handle.",
-    features: [
-      "High-quality durable design",
-      "Sturdy, effective bristles",
-      "Removes stains and limescale",
-      "Ensures thorough hygiene"
-    ]
-  },
-  {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Toilet tissue paper",
     price: 2000,
     image: "./Products/toiletroll.jpeg",
@@ -1819,19 +1846,6 @@
       "Highly absorbent",
       "Disposable and convenient",
       "Comes in a large pack"
-    ]
-  },
-  {
-    category: "Cleaning Products",
-    name: "Harpic toilet cleaner",
-    price: 9500,
-    image: "./Products/harpic.jpeg",
-    description: "Harpic Toilet Cleaner removes tough stains, limescale, and germs with ease. Powerful action deep cleans and disinfects, leaving toilets hygienic and fresh with a long-lasting fragrance.",
-    features: [
-      "Powerful stain and limescale remover",
-      "Kills germs and disinfects",
-      "Leaves toilet hygienic",
-      "Long-lasting fresh fragrance"
     ]
   },
   {
@@ -1847,7 +1861,6 @@
       "Disinfects household surfaces"
     ]
   },
-
   {
     category: "Cleaning Products",
     name: "Fabuloso Lavender Multi-Purpose Cleaner",
@@ -1876,45 +1889,6 @@
   },
   {
     category: "Cleaning Products",
-    name: "Mr sheen multi surface cleanser",
-    price: 3000,
-    image: "./Products/mr sheen.jpeg",
-    description: "Mr Sheen Multi-Surface Cleanser removes dust, fingerprints, and everyday dirt from a variety of surfaces. Quick-drying, streak-free formula restores shine.",
-    features: [
-      "Removes dust and fingerprints",
-      "Multi-surface use",
-      "Quick-drying, streak-free formula",
-      "Restores surface shine"
-    ]
-  },
-  {
-    category: "Cleaning Products",
-    name: "Novex multipurpose cleaner",
-    price: 4500,
-    image: "./Products/Novex multipurpose cleaner",
-    description: "Novex Multipurpose Cleaner cuts through dirt, grease, and stains on a wide range of surfaces. Leaves areas hygienically clean with a refreshing fragrance.",
-    features: [
-      "Cuts through dirt, grease, and stains",
-      "Wide range of surface use",
-      "Hygienically cleans",
-      "Refreshing fragrance"
-    ]
-  },
-  {
-    category: "Cleaning Products",
-    name: "Cif floor cleaner",
-    price: 4000,
-    image: "./Products/ciffloorcleaner.jpeg",
-    description: "Cif Floor Cleaner removes dirt, grease, and stains while protecting your floors’ natural shine. Suitable for various surfaces, leaves a long-lasting fresh fragrance.",
-    features: [
-      "Removes dirt, grease, and stains",
-      "Protects natural floor shine",
-      "Suitable for various floors",
-      "Long-lasting fresh fragrance"
-    ]
-  },
-  {
-    category: "Laundry Care",
     name: "Astonish antibacterial surface cleanser",
     price: 6500,
     image: "./Products/asc.jpeg",
@@ -2031,7 +2005,7 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Brightening vitamin c facial wash",
     price: 5000,
     image: "./Products/Brightening vitamin c facial wash.jpeg",
@@ -2109,11 +2083,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "CeraVe foaming facial cleanser",
     price: 30000,
     image: "./Products/CeraVe foaming facial cleanser.jpeg",
-    description: "CeraVe Foaming Facial Cleanser gently removes dirt, oil, and makeup while keeping your skin’s natural moisture balance intact. Perfect for normal to oily skin.",
+    description: "CeraVe Foaming Facial Cleanser gently removes dirt, oil, and makeup while keeping your skin's natural moisture balance intact. Perfect for normal to oily skin.",
     features: [
       "Gently removes dirt, oil, and makeup",
       "Maintains natural moisture balance",
@@ -2122,11 +2096,11 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Dr Teal’s shea sugar scrub",
+    category: "Facial and Skin Care",
+    name: "Dr Teal's shea sugar scrub",
     price: 13000,
-    image: "./Products/Dr Teal’s shea sugar scrub.jpeg",
-    description: "Dr Teal’s Shea Sugar Scrub. Gentle sugar crystals remove dead skin cells, while shea butter nourishes and softens, leaving your skin smooth, refreshed, and radiant.",
+    image: "./Products/Dr Teal's shea sugar scrub.jpeg",
+    description: "Dr Teal's Shea Sugar Scrub. Gentle sugar crystals remove dead skin cells, while shea butter nourishes and softens, leaving your skin smooth, refreshed, and radiant.",
     features: [
       "Gentle sugar crystals exfoliate",
       "Shea butter nourishes and softens",
@@ -2135,11 +2109,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Simple smoothing facial scrub",
     price: 9000,
     image: "./Products/Simple smoothing facial scrub.jpeg",
-    description: "Simple Smoothing Facial Scrub – Gently renew your skin by removing dirt, oil, and dead skin cells without irritation. Leaves your face feeling smooth, soft, and naturally fresh.",
+    description: "Simple Smoothing Facial Scrub - Gently renew your skin by removing dirt, oil, and dead skin cells without irritation. Leaves your face feeling smooth, soft, and naturally fresh.",
     features: [
       "Gently renews skin without irritation",
       "Removes dirt, oil, and dead skin cells",
@@ -2148,11 +2122,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Disaar aloevera",
     price: 5000,
     image: "./Products/Disaar aloevera.jpeg",
-    description: "Disaar Aloe Vera – Soothes and hydrates your skin with the natural goodness of aloe vera. Helps calm irritation, refreshes dry or tired skin, and leaves it feeling soft, smooth, and rejuvenated.",
+    description: "Disaar Aloe Vera - Soothes and hydrates your skin with the natural goodness of aloe vera. Helps calm irritation, refreshes dry or tired skin, and leaves it feeling soft, smooth, and rejuvenated.",
     features: [
       "Soothes and hydrates skin",
       "Made with natural aloe vera",
@@ -2161,11 +2135,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Tea tree facial scrub",
     price: 5000,
     image: "./Products/Tea tree facial scrub.jpeg",
-    description: "Tea Tree Facial Scrub – Gently cleans and refreshes your skin with the natural power of tea tree. Helps remove dirt, oil, and impurities while leaving your face smooth, clear, and invigorated.",
+    description: "Tea Tree Facial Scrub - Gently cleans and refreshes your skin with the natural power of tea tree. Helps remove dirt, oil, and impurities while leaving your face smooth, clear, and invigorated.",
     features: [
       "Natural power of tea tree",
       "Gently cleans and refreshes",
@@ -2174,11 +2148,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Personal facial cotton buds",
     price: 3000,
     image: "./Products/Personal facial cotton bud.jpeg",
-    description: "Personal Facial Cotton Buds – Perfect for precise cleaning and gentle care. Ideal for makeup touch-ups, ear cleaning, and delicate skin areas, these cotton buds are soft, absorbent, and reliable.",
+    description: "Personal Facial Cotton Buds - Perfect for precise cleaning and gentle care. Ideal for makeup touch-ups, ear cleaning, and delicate skin areas, these cotton buds are soft, absorbent, and reliable.",
     features: [
       "Perfect for precise cleaning",
       "Soft, absorbent, and reliable",
@@ -2187,11 +2161,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Facial clean sponge",
     price: 1500,
     image: "./Products/Bathing sponge.jpeg",
-    description: "Facial Clean Sponge – Gently exfoliates and cleans your skin, removing dirt, oil, and impurities. Soft and durable, it helps your face feel refreshed, smooth, and naturally radiant.",
+    description: "Facial Clean Sponge - Gently exfoliates and cleans your skin, removing dirt, oil, and impurities. Soft and durable, it helps your face feel refreshed, smooth, and naturally radiant.",
     features: [
       "Gently exfoliates the skin",
       "Removes dirt, oil, and impurities",
@@ -2200,11 +2174,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Neutrogena clear and defend face scrub",
     price: 12000,
     image: "./Products/Neutrogena clear and defend face scrub.jpeg",
-    description: "Neutrogena Clear & Defend Face Scrub – Gently cleanses and refreshes your skin while helping to fight acne and impurities. Removes dirt and excess oil.",
+    description: "Neutrogena Clear & Defend Face Scrub - Gently cleanses and refreshes your skin while helping to fight acne and impurities. Removes dirt and excess oil.",
     features: [
       "Helps fight acne and impurities",
       "Smooth exfoliating formula",
@@ -2212,13 +2186,25 @@
       "Leaves face clean and clear"
     ]
   },
-
-{
-    category: " Home Essentials",
+  {
+    category: "Facial and Skin Care",
+    name: "Blackhead clearing cleanser",
+    price: 11000,
+    image: "./Products/Blackhead clearing cleanser.jpeg",
+    description: "Blackhead Clearing Cleanser - Gently removes dirt, oil, and impurities to help reduce blackheads and prevent breakouts. Leaves your skin feeling clean, smooth, and refreshed.",
+    features: [
+      "Helps reduce blackheads",
+      "Prevents breakouts",
+      "Removes dirt, oil, and impurities",
+      "Leaves skin clean and smooth"
+    ]
+  },
+  {
+    category: "Home Essentials",
     name: "Elan Mentholated Shampoo and Hair Conditioner",
     price: 8000,
     image: "./Products/Elan Mentholated shampoo and hair conditioner.jpeg",
-    description: "Elan Mentholated Shampoo and Hair Conditioner – Refresh and revitalize your hair with the cooling sensation of menthol. This duo gently cleanses and conditions, leaving your scalp invigorated and your hair soft, smooth, and full of shine. Perfect for everyday use to keep your hair healthy, fresh, and manageable.",
+    description: "Elan Mentholated Shampoo and Hair Conditioner - Refresh and revitalize your hair with the cooling sensation of menthol. This duo gently cleanses and conditions, leaving your scalp invigorated and your hair soft, smooth, and full of shine. Perfect for everyday use to keep your hair healthy, fresh, and manageable.",
     features: [
       "Cooling menthol for scalp invigoration",
       "Gently cleanses and conditions",
@@ -2227,11 +2213,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Hanger (set)",
     price: 2000,
     image: "./Products/Hanger (set).jpeg",
-    description: "Hanger provides a sturdy and reliable way to keep your clothes organized and wrinkle-free. Lightweight yet durable, it’s perfect for hanging shirts, dresses, jackets, and everyday wear, ensuring your wardrobe stays neat and well-arranged.",
+    description: "Hanger provides a sturdy and reliable way to keep your clothes organized and wrinkle-free. Lightweight yet durable, it's perfect for hanging shirts, dresses, jackets, and everyday wear, ensuring your wardrobe stays neat and well-arranged.",
     features: [
       "Sturdy and reliable design",
       "Keeps clothes organized and wrinkle-free",
@@ -2244,7 +2230,7 @@
     name: "Jik Bleach",
     price: 2000,
     image: "./Products/Jik bleach.jpeg",
-    description: "Jik Bleach – Jik Bleach is a powerful disinfectant and stain remover that kills 99.9% of germs while whitening clothes and brightening dull fabrics. It’s also effective for cleaning kitchens, bathrooms, and household surfaces, leaving everything fresh, hygienic, and sparkling clean.",
+    description: "Jik Bleach - Jik Bleach is a powerful disinfectant and stain remover that kills 99.9% of germs while whitening clothes and brightening dull fabrics. It's also effective for cleaning kitchens, bathrooms, and household surfaces, leaving everything fresh, hygienic, and sparkling clean.",
     features: [
       "Kills 99.9% of germs",
       "Powerful stain remover and whitener",
@@ -2253,11 +2239,11 @@
     ]
   },
   {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "Comfort Fabric Conditioner",
     price: 11000,
     image: "./Products/Comfort fabric conditioner.jpeg",
-    description: "Comfort Fabric Conditioner – Comfort Fabric Conditioner leaves clothes irresistibly soft, smooth, and easy to iron while infusing them with a long-lasting fresh fragrance. It helps protect fabrics from damage, reduces wrinkles, and gives your laundry a touch of care and comfort every wash.",
+    description: "Comfort Fabric Conditioner - Comfort Fabric Conditioner leaves clothes irresistibly soft, smooth, and easy to iron while infusing them with a long-lasting fresh fragrance. It helps protect fabrics from damage, reduces wrinkles, and gives your laundry a touch of care and comfort every wash.",
     features: [
       "Leaves clothes irresistibly soft and smooth",
       "Reduces wrinkles and aids ironing",
@@ -2266,11 +2252,11 @@
     ]
   },
   {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "So Klin Concentrated Detergent",
     price: 2500,
     image: "./Products/So klin concentrated detergent.jpeg",
-    description: "So Klin Concentrated Detergent – So Klin Concentrated Detergent is packed with extra cleaning power to tackle stubborn stains and keep clothes brilliantly bright. Its concentrated formula ensures rich lather, quick stain removal, and long-lasting freshness while being gentle on fabrics. Perfect for both hand and machine wash.",
+    description: "So Klin Concentrated Detergent - So Klin Concentrated Detergent is packed with extra cleaning power to tackle stubborn stains and keep clothes brilliantly bright. Its concentrated formula ensures rich lather, quick stain removal, and long-lasting freshness while being gentle on fabrics. Perfect for both hand and machine wash.",
     features: [
       "Concentrated formula with extra cleaning power",
       "Tackles stubborn stains effectively",
@@ -2278,13 +2264,12 @@
       "Suitable for hand and machine wash"
     ]
   },
-  
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Paloma Classic Tissue",
     price: 2800,
     image: "./Products/Paloma classic tissue.jpeg",
-    description: "Paloma Classic Tissue – Paloma Classic Tissue is soft, strong, and gentle on the skin, making it perfect for everyday use. Designed with quality layers, it provides reliable strength while remaining smooth and comfortable. Ideal for home, office, or on-the-go freshness.",
+    description: "Paloma Classic Tissue - Paloma Classic Tissue is soft, strong, and gentle on the skin, making it perfect for everyday use. Designed with quality layers, it provides reliable strength while remaining smooth and comfortable. Ideal for home, office, or on-the-go freshness.",
     features: [
       "Soft, strong, and gentle on skin",
       "Quality layers for reliable strength",
@@ -2293,11 +2278,11 @@
     ]
   },
   {
-    category: "Cleaning Products",
+    category: "Laundry Care",
     name: "Easy On Spray Starch",
     price: 4500,
     image: "./Products/Easy on spray starch.jpeg",
-    description: "Easy On Spray Starch – Easy On Spray Starch helps you achieve a neat, professional finish on clothes by reducing wrinkles and adding a crisp feel to fabrics. It sprays on smoothly, making ironing faster and more effective while giving garments a long-lasting fresh look. Perfect for shirts, uniforms, and everyday wear.",
+    description: "Easy On Spray Starch - Easy On Spray Starch helps you achieve a neat, professional finish on clothes by reducing wrinkles and adding a crisp feel to fabrics. It sprays on smoothly, making ironing faster and more effective while giving garments a long-lasting fresh look. Perfect for shirts, uniforms, and everyday wear.",
     features: [
       "Reduces wrinkles and adds a crisp feel",
       "Sprays on smoothly for even coverage",
@@ -2306,11 +2291,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Angel Facial Wipes",
     price: 3500,
     image: "./Products/Angel facial wipes .jpeg",
-    description: "Angel Facial Wipes – Convenient and gentle wipes that remove dirt, oil, and makeup with ease. Soft on the skin and lightly refreshing, they leave your face clean, smooth, and revitalized anytime, anywhere. Perfect for daily use or quick touch-ups.",
+    description: "Angel Facial Wipes - Convenient and gentle wipes that remove dirt, oil, and makeup with ease. Soft on the skin and lightly refreshing, they leave your face clean, smooth, and revitalized anytime, anywhere. Perfect for daily use or quick touch-ups.",
     features: [
       "Convenient for use anytime, anywhere",
       "Gently removes dirt, oil, and makeup",
@@ -2319,11 +2304,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Angel Facial Wipes (Premium)",
     price: 4000,
     image: "./Products/Anglewipes.jpeg",
-    description: "Angel Facial Wipes – Convenient and gentle wipes that remove dirt, oil, and makeup with ease. Soft on the skin and lightly refreshing, they leave your face clean, smooth, and revitalized anytime, anywhere. Perfect for daily use or quick touch-ups.",
+    description: "Angel Facial Wipes - Convenient and gentle wipes that remove dirt, oil, and makeup with ease. Soft on the skin and lightly refreshing, they leave your face clean, smooth, and revitalized anytime, anywhere. Perfect for daily use or quick touch-ups.",
     features: [
       "Convenient for use anytime, anywhere",
       "Gently removes dirt, oil, and makeup",
@@ -2332,11 +2317,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Simple Cleansing Facial Wipes",
     price: 6000,
     image: "./Products/Simple cleansing facial wipes.jpeg",
-    description: "Simple Cleansing Facial Wipes – Gently lift away dirt, oil, and makeup while being kind to your skin. Soft and refreshing, they leave your face feeling clean, hydrated, and instantly refreshed. Perfect for daily use, even on sensitive skin.",
+    description: "Simple Cleansing Facial Wipes - Gently lift away dirt, oil, and makeup while being kind to your skin. Soft and refreshing, they leave your face feeling clean, hydrated, and instantly refreshed. Perfect for daily use, even on sensitive skin.",
     features: [
       "Gently lifts away dirt, oil, and makeup",
       "Kind and gentle to sensitive skin",
@@ -2345,11 +2330,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Tea Tree Cleansing Facial Wipes",
     price: 3000,
     image: "./Products/Tea tree facial scrub.jpeg",
-    description: "Tea Tree Cleansing Facial Wipes – Refresh and cleanse your skin anytime, anywhere. Infused with tea tree, these wipes help remove dirt, oil, and makeup while leaving your face feeling clean, smooth, and revitalized. Perfect for daily use or on-the-go freshness.",
+    description: "Tea Tree Cleansing Facial Wipes - Refresh and cleanse your skin anytime, anywhere. Infused with tea tree, these wipes help remove dirt, oil, and makeup while leaving your face feeling clean, smooth, and revitalized. Perfect for daily use or on-the-go freshness.",
     features: [
       "Infused with clarifying tea tree oil",
       "Helps remove dirt, oil, and makeup",
@@ -2358,11 +2343,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Beauty Lint Cotton Wool",
     price: 1500,
     image: "./Products/Beauty lint cotton wool.jpeg",
-    description: "Beauty Lint Cotton Wool – Soft, pure, and absorbent, perfect for gentle skin care. Ideal for makeup removal, baby care, or medical use, it provides comfort and reliability for your daily hygiene needs.",
+    description: "Beauty Lint Cotton Wool - Soft, pure, and absorbent, perfect for gentle skin care. Ideal for makeup removal, baby care, or medical use, it provides comfort and reliability for your daily hygiene needs.",
     features: [
       "Soft, pure, and highly absorbent",
       "Lint-free for gentle skin care",
@@ -2371,11 +2356,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Pretty Cotton Wool Pleat",
     price: 4000,
     image: "./Products/Pretty cotton wool pleat.jpeg",
-    description: "Pretty Cotton Wool Pleat – Soft, gentle, and highly absorbent, making it ideal for everyday personal care. Perfect for makeup removal, baby care, or general cleansing, it’s kind to the skin and easy to use. A must-have for your daily hygiene routine.",
+    description: "Pretty Cotton Wool Pleat - Soft, gentle, and highly absorbent, making it ideal for everyday personal care. Perfect for makeup removal, baby care, or general cleansing, it's kind to the skin and easy to use. A must-have for your daily hygiene routine.",
     features: [
       "Soft, gentle, and highly absorbent",
       "Convenient pleated design",
@@ -2384,11 +2369,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Pretty Intimate Daily Fresh Panty Liners",
     price: 3000,
     image: "./Products/Pretty intimate daily fresh panty liners.jpeg",
-    description: "Pretty Intimate daily fresh Panty Liners – Keep you feeling fresh and comfortable every day. With a soft surface and breathable design, they provide light protection and daily freshness, making them perfect for use between periods or with light discharge.",
+    description: "Pretty Intimate daily fresh Panty Liners - Keep you feeling fresh and comfortable every day. With a soft surface and breathable design, they provide light protection and daily freshness, making them perfect for use between periods or with light discharge.",
     features: [
       "Keeps you feeling fresh daily",
       "Soft surface and breathable design",
@@ -2397,11 +2382,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Love Panty Liners",
     price: 2500,
     image: "./Products/Love panty liners.jpeg",
-    description: "Love Panty Liners – Designed for daily freshness and comfort. Soft, thin, and breathable, they provide light protection while keeping you dry and confident all day. Perfect for everyday use or between periods.",
+    description: "Love Panty Liners - Designed for daily freshness and comfort. Soft, thin, and breathable, they provide light protection while keeping you dry and confident all day. Perfect for everyday use or between periods.",
     features: [
       "Designed for daily freshness and comfort",
       "Soft, thin, and breathable",
@@ -2410,11 +2395,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Pretty Intimate Panty Liners",
     price: 2500,
     image: "./Products/Pretty intimate panty liners.jpeg",
-    description: "Pretty Intimate Panty Liners – Keep you feeling fresh and comfortable every day. With a soft surface and breathable design, they provide light protection and daily freshness, making them perfect for use between periods or with light discharge.",
+    description: "Pretty Intimate Panty Liners - Keep you feeling fresh and comfortable every day. With a soft surface and breathable design, they provide light protection and daily freshness, making them perfect for use between periods or with light discharge.",
     features: [
       "Soft surface and breathable design",
       "Provides light protection and comfort",
@@ -2423,11 +2408,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Equate Tampons",
     price: 13000,
     image: "./Products/Equate Tampons.jpeg",
-    description: "Equate Tampons – Provide dependable protection and comfort for your period. Designed with a smooth applicator for easy insertion and a secure fit, they help you stay dry, confident, and comfortable throughout the day. A reliable choice for everyday menstrual care.",
+    description: "Equate Tampons - Provide dependable protection and comfort for your period. Designed with a smooth applicator for easy insertion and a secure fit, they help you stay dry, confident, and comfortable throughout the day. A reliable choice for everyday menstrual care.",
     features: [
       "Dependable protection and comfort",
       "Smooth applicator for easy insertion",
@@ -2436,11 +2421,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Anytime Menstrual Cup",
     price: 9000,
     image: "./Products/Anytime menstrual cup.jpeg",
-    description: "Anytime Menstrual Cup – A reusable, eco-friendly alternative for safe and comfortable period care. Designed for a secure fit, it offers long-lasting protection, reduces waste, and keeps you feeling fresh and confident all day. Gentle on the body and easy to use, it’s perfect for modern menstrual care.",
+    description: "Anytime Menstrual Cup - A reusable, eco-friendly alternative for safe and comfortable period care. Designed for a secure fit, it offers long-lasting protection, reduces waste, and keeps you feeling fresh and confident all day. Gentle on the body and easy to use, it's perfect for modern menstrual care.",
     features: [
       "Reusable and eco-friendly alternative",
       "Offers long-lasting, secure protection",
@@ -2449,11 +2434,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Tampax Super Tampons",
     price: 8000,
     image: "./Products/Tampax Super Tampons.jpeg",
-    description: "Tampax Super Tampons – Provide strong, reliable protection for medium to heavy flow days. With a smooth applicator for easy use and a comfortable fit, they help you stay fresh, dry, and confident throughout the day. Perfect for discreet, dependable menstrual care.",
+    description: "Tampax Super Tampons - Provide strong, reliable protection for medium to heavy flow days. With a smooth applicator for easy use and a comfortable fit, they help you stay fresh, dry, and confident throughout the day. Perfect for discreet, dependable menstrual care.",
     features: [
       "Strong, reliable protection for heavy flow",
       "Smooth applicator for easy use",
@@ -2462,11 +2447,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Always Sanitary Pad",
     price: 2500,
     image: "./Products/Always sanitary pad.jpeg",
-    description: "Always Sanitary Pad – Trusted protection that keeps you dry, comfortable, and confident all day. With a soft top layer and reliable absorbency, it gently cares for your skin while giving you the security you need during your period.",
+    description: "Always Sanitary Pad - Trusted protection that keeps you dry, comfortable, and confident all day. With a soft top layer and reliable absorbency, it gently cares for your skin while giving you the security you need during your period.",
     features: [
       "Trusted, reliable protection",
       "Soft top layer for gentle care",
@@ -2475,11 +2460,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Molped Maxi Thick Sanitary Pad",
     price: 1000,
     image: "./Products/Molped maxi thick sanitary pad.jpeg",
-    description: "Molped maxi thick sanitary Pad – Offers superior softness and reliable protection for ultimate comfort. Designed with a gentle surface that is kind to the skin, it provides high absorbency to keep you dry, fresh, and confident throughout the day.",
+    description: "Molped maxi thick sanitary Pad - Offers superior softness and reliable protection for ultimate comfort. Designed with a gentle surface that is kind to the skin, it provides high absorbency to keep you dry, fresh, and confident throughout the day.",
     features: [
       "Superior softness for comfort",
       "Maxi thick design for reliable protection",
@@ -2488,11 +2473,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Virony Smart Lady Sanitary Pad",
     price: 6000,
     image: "./Products/Virony smart lady sanitary pad.jpeg",
-    description: "Virony Smart Lady Sanitary Pad – Designed for modern women, it provides reliable absorbency and lasting comfort. With its soft surface and secure fit, it keeps you dry, fresh, and confident all day long. Perfect for everyday menstrual protection.",
+    description: "Virony Smart Lady Sanitary Pad - Designed for modern women, it provides reliable absorbency and lasting comfort. With its soft surface and secure fit, it keeps you dry, fresh, and confident all day long. Perfect for everyday menstrual protection.",
     features: [
       "Reliable absorbency and lasting comfort",
       "Soft surface and secure fit",
@@ -2501,11 +2486,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Molped Ultra Soft Sanitary Pad",
     price: 1200,
     image: "./Products/Molpedultra soft sanitary pad.jpeg",
-    description: "MolpedUltra Soft Sanitary Pad – Offers superior softness and reliable protection for ultimate comfort. Designed with a gentle surface that is kind to the skin, it provides high absorbency to keep you dry, fresh, and confident throughout the day.",
+    description: "MolpedUltra Soft Sanitary Pad - Offers superior softness and reliable protection for ultimate comfort. Designed with a gentle surface that is kind to the skin, it provides high absorbency to keep you dry, fresh, and confident throughout the day.",
     features: [
       "Superior ultra-softness for comfort",
       "Reliable protection and high absorbency",
@@ -2514,11 +2499,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Besense Sanitary Pad",
     price: 6000,
     image: "./Products/Besense sanitary pad.jpeg",
-    description: "Besense Sanitary Pad – Combines comfort, softness, and reliable absorbency to keep you protected all day. Its gentle surface is designed to be skin-friendly while ensuring you feel dry, fresh, and confident during your period.",
+    description: "Besense Sanitary Pad - Combines comfort, softness, and reliable absorbency to keep you protected all day. Its gentle surface is designed to be skin-friendly while ensuring you feel dry, fresh, and confident during your period.",
     features: [
       "Combines comfort, softness, and absorbency",
       "Gentle, skin-friendly surface",
@@ -2527,11 +2512,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Feminine and Hygiene care",
     name: "Drylove Sanitary Pad",
     price: 1000,
     image: "./Products/Drylove sanitary pad.jpeg",
-    description: "Drylove Sanitary Pad – Provides all-day protection and comfort with high absorbency to keep you dry and confident. Its soft, gentle surface is kind to the skin, making it perfect for reliable menstrual care every day.",
+    description: "Drylove Sanitary Pad - Provides all-day protection and comfort with high absorbency to keep you dry and confident. Its soft, gentle surface is kind to the skin, making it perfect for reliable menstrual care every day.",
     features: [
       "Provides all-day protection and comfort",
       "High absorbency to keep you dry",
@@ -2540,11 +2525,11 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Softcare Sanitary Pad (1000)",
+    category: "Feminine and Hygiene care",
+    name: "Softcare Sanitary Pad",
     price: 1000,
     image: "./Products/Softcare sanitary pad2.jpeg",
-    description: "Softcare Sanitary Pad – Designed for comfort, protection, and confidence. With its soft surface and reliable absorbency, it keeps you dry and comfortable throughout the day. Gentle on the skin and easy to use, Softcare is perfect for everyday menstrual care.",
+    description: "Softcare Sanitary Pad - Designed for comfort, protection, and confidence. With its soft surface and reliable absorbency, it keeps you dry and comfortable throughout the day. Gentle on the skin and easy to use, Softcare is perfect for everyday menstrual care.",
     features: [
       "Designed for comfort and confidence",
       "Soft surface and reliable absorbency",
@@ -2553,11 +2538,11 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "Softcare Sanitary Pad (8500)",
+    category: "Feminine and Hygiene care",
+    name: "Softcare Sanitary Pad (Big Pack)",
     price: 8500,
     image: "./Products/Softcare sanitary pad.jpeg",
-    description: "Softcare Sanitary Pad – Designed for comfort, protection, and confidence. With its soft surface and reliable absorbency, it keeps you dry and comfortable throughout the day. Gentle on the skin and easy to use, Softcare is perfect for everyday menstrual care.",
+    description: "Softcare Sanitary Pad - Designed for comfort, protection, and confidence. With its soft surface and reliable absorbency, it keeps you dry and comfortable throughout the day. Gentle on the skin and easy to use, Softcare is perfect for everyday menstrual care.",
     features: [
       "Designed for comfort and confidence",
       "Soft surface and reliable absorbency",
@@ -2566,11 +2551,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Facial and Skin Care",
     name: "Passion Talcum Powder",
     price: 3500,
     image: "./Products/Passion talcum powder.jpeg",
-    description: "Passion Talcum Powder – Keeps your skin fresh, dry, and lightly fragranced throughout the day. Gently absorbs moisture, soothes skin, and leaves a smooth, soft feel. Perfect for daily use to stay comfortable and confident.",
+    description: "Passion Talcum Powder - Keeps your skin fresh, dry, and lightly fragranced throughout the day. Gently absorbs moisture, soothes skin, and leaves a smooth, soft feel. Perfect for daily use to stay comfortable and confident.",
     features: [
       "Keeps skin fresh, dry, and fragranced",
       "Gently absorbs moisture",
@@ -2579,24 +2564,24 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Cussons Baby Powder",
     price: 8500,
     image: "./Products/Cussons baby powder.jpeg",
-    description: "Cussons Baby Powder – Keeps your baby’s skin dry, soft, and fresh all day. Gently absorbs moisture, soothes delicate skin, and helps prevent rashes, leaving a light, comforting fragrance. Perfect for daily use to care for sensitive skin.",
+    description: "Cussons Baby Powder - Keeps your baby's skin dry, soft, and fresh all day. Gently absorbs moisture, soothes delicate skin, and helps prevent rashes, leaving a light, comforting fragrance. Perfect for daily use to care for sensitive skin.",
     features: [
-      "Keeps baby’s skin dry, soft, and fresh",
+      "Keeps baby's skin dry, soft, and fresh",
       "Gently absorbs moisture",
       "Helps prevent rashes",
       "Light, comforting fragrance"
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "TCB Three Oil Sheen Spray",
     price: 8500,
     image: "./Products/Tcb three oil sheen spray.jpeg",
-    description: "TCB Three Oil Sheen Spray – Instantly adds shine and a healthy-looking finish to your hair. Formulated with three nourishing oils, it tames frizz, smooths strands, and leaves hair soft, glossy, and refreshed. Perfect for quick touch-ups and everyday styling.",
+    description: "TCB Three Oil Sheen Spray - Instantly adds shine and a healthy-looking finish to your hair. Formulated with three nourishing oils, it tames frizz, smooths strands, and leaves hair soft, glossy, and refreshed. Perfect for quick touch-ups and everyday styling.",
     features: [
       "Instantly adds healthy-looking shine",
       "Formulated with three nourishing oils",
@@ -2605,11 +2590,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Disaar Argan Oil",
     price: 6500,
     image: "./Products/Disaar aloevera.jpeg",
-    description: "Disaar Argan Oil – Nourishes and strengthens hair while adding natural shine. Helps reduce frizz, repair damaged strands, and leave hair feeling soft, smooth, and healthy. Perfect for daily use to maintain vibrant, resilient hair.",
+    description: "Disaar Argan Oil - Nourishes and strengthens hair while adding natural shine. Helps reduce frizz, repair damaged strands, and leave hair feeling soft, smooth, and healthy. Perfect for daily use to maintain vibrant, resilient hair.",
     features: [
       "Nourishes and strengthens hair",
       "Adds natural, vibrant shine",
@@ -2618,11 +2603,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "ORS Olive Oil",
     price: 4500,
     image: "./Products/Ors olive oil.jpeg",
-    description: "ORS Olive Oil – Deeply nourishes and moisturizes your hair, leaving it soft, smooth, and manageable. Helps reduce dryness and breakage while promoting healthy, shiny hair. Perfect for daily use to keep your hair strong, vibrant, and well-conditioned.",
+    description: "ORS Olive Oil - Deeply nourishes and moisturizes your hair, leaving it soft, smooth, and manageable. Helps reduce dryness and breakage while promoting healthy, shiny hair. Perfect for daily use to keep your hair strong, vibrant, and well-conditioned.",
     features: [
       "Deeply nourishes and moisturizes",
       "Reduces dryness and breakage",
@@ -2631,11 +2616,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Mielle Rosemary Mint Scalp and Hair Strengthening Oil",
     price: 7000,
     image: "./Products/Mielle rosemary mint scale and hair strengthening oil.jpeg",
-    description: "Mielle Rosemary Mint Scalp and Hair Strengthening Oil – Strengthen and revitalize your hair with this refreshing oil. Infused with rosemary and mint, it nourishes the scalp, promotes healthy growth, and leaves hair feeling soft, strong, and invigorated. Perfect for daily use to maintain healthy, resilient hair.",
+    description: "Mielle Rosemary Mint Scalp and Hair Strengthening Oil - Strengthen and revitalize your hair with this refreshing oil. Infused with rosemary and mint, it nourishes the scalp, promotes healthy growth, and leaves hair feeling soft, strong, and invigorated. Perfect for daily use to maintain healthy, resilient hair.",
     features: [
       "Infused with rosemary and mint",
       "Nourishes and revitalizes the scalp",
@@ -2644,11 +2629,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Elan Hair Oil",
     price: 4500,
     image: "./Products/Elan hair oil.jpeg",
-    description: "Elan Hair Oil – Nourishes and strengthens your hair from root to tip. Helps reduce dryness, promote healthy growth, and add natural shine, leaving your hair soft, smooth, and manageable. Perfect for daily use to maintain strong and healthy hair.",
+    description: "Elan Hair Oil - Nourishes and strengthens your hair from root to tip. Helps reduce dryness, promote healthy growth, and add natural shine, leaving your hair soft, smooth, and manageable. Perfect for daily use to maintain strong and healthy hair.",
     features: [
       "Nourishes and strengthens root to tip",
       "Reduces dryness and promotes healthy growth",
@@ -2657,11 +2642,11 @@
     ]
   },
   {
-    category: " Home Essentials",
-    name: "L’uôsais Hair Repair Oil Serum",
+    category: "Home Essentials",
+    name: "L'uôsais Hair Repair Oil Serum",
     price: 5500,
-    image: "./Products/L’uôsais hair repair oil serum .jpeg",
-    description: "L’uôsais Hair Repair Oil Serum – Repairs and nourishes damaged hair, leaving it soft, smooth, and revitalized. Its lightweight formula penetrates deeply to strengthen strands, reduce breakage, and add natural shine. Perfect for daily use to maintain healthy, resilient hair.",
+    image: "./Products/L'uôsais hair repair oil serum .jpeg",
+    description: "L'uôsais Hair Repair Oil Serum - Repairs and nourishes damaged hair, leaving it soft, smooth, and revitalized. Its lightweight formula penetrates deeply to strengthen strands, reduce breakage, and add natural shine. Perfect for daily use to maintain healthy, resilient hair.",
     features: [
       "Repairs and nourishes damaged hair",
       "Lightweight formula for deep penetration",
@@ -2670,11 +2655,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Above Oil Sheen Spray",
     price: 4500,
     image: "./Products/Above oil sheen spray.jpeg",
-    description: "Above Oil Sheen Spray – Instantly adds shine and a healthy-looking finish to your hair. Lightweight and non-greasy, it tames frizz and leaves hair smooth, glossy, and refreshed. Perfect for quick touch-ups and daily styling.",
+    description: "Above Oil Sheen Spray - Instantly adds shine and a healthy-looking finish to your hair. Lightweight and non-greasy, it tames frizz and leaves hair smooth, glossy, and refreshed. Perfect for quick touch-ups and daily styling.",
     features: [
       "Instantly adds shine and healthy finish",
       "Lightweight and non-greasy formula",
@@ -2683,11 +2668,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Mega Growth Anti-Dandruff Shampoo",
     price: 4500,
     image: "./Products/Mega growth anti-dandruff shampoo.jpeg",
-    description: "Mega Growth Anti-Dandruff Shampoo – Effectively combats dandruff while promoting a healthy scalp. Gently cleanses and nourishes your hair, leaving it soft, refreshed, and flake-free. Perfect for daily use to maintain clean, healthy, and manageable hair.",
+    description: "Mega Growth Anti-Dandruff Shampoo - Effectively combats dandruff while promoting a healthy scalp. Gently cleanses and nourishes your hair, leaving it soft, refreshed, and flake-free. Perfect for daily use to maintain clean, healthy, and manageable hair.",
     features: [
       "Effectively combats dandruff and flakes",
       "Promotes a healthy, nourished scalp",
@@ -2696,11 +2681,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Petals Instant Hair Conditioner",
     price: 2500,
     image: "./Products/Petals instant hair conditioner.jpeg",
-    description: "Petals Instant Hair Conditioner – Instantly softens and smooths your hair, making it easier to manage and style. Its lightweight formula nourishes and detangles without weighing hair down, leaving it feeling fresh, silky, and healthy. Perfect for quick care and everyday use.",
+    description: "Petals Instant Hair Conditioner - Instantly softens and smooths your hair, making it easier to manage and style. Its lightweight formula nourishes and detangles without weighing hair down, leaving it feeling fresh, silky, and healthy. Perfect for quick care and everyday use.",
     features: [
       "Instantly softens and smooths hair",
       "Lightweight formula that detangles",
@@ -2709,11 +2694,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Lush Rejuvenating Shampoo and Conditioner",
     price: 800,
     image: "./Products/Lush rejuvenating shampoo and conditioner.jpeg",
-    description: "Lush Rejuvenating Shampoo and Conditioner – Revitalize your hair with this nourishing duo. The shampoo gently cleanses while the conditioner softens and smooths, leaving your hair feeling refreshed, healthy, and full of life. Perfect for daily use to restore shine, strength, and manageability.",
+    description: "Lush Rejuvenating Shampoo and Conditioner - Revitalize your hair with this nourishing duo. The shampoo gently cleanses while the conditioner softens and smooths, leaving your hair feeling refreshed, healthy, and full of life. Perfect for daily use to restore shine, strength, and manageability.",
     features: [
       "Rejuvenates and nourishes hair",
       "Shampoo gently cleanses",
@@ -2722,11 +2707,11 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Petals Shampoo",
     price: 2000,
     image: "./Products/Petals shampoo.jpeg",
-    description: "Petals Shampoo – Gently cleanses your hair while keeping it soft, smooth, and manageable. Its mild formula nourishes your scalp, leaving your hair fresh, healthy, and naturally vibrant. Perfect for daily use to maintain strong, shiny hair.",
+    description: "Petals Shampoo - Gently cleanses your hair while keeping it soft, smooth, and manageable. Its mild formula nourishes your scalp, leaving your hair fresh, healthy, and naturally vibrant. Perfect for daily use to maintain strong, shiny hair.",
     features: [
       "Gently cleanses with mild formula",
       "Keeps hair soft, smooth, and manageable",
@@ -2735,31 +2720,19 @@
     ]
   },
   {
-    category: " Home Essentials",
+    category: "Home Essentials",
     name: "Vinoz Anti-Dandruff Shampoo and Hair Conditioner",
     price: 6000,
     image: "./Products/Vinoz anti-dandroff shampoo and hair conditioner.jpeg",
-    description: "Vinoz Anti-Dandruff Shampoo and Hair Conditioner – Effectively fights dandruff while keeping your hair clean, soft, and manageable. This duo soothes the scalp, helps reduce flakes, and leaves your hair feeling refreshed and healthy. Perfect for daily use to maintain flake-free, nourished hair.",
+    description: "Vinoz Anti-Dandruff Shampoo and Hair Conditioner - Effectively fights dandruff while keeping your hair clean, soft, and manageable. This duo soothes the scalp, helps reduce flakes, and leaves your hair feeling refreshed and healthy. Perfect for daily use to maintain flake-free, nourished hair.",
     features: [
       "Effectively fights dandruff and reduces flakes",
       "Soothes and nourishes the scalp",
       "Keeps hair clean, soft, and manageable",
       "Perfect for daily use"
     ]
-  },
-  {
-    category: " Home Essentials",
-    name: "Blackhead clearing cleanser",
-    price: 11000,
-    image: "./Products/Blackhead clearing cleanser.jpeg",
-    description: "Blackhead Clearing Cleanser – Gently removes dirt, oil, and impurities to help reduce blackheads and prevent breakouts. Leaves your skin feeling clean, smooth, and refreshed.",
-    features: [
-      "Helps reduce blackheads",
-      "Prevents breakouts",
-      "Removes dirt, oil, and impurities",
-      "Leaves skin clean and smooth"
-    ]
   }
+
     ];
 
     // Function to extract the product name from the URL
