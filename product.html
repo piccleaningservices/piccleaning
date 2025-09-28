@@ -87,6 +87,23 @@
     .notification.show {
       opacity: 1;
     }
+
+
+    .cart-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.808); /* 50% opacity black */
+    z-index: 1; /* Place the overlay behind the content but over the image */
+}
+
+.cart-background > * {
+    position: relative;
+    z-index: 2;
+}
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
