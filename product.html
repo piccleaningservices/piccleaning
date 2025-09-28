@@ -184,6 +184,422 @@
   <script>
     // Cleaned up products array with unique products
     const products = [
+      {
+    category: "Home Essentials",
+    name: "Bathroom mat",
+    price: 6000,
+    image: "./Products/mat.jpeg",
+    description: "A soft, absorbent bathroom mat designed to keep your floor dry and provide a comfortable, non-slip surface when stepping out of the shower or bath. Its quick-drying material prevents mildew.",
+    features: [
+      "Soft and comfortable texture",
+      "High absorbency",
+      "Non-slip backing for safety",
+      "Quick-drying material"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Parker (Window Squeegee)",
+    price: 2000,
+    image: "./Products/par.jpeg",
+    description: "The Parker professional window squeegee offers streak-free cleaning for glass and smooth surfaces. Its durable rubber blade ensures maximum water removal with a single swipe.",
+    features: [
+      "Durable rubber blade",
+      "Streak-free cleaning",
+      "Ergonomic handle for comfortable grip",
+      "Suitable for windows, mirrors, and tiles"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Scrubbing brush",
+    price: 3000,
+    image: "./Products/scrb.jpeg",
+    description: "A heavy-duty scrubbing brush with stiff bristles for tackling tough dirt and grime on floors, tiles, and grout. The contoured handle provides maximum leverage for deep cleaning.",
+    features: [
+      "Stiff, durable bristles for deep cleaning",
+      "Ergonomic, contoured handle",
+      "Ideal for grout, tiles, and rough surfaces",
+      "Resistant to cleaning chemicals"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Shaving stick one pack",
+    price: 1500,
+    image: "./Products/shave1pack.jpeg",
+    description: "A single pack of disposable shaving sticks, providing a smooth and comfortable shave. The razors feature lubricating strips for reduced irritation and a close finish.",
+    features: [
+      "Smooth, close shave",
+      "Lubricating strip for comfort",
+      "Convenient disposable design",
+      "Easy-grip handle"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Harpic Power Plus Toilet Cleaner",
+    price: 9500,
+    image: "./Products/harpic.jpeg",
+    description: "Harpic Power Plus is a powerful toilet cleaner that kills 99.9% of germs and removes tough stains, including limescale, leaving your toilet clean and smelling fresh.",
+    features: [
+      "Kills 99.9% of germs",
+      "Removes tough limescale and stains",
+      "Unique angled neck for hard-to-reach areas",
+      "Leaves a refreshing scent"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Iron sponge (Scourer)",
+    price: 500,
+    image: "./Products/ironsponge.jpeg",
+    description: "A standard iron sponge scourer, highly effective for removing baked-on food, grease, and tough residue from pots and pans. Essential for heavy-duty kitchen cleaning.",
+    features: [
+      "Heavy-duty cleaning power",
+      "Removes baked-on grime and grease",
+      "Durable coiled iron material",
+      "Ideal for metal cookware"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Bathing sponge",
+    price: 1500,
+    image: "./Products/spongebath.jpeg",
+    description: "A soft, gentle bathing sponge that creates a rich lather and exfoliates the skin for a refreshing cleansing experience. Designed to be durable and quick-drying.",
+    features: [
+      "Soft texture for gentle exfoliation",
+      "Creates a rich, luxurious lather",
+      "Durable and long-lasting material",
+      "Quick-drying to prevent bacteria growth"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Strong Mop",
+    price: 5000,
+    image: "./Products/mop.jpeg",
+    description: "A heavy-duty mop built with a sturdy handle and highly absorbent cotton strands, designed for effective cleaning of large floor areas. It's durable for frequent use.",
+    features: [
+      "Sturdy, reinforced handle",
+      "Highly absorbent cotton mop head",
+      "Effectively cleans large floor areas",
+      "Durable for commercial or home use"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Dental Floss",
+    price: 1500,
+    image: "./Products/floss.jpeg",
+    description: "High-quality dental floss designed to easily slide between teeth, removing plaque and food particles where a toothbrush can't reach. Promotes healthy gums and fresh breath.",
+    features: [
+      "Shred-resistant material",
+      "Effectively removes plaque",
+      "Mint flavored for fresh breath",
+      "Easy to handle container"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Toilet Brush with Caddy",
+    price: 5500,
+    image: "./Products/toiletbrush.jpeg",
+    description: "A hygienic toilet brush and holder set. The brush features strong, contoured bristles for thorough cleaning, and the caddy keeps it neatly stored and out of sight.",
+    features: [
+      "Strong, anti-bacterial bristles",
+      "Contoured head for rim cleaning",
+      "Includes a discreet storage caddy",
+      "Durable, long-lasting handle"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Baby&Me Gentle Wipes",
+    price: 700,
+    image: "./Products/baby&me.jpeg",
+    description: "Soft and gentle multi-purpose wipes, ideal for sensitive skin. Perfect for quick clean-ups for both babies and adults, leaving skin feeling refreshed.",
+    features: [
+      "Extra soft and gentle for sensitive skin",
+      "Alcohol-free and hypoallergenic",
+      "Ideal for quick clean-ups",
+      "Refreshing and clean scent"
+    ]
+  },
+  {
+    category: "Eco-Friendly & Specialty",
+    name: "Air Wick Automatic Air Freshener",
+    price: 4000,
+    image: "./Products/airwick.jpeg",
+    description: "An automatic air freshener that releases bursts of fragrance to eliminate odors and keep your home smelling fresh. Features adjustable intensity settings.",
+    features: [
+      "Automatic fragrance release",
+      "Eliminates tough odors",
+      "Adjustable intensity settings",
+      "Provides long-lasting freshness"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Short Handled Dustpan & Brush Set",
+    price: 4500,
+    image: "./Products/sweeper.jpeg",
+    description: "A compact and durable dustpan and brush set for quick clean-ups of dry spills and dirt. The brush features angled bristles to sweep effectively into the pan.",
+    features: [
+      "Compact size for easy storage",
+      "Angled bristles for efficient sweeping",
+      "Durable plastic construction",
+      "Ideal for kitchen counters and small areas"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Black Soap Bar",
+    price: 5000,
+    image: "./Products/blacksoap.jpeg",
+    description: "A traditional, natural black soap suitable for deep cleaning various surfaces, including floors and laundry. Known for its degreasing and cleaning power.",
+    features: [
+      "Natural and traditional formula",
+      "Excellent degreaser",
+      "Versatile for floors and laundry",
+      "Leaves surfaces spotless"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Blossom Furniture Polish",
+    price: 3000,
+    image: "./Products/blossom.jpeg",
+    description: "Blossom polish cleans, shines, and protects wood, metal, and plastic surfaces, leaving a pleasant scent. It helps to repel dust and prevent smudges.",
+    features: [
+      "Cleans, shines, and protects",
+      "Suitable for multiple surfaces",
+      "Pleasant floral scent",
+      "Helps repel dust"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "CIF Floor cleaner",
+    price: 5000,
+    image: "./Products/ciffloorcleaner.jpeg",
+    description: "CIF multi-purpose floor cleaner effectively cuts through grime and dirt, leaving a brilliant shine and a long-lasting fragrance on all washable floor surfaces.",
+    features: [
+      "Powerful grime and dirt removal",
+      "Leaves a brilliant, streak-free shine",
+      "Suitable for all washable floors",
+      "Long-lasting fresh scent"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Cotton Buds (One Pack)",
+    price: 1200,
+    image: "./Products/cutton bud.jpeg",
+    description: "A pack of soft, gentle cotton buds perfect for delicate cleaning, makeup application, and first aid needs. Made with 100% pure cotton.",
+    features: [
+      "100% pure cotton tips",
+      "Soft and gentle for delicate use",
+      "Versatile for beauty and hygiene",
+      "Sturdy paper or plastic stick"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Kids Milk Teeth Toothpaste",
+    price: 2500,
+    image: "./Products/kids milk teeth.jpeg",
+    description: "A specialty toothpaste formulated for children's milk teeth. It offers gentle cleaning and effective cavity protection with a mild, child-friendly flavor.",
+    features: [
+      "Gentle formula for young teeth",
+      "Effective cavity protection",
+      "Mild, child-friendly flavor",
+      "Fluoride level safe for children"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Wooden Long Brush (Push Broom)",
+    price: 3500,
+    image: "./Products/long brush.jpeg",
+    description: "A wide, wooden-handled push broom with stiff, angled bristles, ideal for sweeping large areas like garages, patios, and workshops. It handles heavy debris with ease.",
+    features: [
+      "Wide head for large areas",
+      "Stiff, durable bristles",
+      "Long wooden handle for ergonomic use",
+      "Ideal for heavy debris"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Metal sponge (Scourer)",
+    price: 1500,
+    image: "./Products/metal sponge.jpeg",
+    description: "A durable, woven metal sponge designed for aggressive scrubbing of stubborn dirt and cooked-on residue from oven racks and durable cookware. Not recommended for non-stick surfaces.",
+    features: [
+      "Extra-strong scrubbing power",
+      "Durable woven metal construction",
+      "Ideal for stubborn residue",
+      "Long-lasting and reusable"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Mop bucket with Wringer",
+    price: 5000,
+    image: "./Products/mop bucket.jpeg",
+    description: "A sturdy mop bucket featuring a built-in wringer mechanism to effortlessly squeeze excess water from your mop, keeping your hands dry and floors cleaner.",
+    features: [
+      "Built-in heavy-duty wringer",
+      "Large capacity bucket",
+      "Pour spout for easy emptying",
+      "Durable, reinforced plastic construction"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Morning Fresh Dishwashing Liquid (Big)",
+    price: 3500,
+    image: "./Products/morning fresh big.jpeg",
+    description: "The large economy size of Morning Fresh, known for its powerful grease-cutting action. A little goes a long way to make your dishes sparkle and shine.",
+    features: [
+      "Economy large size",
+      "Superior grease-cutting formula",
+      "Rich, long-lasting foam",
+      "Gentle on hands"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Morning Fresh Dishwashing Liquid (Standard)",
+    price: 1500,
+    image: "./Products/morning fresh.jpeg",
+    description: "A standard bottle of Morning Fresh dishwashing liquid. It efficiently removes oil and residue, providing a high-performance clean for all your kitchenware.",
+    features: [
+      "Efficiently removes oil and residue",
+      "Produces rich lather",
+      "Standard convenient size",
+      "Leaves dishes sparkling clean"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Mr Sheen Multi-Surface Polish",
+    price: 2500,
+    image: "./Products/mr sheen.jpeg",
+    description: "Mr Sheen is a versatile aerosol polish that cleans, shines, and dusts multiple surfaces like wood, glass, and metal, leaving an anti-static finish.",
+    features: [
+      "Cleans, shines, and dusts",
+      "Anti-static formula repels dust",
+      "Suitable for multiple surfaces",
+      "Quick-drying, streak-free finish"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Oral-B Toothbrush (Individual)",
+    price: 1900,
+    image: "./Products/oral b.jpeg",
+    description: "An individual Oral-B toothbrush designed for superior plaque removal and gum care. Features power tip bristles to reach back teeth and soft gum stimulators.",
+    features: [
+      "Superior plaque removal",
+      "Power tip bristles reach back teeth",
+      "Gentle on gums",
+      "Ergonomic non-slip handle"
+    ]
+  },
+  {
+    category: "Laundry Care",
+    name: "Purit Antiseptic Liquid",
+    price: 2500,
+    image: "./Products/purity antiseptic.jpeg",
+    description: "Purit is a versatile antiseptic liquid that sanitizes clothes during the wash cycle and can be used for general household disinfecting.",
+    features: [
+      "Kills germs and bacteria",
+      "Ideal for laundry sanitizing",
+      "Multi-purpose household disinfectant",
+      "Safe for use on skin when diluted"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Bic Shaving Razors (Disposable)",
+    price: 1500,
+    image: "./Products/shaving bic.jpeg",
+    description: "A pack of Bic disposable razors, offering a quick and efficient shave. These lightweight razors are perfect for travel or everyday use.",
+    features: [
+      "Quick and efficient shave",
+      "Lightweight and easy to handle",
+      "Ideal for travel",
+      "Value multi-pack"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Multi-Purpose Sponge (Pack)",
+    price: 2000,
+    image: "./Products/sponge.jpeg",
+    description: "A pack of multi-purpose absorbent sponges, perfect for dishwashing, wiping counters, and general cleaning tasks around the home. Durable and reusable.",
+    features: [
+      "High absorbency for spills",
+      "Durable and reusable material",
+      "Ideal for kitchen and bathroom cleaning",
+      "Non-scratch on most surfaces"
+    ]
+  },
+  {
+    category: "Home Essentials",
+    name: "Standard Toothbrush (Individual)",
+    price: 700,
+    image: "./Products/toothbrush.jpeg",
+    description: "A standard manual toothbrush with medium bristles for effective daily cleaning. The simple design provides a reliable clean for good oral hygiene.",
+    features: [
+      "Medium bristles for effective cleaning",
+      "Ergonomic handle grip",
+      "Simple, reliable design",
+      "Promotes daily oral hygiene"
+    ]
+  },
+  {
+    category: "Cleaning Equipment & Tools",
+    name: "Professional Upholstery Cleaning Machine",
+    price: 450000,
+    image: "./Products/upholstery machine.jpeg",
+    description: "A high-powered professional machine designed for deep cleaning and extracting dirt from upholstery, carpets, and car interiors. Essential for commercial cleaning or large homes.",
+    features: [
+      "Deep extraction cleaning system",
+      "Powerful suction and spray jets",
+      "Ideal for upholstery and carpets",
+      "Commercial-grade durability"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Viva Bar Soap (Multi-pack)",
+    price: 950,
+    image: "./Products/viva bar soap.jpeg",
+    description: "A multi-pack of Viva bar soap, a basic and reliable cleaning solution for general household use, including handwashing and light laundry tasks.",
+    features: [
+      "Gentle on hands",
+      "Suitable for general household use",
+      "Reliable cleaning foam",
+      "Economical multi-pack"
+    ]
+  },
+  {
+    category: "Cleaning Products",
+    name: "Waw Detergent Powder",
+    price: 1800,
+    image: "./Products/waw detergent.jpeg",
+    description: "Waw is a popular laundry detergent powder known for its stain removal power and ability to keep clothes bright. Works well in both hand wash and washing machine applications.",
+    features: [
+      "Superior stain removal",
+      "Keeps colors bright",
+      "Pleasant, fresh scent",
+      "Suitable for hand and machine wash"
+    ]
+  },
         {
     category: "Cleaning Equipment & Tools",
     name: "Metal Handle Strong Mop",

@@ -25,7 +25,7 @@ function playMobileCartFeedback() {
 }
 
 // 3. CART INTERACTION FUNCTIONS
-window.mobileAddToCart = function(name, price, image) {
+window.addToCart = function(name, price, image) {
     const existing = mobileCart.find(item => item.name === name);
     if (existing) {
         existing.qty++;
