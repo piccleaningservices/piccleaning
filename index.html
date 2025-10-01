@@ -5954,60 +5954,107 @@ body {
 
 
 
-								<div class="wp-block-group alignfull is-style-section-5 is-layout-constrained wp-block-group-is-layout-constrained"
-									style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
-									<div
-										class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-7ee84d44 wp-block-columns-is-layout-flex">
-										<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
-											style="flex-basis:50%">
-											<h2 class="wp-block-heading"><mark style="background-color:rgba(0, 0, 0, 0)"
-													class="has-inline-color has-ast-global-color-0-color">|</mark> Who
-												Are We? </h2>
+								
+								<style>
+    .slideshow{
+		border-radius: 50px;
+      position:relative;
+      width:100%;
+      height:80vh;
+      overflow:hidden;
+    }
+
+    .slide{
+      position:absolute;
+      top:0;left:0;width:100%;height:100%;
+      opacity:0;
+      transition:opacity 1s ease;
+    }
+    .slide img{
+      width:100%;height:100%;object-fit:cover;
+      transform:scale(1.1);
+      animation:zoom 35s linear infinite;
+    }
+    .slide.active{opacity:1;z-index:1}
+
+    @keyframes zoom {
+      from{transform:scale(1.1)}
+      to{transform:scale(1)}
+    }
+
+    .caption{
+      position:absolute;
+      bottom:40px;left:40px;
+      background:rgba(0,0,0,0.4);
+      padding:20px 28px;
+      border-radius:8px;
+      max-width:420px;
+      animation:slideIn 1s ease;
+    }
+    .caption h2{margin:0 0 6px;font-size:24px;font-weight:700;font-family:'Merriweather',serif;color:#f7d774}
+    .caption p{margin:0;font-size:15px;line-height:1.5;color:#eee}
+
+    @keyframes slideIn {
+      from{transform:translateX(-40px);opacity:0}
+      to{transform:translateX(0);opacity:1}
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow" id="slideshow">
+    <div class="slide active">
+      <img src="./assest/clean3.jpeg" alt="slide1"/>
+      <div class="caption"><h2>Home Cleaning Services</h2><p>Enjoy meals in a  <b>perfectly polished kitchen and dining space</b> that shines from every angle.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/picclean001.jpg.jpeg" alt="slide2"/>
+      <div class="caption"><h2>Industrial Cleaning Services</h2><p>Our  <b>heavy-duty equipment and professional team</b> tackle the toughest industrial spaces with precision.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/laundry.jpeg" alt="slide3"/>
+      <div class="caption"><h2>Laundry Services</h2><p>From  <b>deep washes to expert folding</b>, we bring a fresh, clean feeling to all your linens and clothing.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/clean9.jpeg" alt="slide4"/>
+      <div class="caption"><h2>Home Cleaning Services</h2><p>Hygiene meets brilliance with  <b>bathrooms cleaned to perfection</b>, leaving every surface sparkling and sanitized.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/piccleaningpg11.jpeg" alt="slide5"/>
+      <div class="caption"><h2>Industrial Cleaning Services</h2><p> <b>Floor waxing and heavy scrubbing</b> for large commercial and industrial environments, ensuring a safe and pristine workspace.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/clean7.jpeg" alt="slide6"/>
+      <div class="caption"><h2>Laundry Services</h2><p> <b>Towel cleaning and folding</b> that ensures your textiles are fresh, organized, and invitingly soft.</p></div>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentslide = 0;
+    let timer = null;
+    const interval = 3000; // 5s
+
+    function showSlide(i){
+      slides.forEach((s,idx)=> s.classList.toggle('active', idx===i));
+      currentslide = i;
+    }
+
+    function nextSlide(){
+      showSlide((currentslide+1)%slides.length);
+    }
+
+    function start(){ timer = setInterval(nextSlide, interval); }
+    function stop(){ clearInterval(timer); timer=null; }
+
+    const slideshow = document.getElementById('slideshow');
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', start);
+
+    start();
+  </script>
 
 
-
-											<p class="has-medium-font-size text-gray-600">At <strong><mark
-														style="background-color:rgba(0, 0, 0, 0)"
-														class="has-inline-color has-ast-global-color-0-color">Pic-Cleaning</mark></strong>,
-												we’re not here to mess around. Your space deserves <strong><mark
-														style="background-color:rgba(0, 0, 0, 0)"
-														class="has-inline-color has-ast-global-color-0-color">precision,
-														power, and perfection</mark></strong>. Whether it’s your home,
-												office, or commercial property, we deliver <strong><mark
-														style="background-color:rgba(0, 0, 0, 0)"
-														class="has-inline-color has-ast-global-color-0-color">top-tier
-														cleaning services that don’t quit until the job is
-														flawless</mark></strong>. Your satisfaction isn’t a goal—it’s a
-												guarantee.</p>
-
-
-
-											<p class="has-medium-font-size text-gray-600">Our team brings <strong><mark
-														style="background-color:rgba(0, 0, 0, 0)"
-														class="has-inline-color has-ast-global-color-0-color">expert
-														focus, speed, and care</mark></strong> to every corner—treating
-												your space like it’s our own. From <strong><mark
-														style="background-color:rgba(0, 0, 0, 0)"
-														class="has-inline-color has-ast-global-color-0-color">one-time
-														deep cleans to recurring maintenance</mark></strong>, we adapt
-												to your schedule and priorities, ensuring your space isn’t just
-												clean—it’s <mark style="background-color:rgba(0, 0, 0, 0)"
-													class="has-inline-color has-ast-global-color-0-color"><strong>Pic-Cleaning
-														clean</strong>.</mark></p>
-										</div>
-
-
-
-										<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
-											style="flex-basis:50%">
-											<figure class="wp-block-image size-full is-style-rounded"
-												style="margin-top:0;margin-bottom:0"><img decoding="async" width="3024"
-													height="4032" src="./index_files/piccleaningpg11.jpeg" alt=""
-													class="wp-image-115" style="aspect-ratio:1;object-fit:cover">
-											</figure>
-										</div>
-									</div>
-								</div>
+								
 
 
 

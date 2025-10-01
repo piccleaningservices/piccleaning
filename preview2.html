@@ -1,537 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Image Slideshow</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio Gallery Slideshow</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Inter,Segoe UI,sans-serif;background:#000;color:#fff;overflow:hidden}
 
-        .body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    .slideshow{
+      position:relative;
+      width:100%;
+      height:100vh;
+      overflow:hidden;
+    }
 
-        .slideshow-container {
-            max-width: 960px;
-            width: 100%;
-			height: 1280px;
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+    .slide{
+      position:absolute;
+      top:0;left:0;width:100%;height:100%;
+      opacity:0;
+      transition:opacity 1s ease;
+    }
+    .slide img{
+      width:100%;height:100%;object-fit:cover;
+      transform:scale(1.1);
+      animation:zoom 35s linear infinite;
+    }
+    .slide.active{opacity:1;z-index:1}
 
-        .slides {
-            position: relative;
-            height: 100%;
-            width: 100%;
-        }
+    @keyframes zoom {
+      from{transform:scale(1.1)}
+      to{transform:scale(1)}
+    }
 
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transform: scale(1.1);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+    .caption{
+      position:absolute;
+      bottom:40px;left:40px;
+      background:rgba(0,0,0,0.4);
+      padding:20px 28px;
+      border-radius:8px;
+      max-width:420px;
+      animation:slideIn 1s ease;
+    }
+    .caption h2{margin:0 0 6px;font-size:24px;font-weight:700;font-family:'Merriweather',serif;color:#f7d774}
+    .caption p{margin:0;font-size:15px;line-height:1.5;color:#eee}
 
-        .slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .slide-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 60px 40px 40px;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.6s ease 0.3s;
-        }
-
-        .slide.active .slide-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .slide-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .slide-description {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        /* Navigation Controls */
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .nav-btn.prev {
-            left: 20px;
-        }
-
-        .nav-btn.next {
-            right: 20px;
-        }
-
-        .nav-btn svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        /* Dots Indicator */
-        .dots-container {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .dot.active {
-            background: white;
-            transform: scale(1.2);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .dot:hover {
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Progress Bar */
-        .progress-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b6b, #ffa500, #ffd93d, #6bcf7f, #4d96ff);
-            width: 0%;
-            transition: width 0.1s linear;
-            z-index: 10;
-        }
-
-        /* Thumbnails */
-        .thumbnails {
-            display: flex;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            gap: 10px;
-            overflow-x: auto;
-        }
-
-        .thumbnail {
-            min-width: 80px;
-            height: 60px;
-            border-radius: 8px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-            background-size: cover;
-            background-position: center;
-            border: 2px solid transparent;
-        }
-
-        .thumbnail.active {
-            opacity: 1;
-            border-color: white;
-            transform: scale(1.05);
-        }
-
-        .thumbnail:hover {
-            opacity: 0.8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .slides {
-                height: 400px;
-            }
-            
-            .slide-title {
-                font-size: 1.8rem;
-            }
-            
-            .slide-content {
-                padding: 40px 20px 20px;
-            }
-            
-            .nav-btn {
-                width: 50px;
-                height: 50px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .slides {
-                height: 300px;
-            }
-            
-            .slide-title {
-                font-size: 1.4rem;
-            }
-            
-            .slide-description {
-                font-size: 0.9rem;
-            }
-            
-            .thumbnails {
-                padding: 10px;
-            }
-            
-            .thumbnail {
-                min-width: 60px;
-                height: 45px;
-            }
-        }
-
-        /* Animation for slide change */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: scale(1.1);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
+    @keyframes slideIn {
+      from{transform:translateX(-40px);opacity:0}
+      to{transform:translateX(0);opacity:1}
+    }
+  </style>
 </head>
-<div class="body">
-    <div class="slideshow-container">
-        <div class="progress-bar" id="progressBar"></div>
-        
-        <div class="slides" id="slidesContainer">
-            <!-- Slides will be dynamically inserted -->
-        </div>
-
-        <button class="nav-btn prev" id="prevBtn">
-            <svg viewBox="0 0 24 24">
-                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-            </svg>
-        </button>
-        
-        <button class="nav-btn next" id="nextBtn">
-            <svg viewBox="0 0 24 24">
-                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-            </svg>
-        </button>
-
-        <div class="dots-container" id="dotsContainer">
-            <!-- Dots will be dynamically inserted -->
-        </div>
-
-        <div class="thumbnails" id="thumbnailsContainer">
-            <!-- Thumbnails will be dynamically inserted -->
-        </div>
+<body>
+  <div class="slideshow" id="slideshow">
+    <div class="slide active">
+      <img src="./assest/clean3.jpeg" alt="slide1"/>
+      <div class="caption"><h2>Home Cleaning Services</h2><p>Enjoy meals in a perfectly polished dining space that shines from every angle.</p></div>
     </div>
+    <div class="slide">
+      <img src="./assest/picclean001.jpg.jpeg" alt="slide2"/>
+      <div class="caption"><h2>Industrial Cleaning Services</h2><p>Our professional touch brings comfort and brilliance to your living space.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/laundry.jpeg" alt="slide3"/>
+      <div class="caption"><h2>Laundry Services</h2><p>Step into a living room that feels fresh, organized, and inviting.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/clean9.jpeg" alt="slide4"/>
+      <div class="caption"><h2>Home Cleaning Services</h2><p>Relax in a sitting room styled to perfection and cleaned with precision.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/piccleaningpg11.jpeg" alt="slide5"/>
+      <div class="caption"><h2>Industrial Cleaning Services</h2><p>Sleep better in a bedroom that’s neat, organized, and stress-free.</p></div>
+    </div>
+    <div class="slide">
+      <img src="./assest/clean7.jpeg" alt="slide6"/>
+      <div class="caption"><h2>Laundry Services</h2><p>Hygiene meets brilliance with bathrooms cleaned to perfection.</p></div>
+    </div>
+  </div>
 
-    <script>
-        class ProfessionalSlideshow {
-            constructor() {
-                this.slides = [
-                    {
-                        image: './assest/clean1.jpeg',
-                        title: 'Beautiful Landscapes',
-                        description: 'Discover the most stunning natural landscapes from around the world.'
-                    },
-                    {
-                        image: './assest/clean2.jpeg',
-                        title: 'Urban Architecture',
-                        description: 'Modern cityscapes and architectural marvels that define our era.'
-                    },
-                    {
-                        image: './assest/clean3.jpeg',
-                        title: 'Future Technology',
-                        description: 'Innovative technologies shaping the future of humanity.'
-                    },
-                    {
-                        image: './assest/clean4.jpeg',
-                        title: 'Creative Arts',
-                        description: 'Inspiring artworks and creative expressions from talented artists.'
-                    },
-                    {
-                        image: './assest/clean5.jpeg',
-                        title: 'Adventure Travel',
-                        description: 'Embark on unforgettable journeys to the most exciting destinations.'
-                    },
-                    {
-                        image: './assest/clean6.jpeg',
-                        title: 'Business Success',
-                        description: 'Strategies and insights for achieving remarkable business growth.'
-                    },
-                    {
-                        image: './assest/clean7.jpeg',
-                        title: 'Health & Wellness',
-                        description: 'Transform your life with holistic health and wellness practices.'
-                    },
-					 {
-                        image: './assest/clean8.jpeg',
-                        title: 'Health & Wellness',
-                        description: 'Transform your life with holistic health and wellness practices.'
-                    },
-					 {
-                        image: './assest/clean9.jpeg',
-                        title: 'Health & Wellness',
-                        description: 'Transform your life with holistic health and wellness practices.'
-                    },
-					 {
-                        image: './assest/clean10.png',
-                        title: 'Health & Wellness',
-                        description: 'Transform your life with holistic health and wellness practices.'
-                    }
-                ];
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentslide = 0;
+    let timer = null;
+    const interval = 3000; // 5s
 
-                this.currentSlide = 0;
-                this.slideInterval = null;
-                this.slideDuration = 5000; // 5 seconds
-                this.isPaused = false;
+    function showSlide(i){
+      slides.forEach((s,idx)=> s.classList.toggle('active', idx===i));
+      currentslide = i;
+    }
 
-                this.init();
-            }
+    function nextSlide(){
+      showSlide((currentslide+1)%slides.length);
+    }
 
-            init() {
-                this.createSlides();
-                this.createDots();
-                this.createThumbnails();
-                this.startAutoSlide();
-                this.addEventListeners();
-                this.updateProgressBar();
-            }
+    function start(){ timer = setInterval(nextSlide, interval); }
+    function stop(){ clearInterval(timer); timer=null; }
 
-            createSlides() {
-                const slidesContainer = document.getElementById('slidesContainer');
-                
-                this.slides.forEach((slide, index) => {
-                    const slideElement = document.createElement('div');
-                    slideElement.className = `slide ${index === 0 ? 'active' : ''}`;
-                    slideElement.style.backgroundImage = `url(${slide.image})`;
-                    
-                    slideElement.innerHTML = `
-                        <div class="slide-content">
-                            <h2 class="slide-title">${slide.title}</h2>
-                            <p class="slide-description">${slide.description}</p>
-                        </div>
-                    `;
-                    
-                    slidesContainer.appendChild(slideElement);
-                });
-            }
+    const slideshow = document.getElementById('slideshow');
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', start);
 
-            createDots() {
-                const dotsContainer = document.getElementById('dotsContainer');
-                
-                this.slides.forEach((_, index) => {
-                    const dot = document.createElement('div');
-                    dot.className = `dot ${index === 0 ? 'active' : ''}`;
-                    dot.addEventListener('click', () => this.goToSlide(index));
-                    dotsContainer.appendChild(dot);
-                });
-            }
-
-            createThumbnails() {
-                const thumbnailsContainer = document.getElementById('thumbnailsContainer');
-                
-                this.slides.forEach((slide, index) => {
-                    const thumbnail = document.createElement('div');
-                    thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
-                    thumbnail.style.backgroundImage = `url(${slide.image})`;
-                    thumbnail.addEventListener('click', () => this.goToSlide(index));
-                    thumbnailsContainer.appendChild(thumbnail);
-                });
-            }
-
-            addEventListeners() {
-                document.getElementById('prevBtn').addEventListener('click', () => this.prevSlide());
-                document.getElementById('nextBtn').addEventListener('click', () => this.nextSlide());
-
-                // Pause on hover
-                const slideshow = document.querySelector('.slideshow-container');
-                slideshow.addEventListener('mouseenter', () => this.pause());
-                slideshow.addEventListener('mouseleave', () => this.resume());
-
-                // Touch support for mobile
-                let startX = 0;
-                slideshow.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                    this.pause();
-                });
-
-                slideshow.addEventListener('touchend', (e) => {
-                    const endX = e.changedTouches[0].clientX;
-                    const diff = startX - endX;
-                    
-                    if (Math.abs(diff) > 50) { // Minimum swipe distance
-                        if (diff > 0) {
-                            this.nextSlide();
-                        } else {
-                            this.prevSlide();
-                        }
-                    }
-                    this.resume();
-                });
-
-                // Keyboard navigation
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowLeft') this.prevSlide();
-                    if (e.key === 'ArrowRight') this.nextSlide();
-                    if (e.key === ' ') {
-                        e.preventDefault();
-                        this.togglePause();
-                    }
-                });
-            }
-
-            goToSlide(index) {
-                this.currentSlide = index;
-                this.updateSlides();
-                this.resetAutoSlide();
-            }
-
-            nextSlide() {
-                this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-                this.updateSlides();
-                this.resetAutoSlide();
-            }
-
-            prevSlide() {
-                this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-                this.updateSlides();
-                this.resetAutoSlide();
-            }
-
-            updateSlides() {
-                const slides = document.querySelectorAll('.slide');
-                const dots = document.querySelectorAll('.dot');
-                const thumbnails = document.querySelectorAll('.thumbnail');
-
-                slides.forEach((slide, index) => {
-                    slide.classList.toggle('active', index === this.currentSlide);
-                });
-
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === this.currentSlide);
-                });
-
-                thumbnails.forEach((thumbnail, index) => {
-                    thumbnail.classList.toggle('active', index === this.currentSlide);
-                });
-
-                this.updateProgressBar();
-            }
-
-            updateProgressBar() {
-                const progressBar = document.getElementById('progressBar');
-                progressBar.style.width = '0%';
-                
-                // Reset and animate progress bar
-                setTimeout(() => {
-                    progressBar.style.transition = `width ${this.slideDuration}ms linear`;
-                    progressBar.style.width = '100%';
-                }, 50);
-            }
-
-            startAutoSlide() {
-                this.slideInterval = setInterval(() => {
-                    if (!this.isPaused) {
-                        this.nextSlide();
-                    }
-                }, this.slideDuration);
-            }
-
-            resetAutoSlide() {
-                clearInterval(this.slideInterval);
-                this.startAutoSlide();
-            }
-
-            pause() {
-                this.isPaused = true;
-                const progressBar = document.getElementById('progressBar');
-                progressBar.style.transition = 'none';
-            }
-
-            resume() {
-                this.isPaused = false;
-                this.updateProgressBar();
-            }
-
-            togglePause() {
-                this.isPaused ? this.resume() : this.pause();
-            }
-
-            // Public method to destroy slideshow (cleanup)
-            destroy() {
-                clearInterval(this.slideInterval);
-                // Remove event listeners if needed
-            }
-        }
-
-        // Initialize the slideshow when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            new ProfessionalSlideshow();
-        });
-
-        // Export for use in other scripts
-        window.ProfessionalSlideshow = ProfessionalSlideshow;
-    </script>
-</div>
+    start();
+  </script>
+</body>
 </html>
