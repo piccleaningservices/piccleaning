@@ -6422,7 +6422,7 @@ flexibility(document.documentElement);
                           <p>Professional laundry services that deliver freshness and care for every fabric.</p>
                         </a>
 
-                        <a href="./shop.html" class="zz-service-card card-equipment" data-service="equipment">
+                        <a href="./hireequipments.html" class="zz-service-card card-equipment" data-service="equipment">
                           <div class="zz-fill-layer"></div>
                           <div class="effect-layer">
                             <div
@@ -6430,7 +6430,7 @@ flexibility(document.documentElement);
                             </div>
                           </div>
                           <div class="zz-icon">⚙️</div>
-                          <h3>Industrial Equipment &amp; Chemicals</h3>
+                          <h3>Industrial Equipment &amp; Chemicals (Hiring)</h3>
                           <p>High-quality machines and chemicals designed for professionals who demand results.</p>
                         </a>
 
@@ -6472,6 +6472,247 @@ flexibility(document.documentElement);
                       --deepseek-purple: #7e57c2;
                       --deepseek-teal: #26c6da;
                     }
+
+
+                    /* --- Background Image and Dark Overlay --- */
+.zz-service-card.card-coming-soon {
+  position: relative; /* Needed for absolute positioning of the overlay */
+  background-image: url('./assest/bot.jpg'); /* <--- CHANGE THIS PATH */
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  color: white; /* Make all direct text content white by default */
+  overflow: hidden; /* Important to contain pseudo-element overlay */
+}
+
+/* --- Dark Overlay (using a pseudo-element for efficiency) --- */
+.zz-service-card.card-coming-soon::before {
+  content: ''; /* Essential for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.810); /* Black with 60% opacity */
+  z-index: 1; /* Puts the overlay above the background image */
+}
+
+/* --- Ensure all content is above the dark overlay and white --- */
+.zz-service-card.card-coming-soon > * { /* Selects all direct children of the card */
+  position: relative; /* Brings content above the ::before pseudo-element */
+  z-index: 2; /* Ensures content is visible above the overlay */
+  color: white; /* Explicitly set text color for all content */
+}
+
+
+
+
+
+
+
+
+.zz-service-card.card-equipment {
+  position: relative; /* Needed for absolute positioning of the overlay */
+  background-image: url('./assest/equipments.jpg'); /* <--- CHANGE THIS PATH */
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  color: white; /* Make all direct text content white by default */
+  overflow: hidden; /* Important to contain pseudo-element overlay */
+}
+
+/* --- Dark Overlay (using a pseudo-element for efficiency) --- */
+.zz-service-card.card-equipment::before {
+  content: ''; /* Essential for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.810); /* Black with 60% opacity */
+  z-index: 1; /* Puts the overlay above the background image */
+}
+
+/* --- Ensure all content is above the dark overlay and white --- */
+.zz-service-card.card-equipment > * { /* Selects all direct children of the card */
+  position: relative; /* Brings content above the ::before pseudo-element */
+  z-index: 2; /* Ensures content is visible above the overlay */
+  color: white; /* Explicitly set text color for all content */
+}
+
+
+
+
+
+
+
+
+
+
+.zz-service-card.card-laundry {
+  position: relative; /* Needed for absolute positioning of the overlay */
+  background-image: url('./assest/clean7.jpeg'); /* <--- CHANGE THIS PATH */
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  color: white; /* Make all direct text content white by default */
+  overflow: hidden; /* Important to contain pseudo-element overlay */
+}
+
+/* --- Dark Overlay (using a pseudo-element for efficiency) --- */
+.zz-service-card.card-laundry::before {
+  content: ''; /* Essential for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.810); /* Black with 60% opacity */
+  z-index: 1; /* Puts the overlay above the background image */
+}
+
+/* --- Ensure all content is above the dark overlay and white --- */
+.zz-service-card.card-laundry > * { /* Selects all direct children of the card */
+  position: relative; /* Brings content above the ::before pseudo-element */
+  z-index: 2; /* Ensures content is visible above the overlay */
+  color: white; /* Explicitly set text color for all content */
+}
+
+
+
+
+
+
+.zz-service-card.card-products {
+  position: relative; /* Needed for absolute positioning of the overlay */
+  background-image: url('./assest/cart.jpg'); /* <--- CHANGE THIS PATH */
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  color: white; /* Make all direct text content white by default */
+  overflow: hidden; /* Important to contain pseudo-element overlay */
+}
+
+/* --- Dark Overlay (using a pseudo-element for efficiency) --- */
+.zz-service-card.card-products::before {
+  content: ''; /* Essential for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.810); /* Black with 60% opacity */
+  z-index: 1; /* Puts the overlay above the background image */
+}
+
+/* --- Ensure all content is above the dark overlay and white --- */
+.zz-service-card.card-products > * { /* Selects all direct children of the card */
+  position: relative; /* Brings content above the ::before pseudo-element */
+  z-index: 2; /* Ensures content is visible above the overlay */
+  color: white; /* Explicitly set text color for all content */
+}
+
+
+
+
+
+
+.zz-service-card.card-industrial {
+  position: relative; /* Needed for absolute positioning of the overlay */
+  background-image: url('./assest/picclean001.jpg.jpeg'); /* <--- CHANGE THIS PATH */
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  color: white; /* Make all direct text content white by default */
+  overflow: hidden; /* Important to contain pseudo-element overlay */
+}
+
+/* --- Dark Overlay (using a pseudo-element for efficiency) --- */
+.zz-service-card.card-industrial::before {
+  content: ''; /* Essential for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.810); /* Black with 60% opacity */
+  z-index: 1; /* Puts the overlay above the background image */
+}
+
+/* --- Ensure all content is above the dark overlay and white --- */
+.zz-service-card.card-industrial > * { /* Selects all direct children of the card */
+  position: relative; /* Brings content above the ::before pseudo-element */
+  z-index: 2; /* Ensures content is visible above the overlay */
+  color: white; /* Explicitly set text color for all content */
+}
+
+
+
+
+
+
+
+
+
+
+.zz-service-card.card-home {
+  position: relative; /* Needed for absolute positioning of the overlay */
+  background-image: url('./assest/clean3.jpeg'); /* <--- CHANGE THIS PATH */
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  color: white; /* Make all direct text content white by default */
+  overflow: hidden; /* Important to contain pseudo-element overlay */
+}
+
+/* --- Dark Overlay (using a pseudo-element for efficiency) --- */
+.zz-service-card.card-home::before {
+  content: ''; /* Essential for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.810); /* Black with 60% opacity */
+  z-index: 1; /* Puts the overlay above the background image */
+}
+
+/* --- Ensure all content is above the dark overlay and white --- */
+.zz-service-card.card-home > * { /* Selects all direct children of the card */
+  position: relative; /* Brings content above the ::before pseudo-element */
+  z-index: 2; /* Ensures content is visible above the overlay */
+  color: white; /* Explicitly set text color for all content */
+}
+
+
+
+
+/* --- Specific styling for the coming soon overlay --- */
+.zz-coming-soon-overlay {
+  background-color: transparent !important; /* Ensure no unwanted background on the overlay itself */
+  color: white; /* Ensure text inside is white */
+  text-align: center;
+  /* Add any other styling for the 'Stay tuned!' message, e.g., font size, padding */
+  z-index: 3; /* Make sure this overlay is on top of everything else */
+}
+
+.zz-coming-soon-overlay h3,
+.zz-coming-soon-overlay p {
+  color: white; /* Explicitly ensure text is white */
+}
+
+/* You might need to adjust other existing styles */
+/* For example, if you have a .zz-icon with a background, you might want to adjust it */
+.zz-service-card.card-coming-soon .zz-icon {
+    /* Example: If icon had a colored background, you might want to remove it or adjust opacity */
+    background-color: transparent; /* Or a semi-transparent white */
+    color: white;
+}
+
+/* Ensure the `deepseek-glow` also interacts well if it's visible */
+.deepseek-glow {
+    /* Adjust Z-index if needed to sit below content but above overlay */
+    z-index: 1.5;
+}
+
+/* If the .zz-fill-layer or .effect-layer had any background, you might want to make it transparent */
+.zz-fill-layer, .effect-layer {
+    background-color: transparent;
+}
 
                     /* -------- LAYOUT & BASE STYLES -------- */
                     .zz-services-xl {
