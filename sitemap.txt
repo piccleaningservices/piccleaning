@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://piccleaningservices.github.io/piccleaning/</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/aboutus.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/contactus.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/ourservices.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/homecleaning.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/industrialcleaning.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/hireequipments.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/laundry.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/service.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/shop.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/shop2.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/requestservice.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/requestajob.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/product.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/preview.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/preview2.html</loc><lastmod>2025-10-09</lastmod></url>
+  <url><loc>https://piccleaningservices.github.io/piccleaning/googleec777c4635da4405.html</loc><lastmod>2025-10-09</lastmod></url>
+</urlset>
